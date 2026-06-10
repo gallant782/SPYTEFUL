@@ -1,0 +1,342 @@
+[
+  {
+    "id": "mf-031",
+    "hook": "You aren't tired; you're uninspired.",
+    "template": "The Hard Truth (Tough Love)",
+    "pillar": "Mindset",
+    "performance_score": 8.9,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, challenging, rhythmic",
+      "script": [
+        "You aren't tired; you're uninspired.",
+        "Your fatigue is often just your brain's response to a lack of meaningful mission.",
+        "Low-stakes living is exhausting.",
+        "The MindFrame Protocol: Identify one 'Goliath' goal that justifies your existence.",
+        "When you align your actions with a purpose that matters, energy becomes a renewable resource.",
+        "Stop medicating your boredom with sleep and start curing it with intensity.",
+        "Wake up your soul or continue rotting in comfort.",
+        "Find your mission. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person yawning in a gray office vs a person working intensely on a passion project.", "text_overlay": "UNINSPIRED > TIRED", "position": "center"},
+      {"line": 2, "b_roll": "A shot of a battery charging slowly vs a lightning strike.", "text_overlay": "MEANINGFUL MISSION", "position": "center"},
+      {"line": 3, "b_roll": "A person walking slowly through a gray, flat desert.", "text_overlay": "LOW-STAKES LIVING", "position": "center"},
+      {"line": 4, "b_roll": "A person standing before a massive, dark mountain with a determined look.", "text_overlay": "THE GOLIATH GOAL", "position": "top-center"},
+      {"line": 5, "b_roll": "A person running uphill at sunrise, looking energized.", "text_overlay": "RENEWABLE ENERGY", "position": "center"},
+      {"line": 6, "b_roll": "A person tossing a pillow aside and sitting up in bed with focus.", "text_overlay": "CURE THE BOREDOM", "position": "center"},
+      {"line": 7, "b_roll": "A macro shot of a flame igniting in the dark.", "text_overlay": "WAKE YOUR SOUL", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing with a bright flash.", "text_overlay": "FIND YOUR MISSION", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Find your MindFrame mission.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person's eyes glowing like fire in a dark room. Text: CURE YOUR FATIGUE."
+  },
+  {
+    "id": "mf-032",
+    "hook": "Stop trading your health for wealth you'll be too sick to enjoy.",
+    "template": "The Hard Truth (Tough Love)",
+    "pillar": "Health",
+    "performance_score": 9.3,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, warning, authoritative",
+      "script": [
+        "Stop trading your health for wealth you'll be too sick to enjoy.",
+        "You are mortgaging your future vitality for a pile of gold you won't have the energy to spend.",
+        "High-performance is a physical game first.",
+        "The MindFrame Protocol: Non-negotiable physical maintenance is the foundation of cognitive sovereignty.",
+        "If you don't make time for your health, you will be forced to make time for your illness.",
+        "Your body is the vehicle for your legacy. Don't run it into the ground.",
+        "Optimize your machine, or the machine will fail you.",
+        "Get the Health OS. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A shot of a hospital bed transitioning to a vault full of gold.", "text_overlay": "THE WRONG TRADE", "position": "center"},
+      {"line": 2, "b_roll": "A person looking at a digital bank account while coughing or looking pale.", "text_overlay": "MORTGAGING VITALITY", "position": "center"},
+      {"line": 3, "b_roll": "A person lifting heavy weights in a dark, minimalist gym.", "text_overlay": "PHYSICAL GAME", "position": "center"},
+      {"line": 4, "b_roll": "A person eating a clean, vibrant meal while reading a business book.", "text_overlay": "HEALTH PROTOCOL", "position": "top-center"},
+      {"line": 5, "b_roll": "A shadow of a person walking with a cane vs a person running free.", "text_overlay": "MAKE TIME", "position": "center"},
+      {"line": 6, "b_roll": "A high-end sports car being tuned by a mechanic.", "text_overlay": "YOUR VEHICLE", "position": "center"},
+      {"line": 7, "b_roll": "A macro shot of a heartbeat monitor showing a strong, steady pulse.", "text_overlay": "OPTIMIZE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo fading in.", "text_overlay": "GET THE OS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the MindFrame Health OS.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A stethoscope on a pile of money. Text: THE REAL WEALTH."
+  },
+  {
+    "id": "mf-033",
+    "hook": "If you don't control your mind, someone else will.",
+    "template": "They Don't Want You To Know (Conspiracy-Adjacent)",
+    "pillar": "Mindset",
+    "performance_score": 9.2,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Mystery, direct, cautionary",
+      "script": [
+        "If you don't control your mind, someone else will.",
+        "The world is a battlefield of psychological manipulation, designed to keep you reactive and compliant.",
+        "Your attention is the prize; your sovereignty is the cost.",
+        "The MindFrame Protocol: Build a mental fortress of first-principles thinking.",
+        "Audit your inputs, question your reactions, and reclaim your internal narrative.",
+        "He who owns his thoughts owns his destiny.",
+        "Stop being a pawn and start being the player.",
+        "Claim your sovereignty. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person in a crowd all looking at their phones with the same blue glow.", "text_overlay": "MIND CONTROL", "position": "center"},
+      {"line": 2, "b_roll": "Flickering shots of news headlines, advertisements, and social media icons.", "text_overlay": "BATTLEFIELD", "position": "center"},
+      {"line": 3, "b_roll": "A hand pulling a puppet's strings over a blurry city.", "text_overlay": "THE PRIZE", "position": "center"},
+      {"line": 4, "b_roll": "A person drawing a solid circle around themselves on a blueprint.", "text_overlay": "MENTAL FORTRESS", "position": "top-center"},
+      {"line": 5, "b_roll": "A person looking at a mirror and seeing their own eyes with clarity.", "text_overlay": "RECLAIM NARRATIVE", "position": "center"},
+      {"line": 6, "b_roll": "A person standing on top of a chess board, looking down.", "text_overlay": "OWN DESTINY", "position": "center"},
+      {"line": 7, "b_roll": "A single person walking against a crowd of people in suits.", "text_overlay": "BE THE PLAYER", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold outline.", "text_overlay": "CLAIM SOVEREIGNTY", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Claim your mental sovereignty.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A human eye with a keyhole in the pupil. Text: UNLOCK YOUR MIND."
+  },
+  {
+    "id": "mf-034",
+    "hook": "The psychology of why you keep procrastinating.",
+    "template": "Why You're Stuck (Pain Point)",
+    "pillar": "Productivity",
+    "performance_score": 8.6,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, scientific, insightful",
+      "script": [
+        "The psychology of why you keep procrastinating.",
+        "It's not about time management; it's about mood management.",
+        "Your brain is avoiding the 'negative affect' associated with a difficult task.",
+        "The MindFrame Fix: The '5-Second Friction Break'.",
+        "Commit only to the first 5 seconds of the task. Reduce the perceived threat to your comfort.",
+        "Once you break the seal of inertia, momentum becomes your ally.",
+        "Stop managing your schedule and start managing your resistance.",
+        "Get the Procrastination Fix. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person staring at a blinking cursor on a blank screen.", "text_overlay": "WHY YOU STALL", "position": "center"},
+      {"line": 2, "b_roll": "A person looking frustrated and then picking up their phone.", "text_overlay": "MOOD MANAGEMENT", "position": "center"},
+      {"line": 3, "b_roll": "A close-up of a person's tensed eyebrows.", "text_overlay": "NEGATIVE AFFECT", "position": "center"},
+      {"line": 4, "b_roll": "A hand hitting a stopwatch and starting a timer for 5 seconds.", "text_overlay": "5-SECOND FIX", "position": "top-center"},
+      {"line": 5, "b_roll": "A person typing just one sentence and then continuing to type faster.", "text_overlay": "BREAK THE SEAL", "position": "center"},
+      {"line": 6, "b_roll": "A heavy boulder starting to roll down a hill, gaining speed.", "text_overlay": "MOMENTUM", "position": "center"},
+      {"line": 7, "b_roll": "A person pushing through a heavy door into a bright workspace.", "text_overlay": "MANAGE RESISTANCE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo fading in.", "text_overlay": "THE FIX", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Get the MindFrame Procrastination Fix.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A clock being smashed by a hammer. Text: KILL PROCRASTINATION."
+  },
+  {
+    "id": "mf-035",
+    "hook": "The $10,000/hour skill you're ignoring.",
+    "template": "One Habit That... (Atomic Habits Style)",
+    "pillar": "Money",
+    "performance_score": 9.4,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, value-dense, authoritative",
+      "script": [
+        "The $10,000/hour skill you're ignoring.",
+        "It's not coding, trading, or sales. It's the ability to focus on one thing for 4 hours.",
+        "In a world of infinite distraction, deep focus is the ultimate asymmetric advantage.",
+        "The MindFrame Protocol: One 'Monastic Block' every single morning.",
+        "While the world is reacting to emails, you are building the assets of your future.",
+        "Focus is the multiplier of all other skills.",
+        "Master this, and the money will follow as a lagging indicator.",
+        "Master your focus. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person looking at a digital screen with '$10,000' flashing in gold.", "text_overlay": "THE ULTIMATE SKILL", "position": "center"},
+      {"line": 2, "b_roll": "A person sitting alone in a dark room with just a desk lamp, completely absorbed.", "text_overlay": "4 HOURS OF FOCUS", "position": "center"},
+      {"line": 3, "b_roll": "A person standing tall while a crowd of blurry people rush around them.", "text_overlay": "ASYMMETRIC", "position": "center"},
+      {"line": 4, "b_roll": "A calendar showing a single gold block labeled 'Monastic'.", "text_overlay": "MONASTIC BLOCK", "position": "top-center"},
+      {"line": 5, "b_roll": "A person building a complex bridge or structure in slow motion.", "text_overlay": "BUILD FUTURE ASSETS", "position": "center"},
+      {"line": 6, "b_roll": "An 'X' symbol multiplying over a shot of a brain.", "text_overlay": "THE MULTIPLIER", "position": "center"},
+      {"line": 7, "b_roll": "A graph showing a sharp upward curve labeled 'Wealth'.", "text_overlay": "LAGGING INDICATOR", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming in.", "text_overlay": "MASTER FOCUS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your focus with MindFrame.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person's eye with a gold dollar sign in the pupil. Text: $10,000/HOUR."
+  },
+  {
+    "id": "mf-036",
+    "hook": "Stop arguing with people who haven't done the work.",
+    "template": "The Hard Truth (Tough Love)",
+    "pillar": "Relationships",
+    "performance_score": 9.1,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, dismissive, authoritative",
+      "script": [
+        "Stop arguing with people who haven't done the work.",
+        "Opinion is cheap; execution is expensive.",
+        "When you defend your vision to those who are comfortable with 'average,' you are leaking energy.",
+        "The MindFrame Protocol: Silent Execution. Let your results be the only noise you make.",
+        "High-performers don't seek consensus; they seek outcomes.",
+        "Detach your identity from the approval of the crowd.",
+        "Move in silence and let your success speak for you.",
+        "Join the 1%. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person talking animatedly while another person with a calm face simply walks away.", "text_overlay": "STOP ARGUING", "position": "center"},
+      {"line": 2, "b_roll": "A pile of trash vs a single gold bar.", "text_overlay": "OPINION VS EXECUTION", "position": "center"},
+      {"line": 3, "b_roll": "A person trying to fill a bucket with a hole in it.", "text_overlay": "LEAKING ENERGY", "position": "center"},
+      {"line": 4, "b_roll": "A person working intensely in a dark room, only the sound of typing.", "text_overlay": "SILENT EXECUTION", "position": "top-center"},
+      {"line": 5, "b_roll": "A person standing alone on a summit, looking out at the world.", "text_overlay": "SEEK OUTCOMES", "position": "center"},
+      {"line": 6, "b_roll": "A crowd of blurry people all shouting at once.", "text_overlay": "DETACH IDENTITY", "position": "center"},
+      {"line": 7, "b_roll": "A person walking through a dark hallway into a bright light.", "text_overlay": "SUCCESS SPEAKS", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo fading in.", "text_overlay": "JOIN THE 1%", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the MindFrame Inner Circle.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person with their finger to their lips. Text: SILENT WINS."
+  },
+  {
+    "id": "mf-037",
+    "hook": "Your phone is a tool or a weapon. You choose.",
+    "template": "If You Do X, Stop (Intervention Style)",
+    "pillar": "Discipline",
+    "performance_score": 8.7,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, serious, insightful",
+      "script": [
+        "Your phone is a tool or a weapon. You choose.",
+        "Is it building your empire or destroying your attention?",
+        "Most people are being systematically dismantled by the devices they paid for.",
+        "The MindFrame Protocol: Reclaim the device. Delete every app that doesn't provide a direct ROI.",
+        "Turn your phone into a high-performance terminal for production, not a slot machine for consumption.",
+        "Your digital environment is your mental environment.",
+        "Rule the machine, or the machine will rule you.",
+        "Optimize your environment. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A split screen showing a phone as a sleek tool vs a jagged, dark weapon.", "text_overlay": "TOOL OR WEAPON", "position": "center"},
+      {"line": 2, "b_roll": "A person building a digital empire vs a person slumped over a phone.", "text_overlay": "BUILD OR DESTROY", "position": "center"},
+      {"line": 3, "b_roll": "A machine being disassembled piece by piece.", "text_overlay": "DISMANTLED", "position": "center"},
+      {"line": 4, "b_roll": "A hand deleting apps from a phone screen in one go.", "text_overlay": "RECLAIM THE DEVICE", "position": "top-center"},
+      {"line": 5, "b_roll": "A phone displaying a complex data dashboard with gold accents.", "text_overlay": "PRODUCTION TERMINAL", "position": "center"},
+      {"line": 6, "b_roll": "A clean, minimalist room transitioning to a cluttered, digital mess.", "text_overlay": "DIGITAL ENVIRONMENT", "position": "center"},
+      {"line": 7, "b_roll": "A person holding a phone high, like a scepter.", "text_overlay": "RULE THE MACHINE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming out.", "text_overlay": "OPTIMIZE NOW", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Optimize your digital environment.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A phone with a crown on it. Text: RULE THE MACHINE."
+  },
+  {
+    "id": "mf-038",
+    "hook": "Success is 10% strategy and 90% emotional control.",
+    "template": "This Will Change You (Transformation)",
+    "pillar": "Mindset",
+    "performance_score": 8.8,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, stoic, authoritative",
+      "script": [
+        "Success is 10% strategy and 90% emotional control.",
+        "You don't lose because your plan is bad; you lose because you can't handle the friction of the process.",
+        "High-performance is the ability to maintain clinical execution while under intense internal pressure.",
+        "The MindFrame Protocol: Develop 'Emotional Sovereignty.'",
+        "Detach your actions from your feelings. Feelings are data points, not instructions.",
+        "When you can execute regardless of your mood, you become unstoppable.",
+        "Master your internal state, and the world will bow to your output.",
+        "Master your emotions. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A blueprint of a plan transitioning to a shot of a person's focused, calm face.", "text_overlay": "EMOTIONAL CONTROL", "position": "center"},
+      {"line": 2, "b_roll": "A person throwing a plan away in frustration vs a person continuing to work.", "text_overlay": "THE FRICTION", "position": "center"},
+      {"line": 3, "b_roll": "A person underwater, moving slowly and deliberately while everything is dark around them.", "text_overlay": "CLINICAL EXECUTION", "position": "center"},
+      {"line": 4, "b_roll": "A person standing tall and still while a storm swirls around them.", "text_overlay": "SOVEREIGNTY", "position": "top-center"},
+      {"line": 5, "b_roll": "A graph with jagged red lines (feelings) being smoothed out by a straight gold line (action).", "text_overlay": "ACTION > FEELINGS", "position": "center"},
+      {"line": 6, "b_roll": "A person walking through a heavy iron gate with a determined look.", "text_overlay": "UNSTOPPABLE", "position": "center"},
+      {"line": 7, "b_roll": "A person looking at their reflection in a clear, calm pool of water.", "text_overlay": "MASTER YOUR STATE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing with a sound of heavy stone.", "text_overlay": "MASTER EMOTIONS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your emotional sovereignty.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person's head as a calm, clear crystal in a storm. Text: 90% EMOTION."
+  },
+  {
+    "id": "mf-039",
+    "hook": "Why being 'nice' is keeping you weak.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Mindset",
+    "performance_score": 9.5,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, slightly confrontational, wise",
+      "script": [
+        "Why being 'nice' is keeping you weak.",
+        "Niceness is often a mask for a lack of courage and a desire for social approval.",
+        "Kindness is a choice; niceness is a reflex of the insecure.",
+        "High-performers prioritize 'Authentic Sovereignty' over common politeness.",
+        "The MindFrame Protocol: Tell the truth, especially when it's uncomfortable.",
+        "When you stop seeking to be 'liked,' you start being respected.",
+        "Trade your mask for a mission.",
+        "Become unrecognizable. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person with a painted-on smile mask vs a person with a determined, bare face.", "text_overlay": "NICENESS IS WEAKNESS", "position": "center"},
+      {"line": 2, "b_roll": "A person looking around nervously at a party, trying to fit in.", "text_overlay": "SOCIAL APPROVAL", "position": "center"},
+      {"line": 3, "b_roll": "A hand reaching out to help someone vs a hand just waving blindly.", "text_overlay": "KINDNESS VS NICE", "position": "center"},
+      {"line": 4, "b_roll": "A person standing alone in a room, looking out a large window.", "text_overlay": "SOVEREIGNTY", "position": "top-center"},
+      {"line": 5, "b_roll": "A person's mouth speaking, with the word 'TRUTH' appearing in gold.", "text_overlay": "TELL THE TRUTH", "position": "center"},
+      {"line": 6, "b_roll": "A person being handed a gold award by a crowd of people in suits.", "text_overlay": "START BEING RESPECTED", "position": "center"},
+      {"line": 7, "b_roll": "A person taking off a theater mask and dropping it on the floor.", "text_overlay": "THE MISSION", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming in.", "text_overlay": "BECOME UNRECOGNIZABLE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Start your MindFrame transformation.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person tearing a smiling mask in half. Text: STOP BEING NICE."
+  },
+  {
+    "id": "mf-040",
+    "hook": "How to build an 'Anti-Fragile' mindset.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Mindset",
+    "performance_score": 9.0,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, stoic, authoritative",
+      "script": [
+        "How to build an 'Anti-Fragile' mindset.",
+        "Fragility breaks under stress; resilience survives stress; anti-fragility *improves* from stress.",
+        "Step one: Seek voluntary discomfort every single day.",
+        "Step two: Reframe every 'failure' as essential data for your evolution.",
+        "Step three: Diversify your sources of self-worth so no single event can break you.",
+        "The MindFrame Protocol: Feed the fire with the obstacles in your path.",
+        "Become the person who gets stronger when things get harder.",
+        "Build the armor. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A glass breaking, a rubber ball bouncing, and a fire growing larger in the wind.", "text_overlay": "ANTI-FRAGILE", "position": "center"},
+      {"line": 2, "b_roll": "A macro shot of a person's skin being exposed to cold water or intense heat.", "text_overlay": "VOLUNTARY DISCOMFORT", "position": "center"},
+      {"line": 3, "b_roll": "A person looking at a 'REJECTED' stamp and then smiling and starting again.", "text_overlay": "ESSENTIAL DATA", "position": "top-center"},
+      {"line": 4, "b_roll": "A person with multiple pillars of light around them.", "text_overlay": "DIVERSIFY WORTH", "position": "center"},
+      {"line": 5, "b_roll": "A large bonfire being fueled by heavy logs.", "text_overlay": "FEED THE FIRE", "position": "center"},
+      {"line": 6, "b_roll": "A person walking through a heavy windstorm, standing taller as it gets stronger.", "text_overlay": "STRONGER UNDER STRESS", "position": "center"},
+      {"line": 7, "b_roll": "A person being fitted with a sleek, dark suit of armor.", "text_overlay": "BUILD THE ARMOR", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold glow.", "text_overlay": "START NOW", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Build your anti-fragile mindset.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A fire being fueled by a pile of books labeled 'Failure'. Text: STRESS IS FUEL."
+  }
+]

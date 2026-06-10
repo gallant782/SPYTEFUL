@@ -1,0 +1,371 @@
+{
+  "info": {
+    "name": "MindFrame API — Webhook Testing",
+    "description": "Postman collection for testing all MindFrame n8n webhook endpoints. Each request tests a different automation workflow in the content-to-revenue pipeline.\n\n## Setup\n1. Set `n8n_base_url` to your n8n instance URL (e.g., http://localhost:5678)\n2. Ensure each workflow is activated in n8n before testing\n3. Use test mode (Stripe test keys, sandbox data) for non-production testing\n\n## Workflow Dependencies\n- Workflow 2 (Lead Magnet) → triggers Workflow 5 (Welcome Sequence)\n- Workflow 3 (Purchase Handler) → triggers Workflow 5 + 6\n- Workflows 1, 4, 8 are standalone\n\nSee also: Stripe Dashboard for webhook event simulation.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "n8n_base_url",
+      "value": "http://localhost:5678",
+      "type": "string"
+    },
+    {
+      "key": "supabase_url",
+      "value": "https://YOUR-PROJECT.supabase.co",
+      "type": "string"
+    },
+    {
+      "key": "stripe_secret_key",
+      "value": "sk_test_XXXXXXXXXXXXXX",
+      "type": "string",
+      "disabled": true
+    }
+  ],
+  "auth": {
+    "type": "noauth"
+  },
+  "item": [
+    {
+      "name": "Workflow 1: Script Generator",
+      "description": "Generates a 60-second short-form video script using a viral hook + content template.\n\nPre-requisites:\n- Get a hook_id: SELECT id FROM viral_hooks LIMIT 1;\n- Get a template_id: SELECT id FROM content_templates LIMIT 1;\n\nOn success: Returns a script_id. Verify with: SELECT * FROM content_scripts ORDER BY created_at DESC LIMIT 1;",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"hook_id\": \"<INSERT-HOOK-UUID>\",\n  \"template_id\": \"<INSERT-TEMPLATE-UUID>\"\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/script-generator",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "script-generator"]
+        },
+        "description": "Trigger: Manual / Internal\nWorkflow: 01-script-generator.json\nSteps: Hook + Template → OpenAI GPT-4 → content_scripts insert → Hook counter increment → Log"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Has script_id', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.success).to.be.true;",
+              "  pm.expect(json.script_id).to.be.a('string');",
+              "  pm.expect(json.word_count).to.be.above(50);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workflow 2: Lead Magnet Delivery",
+      "description": "Captures a new lead from the landing page, adds to Beehiiv, tags them, and sends the welcome email with the 5-Minute Daily System download.\n\nOn success: Subscriber is created in email_subscribers. Verify with:\n  SELECT * FROM email_subscribers ORDER BY created_at DESC LIMIT 1;\n  SELECT * FROM email_subscriber_tags WHERE subscriber_id = '<id>';",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test-user@mindframe.ai\",\n  \"name\": \"Test User\",\n  \"source\": \"landing_page\",\n  \"source_url\": \"https://mindframe.ai/landing\",\n  \"source_video_id\": null,\n  \"double_opt_in\": false,\n  \"ip\": \"127.0.0.1\"\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/lead-magnet",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "lead-magnet"]
+        },
+        "description": "Trigger: Landing Page Form\nWorkflow: 02-lead-magnet-delivery.json\nSteps: Validate → Check duplicate → Insert subscriber → Create in Beehiiv → Apply tags → Send welcome → Log"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Has subscriber_id', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.success).to.be.true;",
+              "  pm.expect(json.subscriber_id).to.be.a('string');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workflow 3a: Purchase Handler (Stripe Simulated)",
+      "description": "Simulates a Stripe checkout.session.completed event to test the purchase handler workflow.\n\nStripe test card: 4242 4242 4242 4242\n\nOn success: Creates a purchase record, grants access, tags subscriber.\nVerify: SELECT * FROM purchases ORDER BY created_at DESC LIMIT 1;",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "Stripe-Signature",
+            "value": "test_sig_placeholder",
+            "disabled": true
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"checkout.session.completed\",\n  \"data\": {\n    \"object\": {\n      \"id\": \"cs_test_\" + Math.random().toString(36).substring(2, 15),\n      \"object\": \"checkout.session\",\n      \"mode\": \"payment\",\n      \"amount_total\": 2700,\n      \"currency\": \"usd\",\n      \"payment_status\": \"paid\",\n      \"customer\": \"cus_test_\" + Math.random().toString(36).substring(2, 10),\n      \"customer_details\": {\n        \"email\": \"test-buyer@mindframe.ai\",\n        \"name\": \"Test Buyer\"\n      },\n      \"metadata\": {\n        \"product_id\": \"<INSERT-PRODUCT-UUID>\",\n        \"price_id\": \"price_test_xyz\",\n        \"affiliate_id\": \"\"\n      },\n      \"subscription\": null\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/stripe-purchase",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "stripe-purchase"]
+        },
+        "description": "Trigger: Stripe Webhook\nWorkflow: 03-purchase-handler.json\nSteps: Verify event → Find/Create profile → Lookup product → Create purchase → Grant access → Tag subscriber → Trigger welcome → Log"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Purchase received', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.received).to.be.true;",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workflow 3b: Purchase Handler (Stripe Actual)",
+      "description": "Sends a real Stripe webhook event using the Stripe API. Requires a valid Stripe test secret key.\n\nPre-requisite: Create a test checkout session first:\n  stripe checkout_session create --mode payment --line-items 'price=price_test_xxx:1'",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"checkout.session.completed\",\n  \"data\": {\n    \"object\": {\n      \"id\": \"{{$guid}}\",\n      \"object\": \"checkout.session\",\n      \"mode\": \"payment\",\n      \"amount_total\": 2700,\n      \"currency\": \"usd\",\n      \"payment_status\": \"paid\",\n      \"customer\": \"cus_test_placeholder\",\n      \"customer_details\": {\n        \"email\": \"real-test-buyer@mindframe.ai\",\n        \"name\": \"Real Test Buyer\"\n      },\n      \"metadata\": {\n        \"product_id\": \"<PRODUCT-UUID-FROM-DB>\",\n        \"price_id\": \"price_placeholder\"\n      },\n      \"subscription\": null\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/stripe-purchase",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "stripe-purchase"]
+        }
+      }
+    },
+    {
+      "name": "Workflow 5: Welcome Sequence (Trigger)",
+      "description": "Triggers the 5-day welcome email drip sequence.\n\nPre-requisite: Subscriber must exist in email_subscribers and Beehiiv.\nGet subscriber_id: SELECT id FROM email_subscribers WHERE email = 'test@mindframe.ai';\n\nOn success: Subscriber gets Day 1 email immediately, then Days 2-5 over 96 hours.",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"test-user@mindframe.ai\",\n  \"subscriber_id\": \"<INSERT-SUBSCRIBER-UUID>\",\n  \"trigger_type\": \"lead_magnet\",\n  \"full_name\": \"Test User\"\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/welcome-sequence",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "welcome-sequence"]
+        },
+        "description": "Trigger: Internal (called by Workflows 2 & 3)\nWorkflow: 05-welcome-sequence.json\nSequence: Day 1 (immediate) → Wait 24h → Day 2 → Wait 24h → ... → Day 5 → Mark complete"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Sequence started', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.success).to.be.true;",
+              "  pm.expect(json.sequence).to.eql('5-day welcome');",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workflow 6: Affiliate Commission (Trigger)",
+      "description": "Processes an affiliate commission when a purchase is made via an affiliate link.\n\nPre-requisites:\n- Affiliate must exist: SELECT id FROM affiliates LIMIT 1;\n- Purchase must exist: SELECT id FROM purchases LIMIT 1;\n\nOn success: Creates commission, updates affiliate totals, sends notification email.\nVerify: SELECT * FROM affiliate_commissions ORDER BY created_at DESC LIMIT 1;",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"purchase_id\": \"<INSERT-PURCHASE-UUID>\",\n  \"affiliate_id\": \"<INSERT-AFFILIATE-UUID>\",\n  \"referral_code\": \"MINDFRAME-TEST\",\n  \"amount_cents\": 2700,\n  \"product_type\": \"tripwire\",\n  \"commission_pct\": 40,\n  \"customer_email\": \"buyer@example.com\",\n  \"profile_id\": null,\n  \"membership_id\": null,\n  \"is_recurring\": false\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/affiliate-commission",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "affiliate-commission"]
+        },
+        "description": "Trigger: Internal (called by Workflow 3 when affiliate_id is present)\nWorkflow: 06-affiliate-commission.json\nSteps: Parse → Fetch affiliate → Check active → Calculate (with tier bonuses) → Create referral → Create commission → Update totals → Notify → Log"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Commission created', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.success).to.be.true;",
+              "  pm.expect(json.commission_id).to.be.a('string');",
+              "  pm.expect(json.amount_cents).to.be.above(0);",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Workflow 7: Membership Sync (Stripe Simulated)",
+      "description": "Simulates a Stripe customer.subscription.created event to test the membership sync workflow.\n\nOn success: Creates/updates memberships row, updates profile.is_member, logs membership_events.\nVerify: SELECT * FROM memberships ORDER BY created_at DESC LIMIT 1;",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"type\": \"customer.subscription.created\",\n  \"data\": {\n    \"object\": {\n      \"id\": \"sub_test_\" + Math.random().toString(36).substring(2, 15),\n      \"object\": \"subscription\",\n      \"status\": \"active\",\n      \"customer\": \"cus_test_member_001\",\n      \"current_period_start\": Math.floor(Date.now() / 1000) - 86400,\n      \"current_period_end\": Math.floor(Date.now() / 1000) + 2592000,\n      \"trial_start\": null,\n      \"trial_end\": null,\n      \"cancel_at_period_end\": false,\n      \"canceled_at\": null,\n      \"ended_at\": null,\n      \"items\": {\n        \"data\": [\n          {\n            \"price\": {\n              \"id\": \"price_monthly_01\",\n              \"unit_amount\": 1900,\n              \"currency\": \"usd\",\n              \"recurring\": {\n                \"interval\": \"month\"\n              }\n            }\n          }\n        ]\n      },\n      \"metadata\": {\n        \"email\": \"test-member@mindframe.ai\",\n        \"plan_id\": \"<INSERT-PLAN-UUID>\"\n      }\n    }\n  }\n}"
+        },
+        "url": {
+          "raw": "{{n8n_base_url}}/webhook/mindframe/membership-sync",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["webhook", "mindframe", "membership-sync"]
+        },
+        "description": "Trigger: Stripe Webhook\nWorkflow: 07-membership-sync.json\nSteps: Parse event → Find/Create profile → Upsert membership → Update profile flag → Log membership event → Send email → Log"
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('Status 200', () => { pm.response.to.have.status(200); });",
+              "pm.test('Membership synced', () => {",
+              "  const json = pm.response.json();",
+              "  pm.expect(json.received).to.be.true;",
+              "});"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Supabase: Verify Viral Hooks Count",
+      "description": "Quick verification that the Supabase database has the seeded viral hooks.",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "apikey",
+            "value": "{{MINDFRAME_SUPABASE_SERVICE_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"SELECT COUNT(*) as hook_count FROM viral_hooks\"\n}"
+        },
+        "url": {
+          "raw": "{{supabase_url}}/rest/v1/rpc/exec_sql",
+          "host": ["{{supabase_url}}"],
+          "path": ["rest", "v1", "rpc", "exec_sql"]
+        }
+      }
+    },
+    {
+      "name": "Supabase: Get Top Hooks by Performance",
+      "description": "Returns the top 10 viral hooks sorted by estimated performance score.",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "apikey",
+            "value": "{{MINDFRAME_SUPABASE_SERVICE_KEY}}"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"query\": \"SELECT hook_text, category, trigger_type, estimated_performance FROM viral_hooks ORDER BY estimated_performance DESC LIMIT 10\"\n}"
+        },
+        "url": {
+          "raw": "{{supabase_url}}/rest/v1/rpc/exec_sql",
+          "host": ["{{supabase_url}}"],
+          "path": ["rest", "v1", "rpc", "exec_sql"]
+        }
+      }
+    },
+    {
+      "name": "Health: n8n Healthcheck",
+      "description": "Quick check that n8n is running and healthy.",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "{{n8n_base_url}}/healthz",
+          "host": ["{{n8n_base_url}}"],
+          "path": ["healthz"]
+        }
+      },
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "pm.test('n8n is healthy', () => { pm.response.to.have.status(200); });"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "name": "Health: Docker Compose Status",
+      "description": "Shows running containers. Run this locally (not via Postman):\n\n  docker compose -f deploy/docker-compose.yml ps",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5678/healthz",
+          "host": ["http://localhost:5678"],
+          "path": ["healthz"]
+        }
+      }
+    }
+  ]
+}

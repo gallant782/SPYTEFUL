@@ -1,0 +1,37 @@
+{
+  "templates": [
+    {
+      "name": "The Hard Truth Call-out",
+      "structure": {
+        "hook": "Start with a direct contradiction or a harsh reality (0-3s).",
+        "tension": "Explain why the listener's current approach is failing (3-15s).",
+        "solution": "Introduce the MindFrame perspective or a specific psychological framework (15-45s).",
+        "proof": "A one-sentence benefit of applying this shift (45-55s).",
+        "cta": "Call to action for the email list/lead magnet (55-60s)."
+      },
+      "example": "Hook: You don't have a motivation problem. You have a clarity problem.\nTension: You wake up and wait for the 'feeling' to work. But feelings are fickle. High-performers don't wait for feelings.\nSolution: At MindFrame, we use the 2-Minute Rule combined with 'Environment Priming'. You don't decide to work; you simply enter a pre-configured environment.\nProof: When friction is zero, discipline is automatic.\nCTA: Download our Frictionless Workspace Guide. Link in bio."
+    },
+    {
+      "name": "The Stoic Wisdom Flip",
+      "structure": {
+        "hook": "Quote or concept from a Stoic philosopher (0-5s).",
+        "modern_context": "Translate this to a modern productivity/life struggle (5-20s).",
+        "application": "Actionable step to apply this today (20-50s).",
+        "cta": "Call to action for the premium community/membership (50-60s)."
+      },
+      "example": "Hook: Marcus Aurelius once said: 'The impediment to action advances action. What stands in the way becomes the way.'\nModern Context: Your 'distractions' aren't obstacles to your work. They ARE your training ground for focus.\nApplication: Every time you feel the urge to check your phone, treat it as a rep in the gym of focus. Don't fight it—observe it, and return to the task.\nCTA: Join the MindFrame Circle for weekly mental training sessions. Link in bio."
+    },
+    {
+      "name": "The System Reveal",
+      "structure": {
+        "hook": "Visual or verbal hook showing a high-level outcome (0-3s).",
+        "component_1": "First pillar of the system (3-15s).",
+        "component_2": "Second pillar of the system (15-30s).",
+        "component_3": "Third pillar of the system (30-45s).",
+        "summary": "How they work together (45-55s).",
+        "cta": "Call to action for a paid template/product (55-60s)."
+      },
+      "example": "Hook: How to build a second brain using AI in 60 seconds.\nComponent 1: Capture. Use a voice-to-text AI to dump every idea instantly.\nComponent 2: Distill. Use a custom GPT to categorize and link these ideas to your projects.\nComponent 3: Execute. Review your 'Actionable Inbox' every 24 hours.\nSummary: You stop remembering information and start using it.\nCTA: Get our complete AI Second Brain template. Link in bio."
+    }
+  ]
+}

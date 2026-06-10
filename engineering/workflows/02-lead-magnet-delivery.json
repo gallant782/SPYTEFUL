@@ -1,0 +1,225 @@
+{
+  "name": "Lead Magnet Delivery",
+  "nodes": [
+    {
+      "id": "webhook-landing-page",
+      "name": "Landing Page Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/lead-magnet",
+        "options": {
+          "responseMode": "responseNode"
+        }
+      },
+      "webhookId": "mindframe-lead-magnet"
+    },
+    {
+      "id": "validate-email",
+      "name": "Validate + Normalize Email",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "const email = ($json.body.email || '').trim().toLowerCase();\nconst name = $json.body.name || email.split('@')[0];\nconst source = $json.body.source || 'landing_page';\nconst sourceUrl = $json.body.source_url || '';\nconst sourceVideoId = $json.body.source_video_id || null;\n\n// Basic email validation\nconst emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;\nif (!emailRegex.test(email)) {\n  return { error: 'Invalid email', email, valid: false };\n}\n\nreturn {\n  email,\n  full_name: name.replace(/[0-9]/g, '').trim(),\n  source,\n  source_url: sourceUrl,\n  source_video_id: sourceVideoId,\n  double_opt_in_confirmed: $json.body.double_opt_in === true,\n  consent_ip: $json.body.ip || '',\n  consent_timestamp: new Date().toISOString(),\n  valid: true\n};"
+      }
+    },
+    {
+      "id": "check-duplicate",
+      "name": "Check Existing Subscriber",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, email, status FROM email_subscribers WHERE email = '{{ $json.email }}' LIMIT 1"
+      }
+    },
+    {
+      "id": "insert-subscriber",
+      "name": "Insert New Subscriber",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 250],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "email_subscribers",
+        "columns": "email,full_name,source,source_url,source_video_id,status,double_opt_in_confirmed,consent_ip,consent_timestamp",
+        "additionalFields": {
+          "returnFields": "id,email,created_at"
+        }
+      }
+    },
+    {
+      "id": "check-subscriber-status",
+      "name": "Route: New vs Existing",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [850, 450],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.length }}",
+              "operation": "equal",
+              "value2": "0"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "beehiiv-create",
+      "name": "Create in Beehiiv/ConvertKit",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/subscribers",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "name", "value": "={{ $json.full_name || $json.email }}"},
+            {"name": "utm_source", "value": "={{ $json.source }}"},
+            {"name": "reactivate_existing", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "tag-subscriber",
+      "name": "Apply Source Tag",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 350],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT '{{ $json.id }}', id FROM email_tags WHERE slug = 'source-{{ $json.source }}'\nON CONFLICT DO NOTHING"
+      }
+    },
+    {
+      "id": "tag-lead-magnet",
+      "name": "Apply Lead Magnet Tag",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 500],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Ensure tag exists, then apply\nINSERT INTO email_tags (name, slug, description)\nVALUES ('Lead Magnet: 5-Minute System', 'lead-magnet-5min', 'Downloaded the 5-Minute Daily System')\nON CONFLICT (slug) DO NOTHING;\n\nINSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT '{{ $json.id }}', id FROM email_tags WHERE slug = 'lead-magnet-5min'\nON CONFLICT DO NOTHING;"
+      }
+    },
+    {
+      "id": "send-email",
+      "name": "Send Welcome Email via Beehiiv",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 650],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        }
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log to Automation Logs",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 400],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source,related_subscriber_id",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "respond-webhook",
+      "name": "Respond to Webhook",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1450, 400],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"subscriber_id\": \"{{ $json.id }}\",\n  \"message\": \"Welcome to MindFrame. Check your inbox for the 5-Minute Daily System.\"\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Landing Page Webhook": {
+      "main": [[{"node": "Validate + Normalize Email", "type": "main", "index": 0}]]
+    },
+    "Validate + Normalize Email": {
+      "main": [[{"node": "Check Existing Subscriber", "type": "main", "index": 0}]]
+    },
+    "Check Existing Subscriber": {
+      "main": [
+        [
+          {"node": "Insert New Subscriber", "type": "main", "index": 0},
+          {"node": "Route: New vs Existing", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Insert New Subscriber": {
+      "main": [[{"node": "Create in Beehiiv/ConvertKit", "type": "main", "index": 0}]]
+    },
+    "Create in Beehiiv/ConvertKit": {
+      "main": [[{"node": "Apply Source Tag", "type": "main", "index": 0}]]
+    },
+    "Apply Source Tag": {
+      "main": [[{"node": "Apply Lead Magnet Tag", "type": "main", "index": 0}]]
+    },
+    "Apply Lead Magnet Tag": {
+      "main": [[{"node": "Send Welcome Email via Beehiiv", "type": "main", "index": 0}]]
+    },
+    "Send Welcome Email via Beehiiv": {
+      "main": [[{"node": "Log to Automation Logs", "type": "main", "index": 0}]]
+    },
+    "Log to Automation Logs": {
+      "main": [[{"node": "Respond to Webhook", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["email", "lead-generation", "onboarding"],
+  "pinData": {},
+  "versionId": "1"
+}

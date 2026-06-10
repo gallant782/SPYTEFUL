@@ -1,0 +1,60 @@
+-- ============================================================
+-- MindFrame Database Schema — Seed Data: Viral Hooks
+-- ============================================================
+-- Source: /home/team/shared/content/HOOKS_DATABASE.json (50 hooks)
+
+BEGIN;
+
+INSERT INTO viral_hooks (hook_text, category, trigger_type, estimated_performance) VALUES
+('Stop wasting your mornings on other people''s priorities.', 'Discipline', 'Loss Aversion', 9.2),
+('Your comfort zone is a slow-motion suicide.', 'Mindset', 'Fear/Urgency', 9.5),
+('The reason you''re burnt out isn''t work—it''s your lack of boundaries.', 'Health', 'Insight', 8.8),
+('99% of people are doing ''deep work'' completely wrong.', 'Productivity', 'Contrarian', 9.1),
+('You''re not lazy; you''re just overstimulated.', 'Health', 'Reassurance/Insight', 8.7),
+('The person you want to become doesn''t have your current habits.', 'Mindset', 'Identity Shift', 9.0),
+('How a Stoic handles a toxic workplace.', 'Mindset', 'Authority/Stoicism', 8.5),
+('The productivity system of the top 0.1%.', 'Productivity', 'Exclusivity', 9.3),
+('Stop acting like you have 1,000 years to live.', 'Mindset', 'Urgency', 9.4),
+('Protect your attention like your life depends on it.', 'Discipline', 'High Stakes', 8.9),
+('The hidden cost of ''one more video''.', 'Productivity', 'Curiosity', 8.6),
+('Why your brain craves distraction (and how to fix it).', 'Productivity', 'Problem/Solution', 8.9),
+('The dark side of ''hustle culture'' nobody talks about.', 'Mindset', 'Mystery', 8.8),
+('One habit that will make you unrecognizable in 6 months.', 'Mindset', 'Transformation', 9.6),
+('The ''Dopamine Detox'' secret that actually works.', 'Health', 'Authority', 9.0),
+('Consistency is overrated. Intensity is what matters.', 'Discipline', 'Contrarian', 9.2),
+('Stop reading books. Start implementing them.', 'Productivity', 'Contrarian', 9.1),
+('Your ''to-do'' list is actually a ''distraction'' list.', 'Productivity', 'Insight', 8.7),
+('The best way to get more done is to do less.', 'Productivity', 'Paradox', 8.9),
+('Motivation is a myth. Only systems remain.', 'Discipline', 'Core Belief', 9.3),
+('Rich people don''t have better luck; they have better systems.', 'Money', 'Comparison', 9.0),
+('The ''Asymmetric Bet'' that will change your financial life.', 'Money', 'Curiosity/Greed', 9.2),
+('Stop saving money. Start buying time.', 'Money', 'Contrarian', 9.4),
+('Your circle is either a net or a cage.', 'Relationships', 'Metaphor', 8.8),
+('How to spot a low-value person in 30 seconds.', 'Relationships', 'Social Proof', 9.5),
+('The law of detachment: Why wanting less gets you more.', 'Mindset', 'Paradox', 8.7),
+('You aren''t tired; you''re uninspired.', 'Mindset', 'Call-out', 8.9),
+('The military secret to instant discipline.', 'Discipline', 'Authority', 9.1),
+('Stop trading your health for wealth you''ll be too sick to enjoy.', 'Health', 'Tough Love', 9.3),
+('The 5 AM club is a lie. Here''s what actually works.', 'Productivity', 'Pattern Interrupt', 9.5),
+('If you don''t control your mind, someone else will.', 'Mindset', 'Fear', 9.2),
+('The psychology of why you keep procrastinating.', 'Productivity', 'Educational', 8.6),
+('High-performers don''t have willpower; they have environments.', 'Discipline', 'Insight', 9.0),
+('The $10,000/hour skill you''re ignoring.', 'Money', 'Greed', 9.4),
+('Stop arguing with people who haven''t done the work.', 'Relationships', 'Boundary', 9.1),
+('The truth about multitasking: It''s just ''task switching''.', 'Productivity', 'Myth-busting', 8.5),
+('Your phone is a tool or a weapon. You choose.', 'Discipline', 'Metaphor', 8.7),
+('The most dangerous addiction is a comfortable salary.', 'Money', 'Tough Love', 9.6),
+('Success is 10% strategy and 90% emotional control.', 'Mindset', 'Statistic', 8.8),
+('The Stoic guide to handling rejection.', 'Mindset', 'Practicality', 8.4),
+('Why being ''nice'' is keeping you weak.', 'Mindset', 'Contrarian', 9.5),
+('The 80/20 rule of your social circle.', 'Relationships', 'System', 8.9),
+('How to build an ''Anti-Fragile'' mindset.', 'Mindset', 'Niche Terminology', 9.0),
+('The one word that destroys your productivity: ''Later''.', 'Productivity', 'Punchy', 8.7),
+('Stop seeking approval from people you don''t even respect.', 'Relationships', 'Truth Bomb', 9.2),
+('The ''Dark Room'' method for solving any problem.', 'Productivity', 'Mystery', 9.3),
+('Why your brain is programmed to be average.', 'Mindset', 'Biological', 8.9),
+('The financial advice 90% of people get wrong.', 'Money', 'Fear of Being Wrong', 9.1),
+('Discipline isn''t a punishment; it''s the ultimate freedom.', 'Discipline', 'Reframing', 9.0),
+('The world doesn''t care about your potential. Only your output.', 'Mindset', 'Harsh Reality', 9.7);
+
+COMMIT;

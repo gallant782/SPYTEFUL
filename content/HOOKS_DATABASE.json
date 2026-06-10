@@ -1,0 +1,304 @@
+{
+  "hooks": [
+    {
+      "text": "Stop wasting your mornings on other people's priorities.",
+      "category": "Discipline",
+      "trigger": "Loss Aversion",
+      "estimated_performance": 9.2
+    },
+    {
+      "text": "Your comfort zone is a slow-motion suicide.",
+      "category": "Mindset",
+      "trigger": "Fear/Urgency",
+      "estimated_performance": 9.5
+    },
+    {
+      "text": "The reason you're burnt out isn't work—it's your lack of boundaries.",
+      "category": "Health",
+      "trigger": "Insight",
+      "estimated_performance": 8.8
+    },
+    {
+      "text": "99% of people are doing 'deep work' completely wrong.",
+      "category": "Productivity",
+      "trigger": "Contrarian",
+      "estimated_performance": 9.1
+    },
+    {
+      "text": "You're not lazy; you're just overstimulated.",
+      "category": "Health",
+      "trigger": "Reassurance/Insight",
+      "estimated_performance": 8.7
+    },
+    {
+      "text": "The person you want to become doesn't have your current habits.",
+      "category": "Mindset",
+      "trigger": "Identity Shift",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "How a Stoic handles a toxic workplace.",
+      "category": "Mindset",
+      "trigger": "Authority/Stoicism",
+      "estimated_performance": 8.5
+    },
+    {
+      "text": "The productivity system of the top 0.1%.",
+      "category": "Productivity",
+      "trigger": "Exclusivity",
+      "estimated_performance": 9.3
+    },
+    {
+      "text": "Stop acting like you have 1,000 years to live.",
+      "category": "Mindset",
+      "trigger": "Urgency",
+      "estimated_performance": 9.4
+    },
+    {
+      "text": "Protect your attention like your life depends on it.",
+      "category": "Discipline",
+      "trigger": "High Stakes",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "The hidden cost of 'one more video'.",
+      "category": "Productivity",
+      "trigger": "Curiosity",
+      "estimated_performance": 8.6
+    },
+    {
+      "text": "Why your brain craves distraction (and how to fix it).",
+      "category": "Productivity",
+      "trigger": "Problem/Solution",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "The dark side of 'hustle culture' nobody talks about.",
+      "category": "Mindset",
+      "trigger": "Mystery",
+      "estimated_performance": 8.8
+    },
+    {
+      "text": "One habit that will make you unrecognizable in 6 months.",
+      "category": "Mindset",
+      "trigger": "Transformation",
+      "estimated_performance": 9.6
+    },
+    {
+      "text": "The 'Dopamine Detox' secret that actually works.",
+      "category": "Health",
+      "trigger": "Authority",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "Consistency is overrated. Intensity is what matters.",
+      "category": "Discipline",
+      "trigger": "Contrarian",
+      "estimated_performance": 9.2
+    },
+    {
+      "text": "Stop reading books. Start implementing them.",
+      "category": "Productivity",
+      "trigger": "Contrarian",
+      "estimated_performance": 9.1
+    },
+    {
+      "text": "Your 'to-do' list is actually a 'distraction' list.",
+      "category": "Productivity",
+      "trigger": "Insight",
+      "estimated_performance": 8.7
+    },
+    {
+      "text": "The best way to get more done is to do less.",
+      "category": "Productivity",
+      "trigger": "Paradox",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "Motivation is a myth. Only systems remain.",
+      "category": "Discipline",
+      "trigger": "Core Belief",
+      "estimated_performance": 9.3
+    },
+    {
+      "text": "Rich people don't have better luck; they have better systems.",
+      "category": "Money",
+      "trigger": "Comparison",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "The 'Asymmetric Bet' that will change your financial life.",
+      "category": "Money",
+      "trigger": "Curiosity/Greed",
+      "estimated_performance": 9.2
+    },
+    {
+      "text": "Stop saving money. Start buying time.",
+      "category": "Money",
+      "trigger": "Contrarian",
+      "estimated_performance": 9.4
+    },
+    {
+      "text": "Your circle is either a net or a cage.",
+      "category": "Relationships",
+      "trigger": "Metaphor",
+      "estimated_performance": 8.8
+    },
+    {
+      "text": "How to spot a low-value person in 30 seconds.",
+      "category": "Relationships",
+      "trigger": "Social Proof",
+      "estimated_performance": 9.5
+    },
+    {
+      "text": "The law of detachment: Why wanting less gets you more.",
+      "category": "Mindset",
+      "trigger": "Paradox",
+      "estimated_performance": 8.7
+    },
+    {
+      "text": "You aren't tired; you're uninspired.",
+      "category": "Mindset",
+      "trigger": "Call-out",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "The military secret to instant discipline.",
+      "category": "Discipline",
+      "trigger": "Authority",
+      "estimated_performance": 9.1
+    },
+    {
+      "text": "Stop trading your health for wealth you'll be too sick to enjoy.",
+      "category": "Health",
+      "trigger": "Tough Love",
+      "estimated_performance": 9.3
+    },
+    {
+      "text": "The 5 AM club is a lie. Here's what actually works.",
+      "category": "Productivity",
+      "trigger": "Pattern Interrupt",
+      "estimated_performance": 9.5
+    },
+    {
+      "text": "If you don't control your mind, someone else will.",
+      "category": "Mindset",
+      "trigger": "Fear",
+      "estimated_performance": 9.2
+    },
+    {
+      "text": "The psychology of why you keep procrastinating.",
+      "category": "Productivity",
+      "trigger": "Educational",
+      "estimated_performance": 8.6
+    },
+    {
+      "text": "High-performers don't have willpower; they have environments.",
+      "category": "Discipline",
+      "trigger": "Insight",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "The $10,000/hour skill you're ignoring.",
+      "category": "Money",
+      "trigger": "Greed",
+      "estimated_performance": 9.4
+    },
+    {
+      "text": "Stop arguing with people who haven't done the work.",
+      "category": "Relationships",
+      "trigger": "Boundary",
+      "estimated_performance": 9.1
+    },
+    {
+      "text": "The truth about multitasking: It's just 'task switching'.",
+      "category": "Productivity",
+      "trigger": "Myth-busting",
+      "estimated_performance": 8.5
+    },
+    {
+      "text": "Your phone is a tool or a weapon. You choose.",
+      "category": "Discipline",
+      "trigger": "Metaphor",
+      "estimated_performance": 8.7
+    },
+    {
+      "text": "The most dangerous addiction is a comfortable salary.",
+      "category": "Money",
+      "trigger": "Tough Love",
+      "estimated_performance": 9.6
+    },
+    {
+      "text": "Success is 10% strategy and 90% emotional control.",
+      "category": "Mindset",
+      "trigger": "Statistic",
+      "estimated_performance": 8.8
+    },
+    {
+      "text": "The Stoic guide to handling rejection.",
+      "category": "Mindset",
+      "trigger": "Practicality",
+      "estimated_performance": 8.4
+    },
+    {
+      "text": "Why being 'nice' is keeping you weak.",
+      "category": "Mindset",
+      "trigger": "Contrarian",
+      "estimated_performance": 9.5
+    },
+    {
+      "text": "The 80/20 rule of your social circle.",
+      "category": "Relationships",
+      "trigger": "System",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "How to build an 'Anti-Fragile' mindset.",
+      "category": "Mindset",
+      "trigger": "Niche Terminology",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "The one word that destroys your productivity: 'Later'.",
+      "category": "Productivity",
+      "trigger": "Punchy",
+      "estimated_performance": 8.7
+    },
+    {
+      "text": "Stop seeking approval from people you don't even respect.",
+      "category": "Relationships",
+      "trigger": "Truth Bomb",
+      "estimated_performance": 9.2
+    },
+    {
+      "text": "The 'Dark Room' method for solving any problem.",
+      "category": "Productivity",
+      "trigger": "Mystery",
+      "estimated_performance": 9.3
+    },
+    {
+      "text": "Why your brain is programmed to be average.",
+      "category": "Mindset",
+      "trigger": "Biological",
+      "estimated_performance": 8.9
+    },
+    {
+      "text": "The financial advice 90% of people get wrong.",
+      "category": "Money",
+      "trigger": "Fear of Being Wrong",
+      "estimated_performance": 9.1
+    },
+    {
+      "text": "Discipline isn't a punishment; it's the ultimate freedom.",
+      "category": "Discipline",
+      "trigger": "Reframing",
+      "estimated_performance": 9.0
+    },
+    {
+      "text": "The world doesn't care about your potential. Only your output.",
+      "category": "Mindset",
+      "trigger": "Harsh Reality",
+      "estimated_performance": 9.7
+    }
+  ]
+}

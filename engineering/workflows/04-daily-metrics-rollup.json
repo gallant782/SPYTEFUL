@@ -1,0 +1,112 @@
+{
+  "name": "Daily Metrics Rollup",
+  "nodes": [
+    {
+      "id": "cron-trigger",
+      "name": "Daily Midnight Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 0 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "aggregate-funnel",
+      "name": "Aggregate Funnel Events",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "WITH yesterday AS (\n  SELECT\n    '{{ (new Date(Date.now() - 86400000)).toISOString().split('T')[0] }}'::DATE AS metric_date\n),\nfunnel AS (\n  SELECT\n    COUNT(*) FILTER (WHERE stage = 'content_view') AS content_views,\n    COUNT(*) FILTER (WHERE stage = 'profile_visit') AS profile_visits,\n    COUNT(*) FILTER (WHERE stage = 'landing_page_view') AS landing_page_views,\n    COUNT(*) FILTER (WHERE stage = 'lead_magnet_download') AS lead_magnet_downloads,\n    COUNT(*) FILTER (WHERE stage = 'tripwire_view') AS tripwire_views,\n    COUNT(*) FILTER (WHERE stage = 'tripwire_purchase') AS tripwire_sales,\n    COUNT(*) FILTER (WHERE stage = 'membership_view') AS membership_views,\n    COUNT(*) FILTER (WHERE stage = 'membership_started') AS membership_started,\n    COUNT(*) FILTER (WHERE stage = 'membership_purchased') AS membership_new_sales\n  FROM analytics_funnel_events\n  WHERE created_at::DATE = (SELECT metric_date FROM yesterday)\n),\nrevenue AS (\n  SELECT\n    COALESCE(SUM(amount_cents) FILTER (WHERE p.status = 'completed' AND dp.product_type = 'tripwire'), 0) AS tripwire_revenue_cents,\n    COALESCE(SUM(amount_cents) FILTER (WHERE p.status = 'completed' AND dp.product_type = 'membership'), 0) AS membership_revenue_cents,\n    COALESCE(SUM(amount_cents) FILTER (WHERE p.status = 'completed' AND dp.product_type = 'automation_package'), 0) AS automation_revenue_cents,\n    COALESCE(SUM(amount_cents) FILTER (WHERE p.status = 'completed'), 0) AS total_revenue_cents\n  FROM purchases p\n  JOIN digital_products dp ON dp.id = p.product_id\n  WHERE p.created_at::DATE = (SELECT metric_date FROM yesterday)\n),\nsubscribers AS (\n  SELECT\n    COUNT(*) FILTER (WHERE created_at::DATE = (SELECT metric_date FROM yesterday)) AS new_subscribers,\n    (SELECT COUNT(*) FROM email_subscribers WHERE status = 'active') AS total_subscribers\n  FROM email_subscribers\n),\ncontent AS (\n  SELECT\n    COUNT(*) AS videos_published\n  FROM content_videos\n  WHERE published_at::DATE = (SELECT metric_date FROM yesterday) AND status = 'published'\n),\ncontent_views AS (\n  SELECT\n    COALESCE(SUM(views), 0) AS total_content_views,\n    COALESCE(SUM(likes + shares + comments + saves), 0) AS total_engagement\n  FROM analytics_content_events\n  WHERE event_date = (SELECT metric_date FROM yesterday)\n),\nworkflows AS (\n  SELECT\n    COUNT(*) FILTER (WHERE status = 'success') AS workflows_run,\n    COUNT(*) FILTER (WHERE status = 'failed') AS workflows_failed\n  FROM automation_execution_logs\n  WHERE started_at::DATE = (SELECT metric_date FROM yesterday)\n)\nSELECT\n  (SELECT metric_date FROM yesterday) AS metric_date,\n  content.videos_published,\n  content_views.total_content_views,\n  content_views.total_engagement,\n  funnel.profile_visits,\n  funnel.landing_page_views,\n  funnel.lead_magnet_downloads,\n  funnel.tripwire_sales,\n  funnel.membership_new_sales,\n  revenue.tripwire_revenue_cents,\n  revenue.membership_revenue_cents,\n  revenue.automation_revenue_cents,\n  revenue.total_revenue_cents,\n  subscribers.new_subscribers,\n  subscribers.total_subscribers\nFROM funnel, revenue, subscribers, content, content_views, workflows;"
+      }
+    },
+    {
+      "id": "upsert-metrics",
+      "name": "UPSERT into daily_metrics",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO analytics_daily_metrics (\n  metric_date, videos_published, total_content_views, total_engagement,\n  profile_visits, landing_page_views, new_subscribers, total_subscribers,\n  lead_magnet_downloads, tripwire_sales, tripwire_revenue_cents,\n  membership_new_sales, membership_revenue_cents,\n  automation_package_sales, automation_revenue_cents,\n  total_revenue_cents, workflows_run, workflows_failed\n)\nVALUES (\n  '{{ $json.metric_date }}',\n  {{ $json.videos_published }}, {{ $json.total_content_views }}, {{ $json.total_engagement }},\n  {{ $json.profile_visits }}, {{ $json.landing_page_views }}, {{ $json.new_subscribers }}, {{ $json.total_subscribers }},\n  {{ $json.lead_magnet_downloads }}, {{ $json.tripwire_sales }}, {{ $json.tripwire_revenue_cents }},\n  {{ $json.membership_new_sales }}, {{ $json.membership_revenue_cents }},\n  0, 0, {{ $json.total_revenue_cents }},\n  {{ $json.workflows_run }}, {{ $json.workflows_failed }}\n)\nON CONFLICT (metric_date)\nDO UPDATE SET\n  videos_published = EXCLUDED.videos_published,\n  total_content_views = EXCLUDED.total_content_views,\n  total_engagement = EXCLUDED.total_engagement,\n  profile_visits = EXCLUDED.profile_visits,\n  landing_page_views = EXCLUDED.landing_page_views,\n  new_subscribers = EXCLUDED.new_subscribers,\n  total_subscribers = EXCLUDED.total_subscribers,\n  lead_magnet_downloads = EXCLUDED.lead_magnet_downloads,\n  tripwire_sales = EXCLUDED.tripwire_sales,\n  tripwire_revenue_cents = EXCLUDED.tripwire_revenue_cents,\n  membership_new_sales = EXCLUDED.membership_new_sales,\n  membership_revenue_cents = EXCLUDED.membership_revenue_cents,\n  total_revenue_cents = EXCLUDED.total_revenue_cents,\n  workflows_run = EXCLUDED.workflows_run,\n  workflows_failed = EXCLUDED.workflows_failed,\n  updated_at = NOW();"
+      }
+    },
+    {
+      "id": "update-video-totals",
+      "name": "Update Video Daily Totals",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "WITH yesterday AS (\n  SELECT '{{ (new Date(Date.now() - 86400000)).toISOString().split('T')[0] }}'::DATE AS event_date\n),\ndaily AS (\n  SELECT\n    video_id,\n    SUM(views) AS views_daily,\n    SUM(likes) AS likes_daily,\n    SUM(shares) AS shares_daily,\n    SUM(comments) AS comments_daily,\n    SUM(saves) AS saves_daily\n  FROM analytics_content_events\n  WHERE event_date = (SELECT event_date FROM yesterday)\n  GROUP BY video_id\n)\nUPDATE content_videos cv\nSET\n  total_views = total_views + daily.views_daily,\n  total_likes = total_likes + daily.likes_daily,\n  total_shares = total_shares + daily.shares_daily,\n  total_comments = total_comments + daily.comments_daily,\n  total_saves = total_saves + daily.saves_daily\nFROM daily\nWHERE cv.id = daily.video_id;"
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log Execution",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "send-summary",
+      "name": "Send Admin Summary Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1250, 300],
+      "parameters": {
+        "fromEmail": "metrics@mindframe.ai",
+        "toEmail": "admin@mindframe.ai",
+        "subject": "=MindFrame Daily Metrics — {{ $json.metric_date }}",
+        "text": "=MindFrame Daily Rollup — {{ $json.metric_date }}\n\nRevenue: ${{ ($json.total_revenue_cents / 100).toFixed(2) }}\nNew Subscribers: {{ $json.new_subscribers }}\nTotal Subscribers: {{ $json.total_subscribers }}\nVideos Published: {{ $json.videos_published }}\nContent Views: {{ $json.total_content_views }}\nProfile Visits: {{ $json.profile_visits }}\nLead Magnet Downloads: {{ $json.lead_magnet_downloads }}\nTripwire Sales: {{ $json.tripwire_sales }}\nNew Memberships: {{ $json.membership_new_sales }}\n\nWorkflows Run: {{ $json.workflows_run }}\nWorkflows Failed: {{ $json.workflows_failed }}\n\nSee full dashboard: https://supabase.com/dashboard/project/[project]/sql",
+        "options": {}
+      }
+    }
+  ],
+  "connections": {
+    "Daily Midnight Trigger": {
+      "main": [[{"node": "Aggregate Funnel Events", "type": "main", "index": 0}]]
+    },
+    "Aggregate Funnel Events": {
+      "main": [[{"node": "UPSERT into daily_metrics", "type": "main", "index": 0}]]
+    },
+    "UPSERT into daily_metrics": {
+      "main": [
+        [
+          {"node": "Update Video Daily Totals", "type": "main", "index": 0},
+          {"node": "Log Execution", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Update Video Daily Totals": {
+      "main": [[{"node": "Log Execution", "type": "main", "index": 0}]]
+    },
+    "Log Execution": {
+      "main": [[{"node": "Send Admin Summary Email", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["analytics", "cron", "reporting"],
+  "pinData": {},
+  "versionId": "1"
+}

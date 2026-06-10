@@ -1,0 +1,342 @@
+[
+  {
+    "id": "mf-021",
+    "hook": "The 'Dopamine Detox' secret that actually works.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Health",
+    "performance_score": 9.0,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Educational, authoritative, clear",
+      "script": [
+        "The 'Dopamine Detox' secret that actually works.",
+        "Most people fail because they try to remove pleasure without adding friction.",
+        "Step one: Identify your 'Slot Machine' apps and move them 3 folders deep.",
+        "Step two: Replace the scroll with the 'Primal Pivot'—a 5-minute walk or 20 pushups.",
+        "Step three: Designate a 'Zero-Input' hour before sleep.",
+        "The goal isn't to live a boring life; it's to reset your baseline for intensity.",
+        "When small things become satisfying, big goals become achievable.",
+        "Get the Detox Protocol. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "Macro shot of a hand hovering over a phone screen, hesitation visible.", "text_overlay": "THE DETOX SECRET", "position": "center"},
+      {"line": 2, "b_roll": "A person struggling to climb a smooth wall vs a wall with handholds.", "text_overlay": "ADD FRICTION", "position": "center"},
+      {"line": 3, "b_roll": "Screen recording of an iPhone home screen, apps being moved into deep folders.", "text_overlay": "3 FOLDERS DEEP", "position": "top-center"},
+      {"line": 4, "b_roll": "A person doing explosive pushups in a dark room with minimal light.", "text_overlay": "PRIMAL PIVOT", "position": "center"},
+      {"line": 5, "b_roll": "A hand placing a phone in a wooden box and closing the lid.", "text_overlay": "ZERO-INPUT HOUR", "position": "center"},
+      {"line": 6, "b_roll": "A single drop of gold liquid falling into a clear pool of water.", "text_overlay": "RESET BASELINE", "position": "center"},
+      {"line": 7, "b_roll": "A person looking at a distant goal on a mountain peak, now looking closer.", "text_overlay": "ACHIEVABLE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a sleek metallic finish.", "text_overlay": "GET THE PROTOCOL", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the MindFrame Detox Protocol.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A smartphone screen shattered by a single gold needle. Text: DOPAMINE RESET."
+  },
+  {
+    "id": "mf-022",
+    "hook": "Consistency is overrated. Intensity is what matters.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Discipline",
+    "performance_score": 9.2,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Confrontational, direct, high-energy",
+      "script": [
+        "Consistency is overrated. Intensity is what matters.",
+        "Doing the same average work every day for a year only makes you consistently average.",
+        "High-performers understand that 'Asymmetric Sprints' create breakthroughs.",
+        "The MindFrame Protocol: Identify your 80/20 task and attack it with 100% of your cognitive capacity.",
+        "Consistently average effort is just a slow road to a mediocre life.",
+        "One hour of absolute intensity beats 8 hours of half-hearted presence.",
+        "Stop counting days and start counting outcomes.",
+        "Master your intensity. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person jogging slowly on a treadmill vs a sprinter exploding from blocks.", "text_overlay": "INTENSITY > CONSISTENCY", "position": "center"},
+      {"line": 2, "b_roll": "A gray, repetitive pattern of bricks transitioning to a single, giant gold block.", "text_overlay": "CONSISTENTLY AVERAGE", "position": "center"},
+      {"line": 3, "b_roll": "A lightning bolt striking a single point in a dark field.", "text_overlay": "ASYMMETRIC SPRINTS", "position": "center"},
+      {"line": 4, "b_roll": "Macro shot of a pen drawing a massive circle around a single word: EXECUTE.", "text_overlay": "100% CAPACITY", "position": "top-center"},
+      {"line": 5, "b_roll": "A person walking a long, flat road that never ends.", "text_overlay": "MEDIOCRE LIFE", "position": "center"},
+      {"line": 6, "b_roll": "A magnifying glass focusing sunlight until it starts a fire.", "text_overlay": "ABSOLUTE INTENSITY", "position": "center"},
+      {"line": 7, "b_roll": "A counter ticking up numbers rapidly, then stopping on a gold trophy icon.", "text_overlay": "COUNT OUTCOMES", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing with a sound of a sharp blade.", "text_overlay": "MASTER INTENSITY", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your intensity blocks.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A lightning bolt hitting a flat line. Text: STOP JOGGING."
+  },
+  {
+    "id": "mf-023",
+    "hook": "Your 'to-do' list is actually a 'distraction' list.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Productivity",
+    "performance_score": 8.7,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Sophisticated, insightful, direct",
+      "script": [
+        "Your 'to-do' list is actually a 'distraction' list.",
+        "You fill it with low-value tasks to give yourself the illusion of progress.",
+        "True productivity isn't about clearing a list; it's about moving the needle.",
+        "The MindFrame Rule: If it's not one of your top 3 needle-movers, it's a distraction.",
+        "Eliminate the 'Productive Procrastination' that is keeping you broke.",
+        "High-performers do less, but with asymmetric intensity.",
+        "Your list should be a surgical plan, not a wish list.",
+        "Download the Priority Matrix in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A hand crossing out endless items on a long piece of paper.", "text_overlay": "DISTRACTION LIST", "position": "center"},
+      {"line": 2, "b_roll": "A person spinning in circles in a room, going nowhere.", "text_overlay": "ILLUSION OF PROGRESS", "position": "center"},
+      {"line": 3, "b_roll": "Close-up of a compass needle shifting from 'North' to a gold coin icon.", "text_overlay": "MOVE THE NEEDLE", "position": "center"},
+      {"line": 4, "b_roll": "A person ripping a long list in half, leaving only three items.", "text_overlay": "TOP 3 ONLY", "position": "top-center"},
+      {"line": 5, "b_roll": "A hand throwing away a pile of 'admin' paperwork.", "text_overlay": "STOP PROCRASTINATING", "position": "center"},
+      {"line": 6, "b_roll": "A single, heavy weight falling and smashing through a glass floor.", "text_overlay": "ASYMMETRIC", "position": "center"},
+      {"line": 7, "b_roll": "Surgical tools being laid out on a clean, sterile tray.", "text_overlay": "SURGICAL PLAN", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming out slowly.", "text_overlay": "PRIORITY MATRIX", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the MindFrame Priority Matrix.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A to-do list where everything is crossed out in red except one gold item. Text: THE 1% LIST."
+  },
+  {
+    "id": "mf-024",
+    "hook": "The best way to get more done is to do less.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Productivity",
+    "performance_score": 8.9,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, authoritative, paradoxical",
+      "script": [
+        "The best way to get more done is to do less.",
+        "Complexity is the enemy of execution.",
+        "Step one: Audit your week and delete every task that doesn't lead to a direct ROI.",
+        "Step two: Delegate or automate the repetitive administrative friction.",
+        "Step three: Protect a 4-hour window for 'Monastic Focus' on your primary goal.",
+        "When you narrow your focus, you increase your velocity.",
+        "Stop being a jack-of-all-trades and become a master of one outcome.",
+        "Reclaim your focus. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person trying to hold 20 tennis balls at once and dropping them all.", "text_overlay": "DO LESS", "position": "center"},
+      {"line": 2, "b_roll": "A tangled mess of wires being untangled into a single straight line.", "text_overlay": "DELETE COMPLEXITY", "position": "center"},
+      {"line": 3, "b_roll": "A hand hitting a 'Delete' key on a keyboard with force.", "text_overlay": "AUDIT YOUR WEEK", "position": "top-center"},
+      {"line": 4, "b_roll": "A shot of a robotic arm moving with perfect precision.", "text_overlay": "AUTOMATE FRICTION", "position": "center"},
+      {"line": 5, "b_roll": "A person sitting alone in a dark library, only a small lamp on.", "text_overlay": "MONASTIC FOCUS", "position": "center"},
+      {"line": 6, "b_roll": "A garden hose with a wide spray transitioning to a high-pressure power washer cutting wood.", "text_overlay": "INCREASE VELOCITY", "position": "center"},
+      {"line": 7, "b_roll": "A single, sharp sword blade being forged in fire.", "text_overlay": "MASTER ONE OUTCOME", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing on black background.", "text_overlay": "RECLAIM FOCUS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Get the Monastic Focus guide.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A single gold arrow cutting through a crowd of gray arrows. Text: POWER OF LESS."
+  },
+  {
+    "id": "mf-025",
+    "hook": "Rich people don't have better luck; they have better systems.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Money",
+    "performance_score": 9.0,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Grounded, realistic, logical",
+      "script": [
+        "Rich people don't have better luck; they have better systems.",
+        "Wealth is a mathematical inevitability for those who control their inputs.",
+        "If you are relying on 'luck,' you are playing a game you've already lost.",
+        "The MindFrame Wealth Protocol: Automate your savings, eliminate consumer friction, and invest in asymmetric assets.",
+        "Your system is your floor; your potential is your ceiling.",
+        "Stop waiting for a windfall and start building your financial engine.",
+        "Luck is just what happens when preparation meets opportunity.",
+        "Build your engine. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person winning at a slot machine vs a person building a complex mechanical watch.", "text_overlay": "SYSTEMS > LUCK", "position": "center"},
+      {"line": 2, "b_roll": "Mathematical formulas scrolling over a shot of a modern architectural home.", "text_overlay": "WEALTH IS MATH", "position": "center"},
+      {"line": 3, "b_roll": "A person throwing dice in a dark room, looking stressed.", "text_overlay": "GAMBLER'S TRAP", "position": "center"},
+      {"line": 4, "b_roll": "A digital dashboard showing growing numbers and graphs.", "text_overlay": "WEALTH PROTOCOL", "position": "top-center"},
+      {"line": 5, "b_roll": "A solid concrete floor being poured vs a person reaching for the clouds.", "text_overlay": "THE FLOOR", "position": "center"},
+      {"line": 6, "b_roll": "A person working on a high-end car engine in a clean garage.", "text_overlay": "FINANCIAL ENGINE", "position": "center"},
+      {"line": 7, "b_roll": "A person standing at a massive open door with a sunrise outside.", "text_overlay": "PREPARATION", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold outline.", "text_overlay": "BUILD YOUR ENGINE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the Wealth Protocol.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A blueprint of a bank vault. Text: WEALTH MATH."
+  },
+  {
+    "id": "mf-026",
+    "hook": "The 'Asymmetric Bet' that will change your financial life.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Money",
+    "performance_score": 9.2,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, intriguing, authoritative",
+      "script": [
+        "The 'Asymmetric Bet' that will change your financial life.",
+        "Most people spend their lives making 'Symmetric Bets'—trading one hour for one fixed payment.",
+        "Step one: Identify high-upside, low-downside opportunities (like building digital assets).",
+        "Step two: Allocate 20% of your time to these asymmetric outcomes.",
+        "Step three: Let the power of compounding and scale do the heavy lifting.",
+        "You don't get wealthy by working harder; you get wealthy by working smarter on the right leverage points.",
+        "One asymmetric win can buy you back the rest of your life.",
+        "Find your leverage. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A small seed growing into a massive tree in a few seconds.", "text_overlay": "ASYMMETRIC BET", "position": "center"},
+      {"line": 2, "b_roll": "A person punch-carding into an old factory.", "text_overlay": "THE HOURLY TRAP", "position": "center"},
+      {"line": 3, "b_roll": "A person creating a digital product on a laptop in a cafe.", "text_overlay": "HIGH UPSIDE", "position": "top-center"},
+      {"line": 4, "b_roll": "A clock where 20% of the face is glowing gold.", "text_overlay": "ALLOCATE 20%", "position": "center"},
+      {"line": 5, "b_roll": "Abstract 3D render of a snowball rolling down a mountain and getting massive.", "text_overlay": "COMPOUNDING", "position": "center"},
+      {"line": 6, "b_roll": "A hand using a long lever to lift a massive boulder easily.", "text_overlay": "LEVERAGE POINTS", "position": "center"},
+      {"line": 7, "b_roll": "A person walking on a beach at sunset, looking relaxed.", "text_overlay": "BUY BACK YOUR LIFE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold glow.", "text_overlay": "FIND LEVERAGE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Get the Leverage Blueprint.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A small coin on one side of a scale lifting a massive gold bar on the other. Text: THE BET."
+  },
+  {
+    "id": "mf-027",
+    "hook": "Stop saving money. Start buying time.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Money",
+    "performance_score": 9.4,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, slightly provocative, wise",
+      "script": [
+        "Stop saving money. Start buying time.",
+        "Money is a renewable resource; your time is a decaying asset.",
+        "The middle class saves for a 'rainy day'; the 1% buys back their focus.",
+        "The MindFrame Protocol: Reinvest your capital into systems that eliminate your administrative load.",
+        "Every hour you buy back is an hour you can spend on asymmetric growth.",
+        "The most expensive thing you can own is a task you shouldn't be doing.",
+        "Wealth is not how much you have; it's how much freedom you've secured.",
+        "Buy back your life. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A hand dropping a single coin into a jar vs a hand stopping a ticking clock.", "text_overlay": "BUY TIME", "position": "center"},
+      {"line": 2, "b_roll": "A pile of cash burning away while a person ages in fast-forward.", "text_overlay": "DECAYING ASSET", "position": "center"},
+      {"line": 3, "b_roll": "A person sitting on a park bench watching a busy crowd rush by.", "text_overlay": "BUYS BACK FOCUS", "position": "center"},
+      {"line": 4, "b_roll": "A person setting up an automated software workflow on a laptop.", "text_overlay": "REINVEST CAPITAL", "position": "top-center"},
+      {"line": 5, "b_roll": "A graph showing exponential growth in a gold color.", "text_overlay": "ASYMMETRIC GROWTH", "position": "center"},
+      {"line": 6, "b_roll": "A person doing laundry or dishes with a look of extreme frustration.", "text_overlay": "MOST EXPENSIVE", "position": "center"},
+      {"line": 7, "b_roll": "A person standing in the middle of a vast, open field with arms wide.", "text_overlay": "FREEDOM SECURED", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing on black background.", "text_overlay": "BUY BACK LIFE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the Life Buy-Back guide.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A hand reaching into a pile of money to pull out an hourglass. Text: TIME > MONEY."
+  },
+  {
+    "id": "mf-028",
+    "hook": "Your circle is either a net or a cage.",
+    "template": "The Hard Truth (Tough Love)",
+    "pillar": "Relationships",
+    "performance_score": 8.8,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, confrontational, realistic",
+      "script": [
+        "Your circle is either a net or a cage.",
+        "The people you spend time with are either elevating your floor or lowering your ceiling.",
+        "Most friendships are built on shared convenience and common trauma, not shared mission.",
+        "Draw a line: Audit your top 5 and ask: 'Do they hold me to my highest protocol?'",
+        "It is better to walk alone in the light than to rot in a cage of comfort with others.",
+        "Your environment is 80% of your destiny. Choose your inhabitants carefully.",
+        "Sovereignty begins with the people you allow into your mind.",
+        "Audit your circle. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A group of people standing in a circle, transitioning to a shot of a bird in a cage.", "text_overlay": "NET OR CAGE", "position": "center"},
+      {"line": 2, "b_roll": "A person being pulled up a cliff by a rope vs a person being weighed down by lead weights.", "text_overlay": "ELEVATE OR LOWER", "position": "center"},
+      {"line": 3, "b_roll": "A group of people drinking and laughing in a dark, hazy room.", "text_overlay": "SHARED TRAUMA", "position": "center"},
+      {"line": 4, "b_roll": "A hand using a magnifying glass to look at a list of 5 names.", "text_overlay": "AUDIT YOUR TOP 5", "position": "top-center"},
+      {"line": 5, "b_roll": "A person walking alone through a bright, clean minimalist art gallery.", "text_overlay": "WALK ALONE", "position": "center"},
+      {"line": 6, "b_roll": "A shot of a lush rainforest vs a dry desert.", "text_overlay": "YOUR DESTINY", "position": "center"},
+      {"line": 7, "b_roll": "A person locking a large, heavy door behind them.", "text_overlay": "SOVEREIGNTY", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming in.", "text_overlay": "AUDIT YOUR CIRCLE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Get the Relationship Audit framework.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person standing alone on a gold pedestal while others are in a gray pit. Text: CHOOSE WISELY."
+  },
+  {
+    "id": "mf-029",
+    "hook": "How to spot a low-value person in 30 seconds.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Relationships",
+    "performance_score": 9.5,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, observant, cold",
+      "script": [
+        "How to spot a low-value person in 30 seconds.",
+        "Value is not about net worth; it's about internal protocol.",
+        "Step one: Watch how they talk about people who aren't in the room.",
+        "Step two: Observe how they handle a minor inconvenience that they can't control.",
+        "Step three: Ask them about their 5-year mission. If they have none, they are a drifter.",
+        "Avoid drifters; they are the primary source of environmental friction.",
+        "Protect your energy by curating your access list.",
+        "Master your environment. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person wearing a sharp suit looking through a camera lens.", "text_overlay": "SPOT LOW-VALUE", "position": "center"},
+      {"line": 2, "b_roll": "A shot of a person's hands—one side clean, one side dirty.", "text_overlay": "INTERNAL PROTOCOL", "position": "center"},
+      {"line": 3, "b_roll": "A person whispering into someone else's ear while looking around.", "text_overlay": "GOSSIP AUDIT", "position": "top-center"},
+      {"line": 4, "b_roll": "A person slamming their fist on a table because of a spilled drink.", "text_overlay": "INCONVENIENCE", "position": "center"},
+      {"line": 5, "b_roll": "A person looking confused when asked a question, eyes darting around.", "text_overlay": "THE DRIFTER", "position": "center"},
+      {"line": 6, "b_roll": "A person pushing through a thick, gray fog.", "text_overlay": "AVOID FRICTION", "position": "center"},
+      {"line": 7, "b_roll": "A VIP velvet rope being hooked into place.", "text_overlay": "CURATE ACCESS", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold outline.", "text_overlay": "MASTER ENVIRONMENT", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the MindFrame Inner Circle.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A magnifying glass over a group of people. Text: THE RED FLAGS."
+  },
+  {
+    "id": "mf-030",
+    "hook": "The law of detachment: Why wanting less gets you more.",
+    "template": "This Will Change You (Transformation)",
+    "pillar": "Mindset",
+    "performance_score": 8.7,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Stoic, calm, profound",
+      "script": [
+        "The law of detachment: Why wanting less gets you more.",
+        "When you are desperate for an outcome, you create a energetic wall that repels it.",
+        "Desperation is the ultimate repellent of high-value results.",
+        "The MindFrame Protocol: Commit to the process with clinical intensity, but detach from the timeline.",
+        "When you stop 'needing' the win, you become the person who is capable of achieving it.",
+        "True power is the ability to walk away from anything that doesn't align with your mission.",
+        "Detach your identity from the noise and watch the signal become clear.",
+        "Master your mindset. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person standing calmly in the middle of a fast-moving stream.", "text_overlay": "LAW OF DETACHMENT", "position": "center"},
+      {"line": 2, "b_roll": "A hand reaching desperately for a floating gold leaf that keeps blowing away.", "text_overlay": "DESPERATION REPEL", "position": "center"},
+      {"line": 3, "b_roll": "A magnet pushing another magnet away.", "text_overlay": "REPELLENT", "position": "center"},
+      {"line": 4, "b_roll": "A person working intensely on a single task, sweat on their brow.", "text_overlay": "COMMIT TO PROCESS", "position": "top-center"},
+      {"line": 5, "b_roll": "A person standing tall and relaxed while a crown is placed on their head.", "text_overlay": "STOP NEEDING", "position": "center"},
+      {"line": 6, "b_roll": "A person walking out of a room full of gold but looks dusty and old.", "text_overlay": "WALK AWAY", "position": "center"},
+      {"line": 7, "b_roll": "A radio dial being turned until the static disappears and clear music plays.", "text_overlay": "CLEAR SIGNAL", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming in.", "text_overlay": "MASTER MINDSET", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your stoic mindset.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person sitting in a zen pose while a storm of gold coins swirls around them. Text: THE ART OF DETACHING."
+  }
+]

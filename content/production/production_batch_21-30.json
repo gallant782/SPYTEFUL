@@ -1,0 +1,1762 @@
+[
+  {
+    "id": "mf-051",
+    "hook": "Stop reading books. Start implementing them.",
+    "pillar": "Productivity",
+    "template": "The 3-Step System (How-To)",
+    "performance_score": 9.1,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 2.7,
+          "text": "Stop reading books. Start implementing them."
+        },
+        {
+          "start": 2.7,
+          "end": 6.3,
+          "text": "Step one: Audit your current environment for them."
+        },
+        {
+          "start": 6.3,
+          "end": 9.9,
+          "text": "Step two: Eliminate the noise with clinical precision."
+        },
+        {
+          "start": 9.9,
+          "end": 13.5,
+          "text": "Step three: Execute your primary mission without compromise."
+        },
+        {
+          "start": 13.5,
+          "end": 16.65,
+          "text": "Velocity is the only metric that matters."
+        },
+        {
+          "start": 16.65,
+          "end": 18.9,
+          "text": "Master the system in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic productivity visual: Stop reading books. Start impl...",
+          "stock_search_terms": [
+            "stop reading",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 2.7,
+          "description": "Cinematic productivity visual: Step one: Audit your current e...",
+          "stock_search_terms": [
+            "step one:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 6.3,
+          "description": "Cinematic productivity visual: Step two: Eliminate the noise ...",
+          "stock_search_terms": [
+            "step two:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 9.9,
+          "description": "Cinematic productivity visual: Step three: Execute your prima...",
+          "stock_search_terms": [
+            "step three:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 13.5,
+          "description": "Cinematic productivity visual: Velocity is the only metric th...",
+          "stock_search_terms": [
+            "velocity is",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "Cinematic productivity visual: Master the system in bio....",
+          "stock_search_terms": [
+            "master the",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "STOP READING",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 2.7,
+          "text": "STEP ONE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 6.3,
+          "text": "STEP TWO:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 9.9,
+          "text": "STEP THREE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 13.5,
+          "text": "VELOCITY IS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "MASTER THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Productivity icon on black. Text: Stop reading bo...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-052",
+    "hook": "The military secret to instant discipline.",
+    "pillar": "Discipline",
+    "template": "The Hard Truth (Tough Love)",
+    "performance_score": 9.1,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 2.7,
+          "text": "The military secret to instant discipline."
+        },
+        {
+          "start": 2.7,
+          "end": 7.2,
+          "text": "You are using discipline to mask your lack of mission."
+        },
+        {
+          "start": 7.2,
+          "end": 12.15,
+          "text": "True power is the ability to sit in silence and execute."
+        },
+        {
+          "start": 12.15,
+          "end": 16.2,
+          "text": "MindFrame protocol: No distractions until the work is done."
+        },
+        {
+          "start": 16.2,
+          "end": 19.35,
+          "text": "Own your attention or someone else will."
+        },
+        {
+          "start": 19.35,
+          "end": 21.6,
+          "text": "Master your focus in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic discipline visual: The military secret to instant...",
+          "stock_search_terms": [
+            "the military",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 2.7,
+          "description": "Cinematic discipline visual: You are using discipline to ma...",
+          "stock_search_terms": [
+            "you are",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.2,
+          "description": "Cinematic discipline visual: True power is the ability to s...",
+          "stock_search_terms": [
+            "true power",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 12.15,
+          "description": "Cinematic discipline visual: MindFrame protocol: No distrac...",
+          "stock_search_terms": [
+            "mindframe protocol:",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.2,
+          "description": "Cinematic discipline visual: Own your attention or someone ...",
+          "stock_search_terms": [
+            "own your",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 19.35,
+          "description": "Cinematic discipline visual: Master your focus in bio....",
+          "stock_search_terms": [
+            "master your",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE MILITARY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 2.7,
+          "text": "YOU ARE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.2,
+          "text": "TRUE POWER",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 12.15,
+          "text": "MINDFRAME PROTOCOL:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.2,
+          "text": "OWN YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 19.35,
+          "text": "MASTER YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Discipline icon on black. Text: The military se...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-053",
+    "hook": "The financial advice 90% of people get wrong.",
+    "pillar": "Money",
+    "template": "The Truth About X (Myth-Busting)",
+    "performance_score": 9.1,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.6,
+          "text": "The financial advice 90% of people get wrong."
+        },
+        {
+          "start": 3.6,
+          "end": 7.65,
+          "text": "The world wants you to stay wrong-focused and predictable."
+        },
+        {
+          "start": 7.65,
+          "end": 11.25,
+          "text": "True sovereignty comes from breaking the established protocol."
+        },
+        {
+          "start": 11.25,
+          "end": 15.3,
+          "text": "MindFrame rule: question every default setting in your life."
+        },
+        {
+          "start": 15.3,
+          "end": 18.9,
+          "text": "This is how you win the asymmetric game."
+        },
+        {
+          "start": 18.9,
+          "end": 23.4,
+          "text": "Join the 1% who see the truth. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic money visual: The financial advice 90% of pe...",
+          "stock_search_terms": [
+            "the financial",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.6,
+          "description": "Cinematic money visual: The world wants you to stay wr...",
+          "stock_search_terms": [
+            "the world",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.65,
+          "description": "Cinematic money visual: True sovereignty comes from br...",
+          "stock_search_terms": [
+            "true sovereignty",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 11.25,
+          "description": "Cinematic money visual: MindFrame rule: question every...",
+          "stock_search_terms": [
+            "mindframe rule:",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 15.3,
+          "description": "Cinematic money visual: This is how you win the asymme...",
+          "stock_search_terms": [
+            "this is",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 18.9,
+          "description": "Cinematic money visual: Join the 1% who see the truth....",
+          "stock_search_terms": [
+            "join the",
+            "money",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE FINANCIAL",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.6,
+          "text": "THE WORLD",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.65,
+          "text": "TRUE SOVEREIGNTY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 11.25,
+          "text": "MINDFRAME RULE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 15.3,
+          "text": "THIS IS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 18.9,
+          "text": "JOIN THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Money icon on black. Text: The financial a...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-054",
+    "hook": "High-performers don't have willpower; they have environments.",
+    "pillar": "Discipline",
+    "template": "Why You're Stuck (Pain Point)",
+    "performance_score": 9.0,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.15,
+          "text": "High-performers don't have willpower; they have environments."
+        },
+        {
+          "start": 3.15,
+          "end": 7.2,
+          "text": "Your brain is seeking the path of least resistance."
+        },
+        {
+          "start": 7.2,
+          "end": 11.7,
+          "text": "But growth only happens in the zone of high friction."
+        },
+        {
+          "start": 11.7,
+          "end": 14.85,
+          "text": "MindFrame protocol: seek voluntary discomfort every morning."
+        },
+        {
+          "start": 14.85,
+          "end": 16.2,
+          "text": "Reclaim your edge."
+        },
+        {
+          "start": 16.2,
+          "end": 18.45,
+          "text": "Get the OS in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic discipline visual: High-performers don't have wil...",
+          "stock_search_terms": [
+            "high-performers don't",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.15,
+          "description": "Cinematic discipline visual: Your brain is seeking the path...",
+          "stock_search_terms": [
+            "your brain",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.2,
+          "description": "Cinematic discipline visual: But growth only happens in the...",
+          "stock_search_terms": [
+            "but growth",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 11.7,
+          "description": "Cinematic discipline visual: MindFrame protocol: seek volun...",
+          "stock_search_terms": [
+            "mindframe protocol:",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 14.85,
+          "description": "Cinematic discipline visual: Reclaim your edge....",
+          "stock_search_terms": [
+            "reclaim your",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.2,
+          "description": "Cinematic discipline visual: Get the OS in bio....",
+          "stock_search_terms": [
+            "get the",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "HIGH-PERFORMERS DON'T",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.15,
+          "text": "YOUR BRAIN",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.2,
+          "text": "BUT GROWTH",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 11.7,
+          "text": "MINDFRAME PROTOCOL:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 14.85,
+          "text": "RECLAIM YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.2,
+          "text": "GET THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Discipline icon on black. Text: High-performers...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-055",
+    "hook": "Discipline isn't a punishment; it's the ultimate freedom.",
+    "pillar": "Discipline",
+    "template": "The 3-Step System (How-To)",
+    "performance_score": 9.0,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.6,
+          "text": "Discipline isn't a punishment; it's the ultimate freedom."
+        },
+        {
+          "start": 3.6,
+          "end": 7.2,
+          "text": "Step one: Audit your current environment for freedom."
+        },
+        {
+          "start": 7.2,
+          "end": 10.8,
+          "text": "Step two: Eliminate the noise with clinical precision."
+        },
+        {
+          "start": 10.8,
+          "end": 14.4,
+          "text": "Step three: Execute your primary mission without compromise."
+        },
+        {
+          "start": 14.4,
+          "end": 17.55,
+          "text": "Velocity is the only metric that matters."
+        },
+        {
+          "start": 17.55,
+          "end": 19.8,
+          "text": "Master the system in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic discipline visual: Discipline isn't a punishment;...",
+          "stock_search_terms": [
+            "discipline isn't",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.6,
+          "description": "Cinematic discipline visual: Step one: Audit your current e...",
+          "stock_search_terms": [
+            "step one:",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.2,
+          "description": "Cinematic discipline visual: Step two: Eliminate the noise ...",
+          "stock_search_terms": [
+            "step two:",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.8,
+          "description": "Cinematic discipline visual: Step three: Execute your prima...",
+          "stock_search_terms": [
+            "step three:",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 14.4,
+          "description": "Cinematic discipline visual: Velocity is the only metric th...",
+          "stock_search_terms": [
+            "velocity is",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 17.55,
+          "description": "Cinematic discipline visual: Master the system in bio....",
+          "stock_search_terms": [
+            "master the",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "DISCIPLINE ISN'T",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.6,
+          "text": "STEP ONE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.2,
+          "text": "STEP TWO:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.8,
+          "text": "STEP THREE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 14.4,
+          "text": "VELOCITY IS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 17.55,
+          "text": "MASTER THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Discipline icon on black. Text: Discipline isn'...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-056",
+    "hook": "The 80/20 rule of your social circle.",
+    "pillar": "Relationships",
+    "template": "The Hard Truth (Tough Love)",
+    "performance_score": 8.9,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.15,
+          "text": "The 80/20 rule of your social circle."
+        },
+        {
+          "start": 3.15,
+          "end": 7.65,
+          "text": "You are using circle to mask your lack of mission."
+        },
+        {
+          "start": 7.65,
+          "end": 12.6,
+          "text": "True power is the ability to sit in silence and execute."
+        },
+        {
+          "start": 12.6,
+          "end": 16.65,
+          "text": "MindFrame protocol: No distractions until the work is done."
+        },
+        {
+          "start": 16.65,
+          "end": 19.8,
+          "text": "Own your attention or someone else will."
+        },
+        {
+          "start": 19.8,
+          "end": 22.05,
+          "text": "Master your focus in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic relationships visual: The 80/20 rule of your social ...",
+          "stock_search_terms": [
+            "the 80/20",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.15,
+          "description": "Cinematic relationships visual: You are using circle to mask y...",
+          "stock_search_terms": [
+            "you are",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.65,
+          "description": "Cinematic relationships visual: True power is the ability to s...",
+          "stock_search_terms": [
+            "true power",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 12.6,
+          "description": "Cinematic relationships visual: MindFrame protocol: No distrac...",
+          "stock_search_terms": [
+            "mindframe protocol:",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "Cinematic relationships visual: Own your attention or someone ...",
+          "stock_search_terms": [
+            "own your",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 19.8,
+          "description": "Cinematic relationships visual: Master your focus in bio....",
+          "stock_search_terms": [
+            "master your",
+            "relationships",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE 80/20",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.15,
+          "text": "YOU ARE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.65,
+          "text": "TRUE POWER",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 12.6,
+          "text": "MINDFRAME PROTOCOL:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "OWN YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 19.8,
+          "text": "MASTER YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Relationships icon on black. Text: The 80/20 rule ...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-057",
+    "hook": "Why your brain is programmed to be average.",
+    "pillar": "Mindset",
+    "template": "The Truth About X (Myth-Busting)",
+    "performance_score": 8.9,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.6,
+          "text": "Why your brain is programmed to be average."
+        },
+        {
+          "start": 3.6,
+          "end": 7.65,
+          "text": "The world wants you to stay average-focused and predictable."
+        },
+        {
+          "start": 7.65,
+          "end": 11.25,
+          "text": "True sovereignty comes from breaking the established protocol."
+        },
+        {
+          "start": 11.25,
+          "end": 15.3,
+          "text": "MindFrame rule: question every default setting in your life."
+        },
+        {
+          "start": 15.3,
+          "end": 18.9,
+          "text": "This is how you win the asymmetric game."
+        },
+        {
+          "start": 18.9,
+          "end": 23.4,
+          "text": "Join the 1% who see the truth. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic mindset visual: Why your brain is programmed t...",
+          "stock_search_terms": [
+            "why your",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.6,
+          "description": "Cinematic mindset visual: The world wants you to stay av...",
+          "stock_search_terms": [
+            "the world",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.65,
+          "description": "Cinematic mindset visual: True sovereignty comes from br...",
+          "stock_search_terms": [
+            "true sovereignty",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 11.25,
+          "description": "Cinematic mindset visual: MindFrame rule: question every...",
+          "stock_search_terms": [
+            "mindframe rule:",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 15.3,
+          "description": "Cinematic mindset visual: This is how you win the asymme...",
+          "stock_search_terms": [
+            "this is",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 18.9,
+          "description": "Cinematic mindset visual: Join the 1% who see the truth....",
+          "stock_search_terms": [
+            "join the",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "WHY YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.6,
+          "text": "THE WORLD",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.65,
+          "text": "TRUE SOVEREIGNTY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 11.25,
+          "text": "MINDFRAME RULE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 15.3,
+          "text": "THIS IS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 18.9,
+          "text": "JOIN THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Mindset icon on black. Text: Why your brain ...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-058",
+    "hook": "The one word that destroys your productivity: 'Later'.",
+    "pillar": "Productivity",
+    "template": "Why You're Stuck (Pain Point)",
+    "performance_score": 8.7,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.6,
+          "text": "The one word that destroys your productivity: 'Later'."
+        },
+        {
+          "start": 3.6,
+          "end": 7.65,
+          "text": "Your brain is seeking the path of least resistance."
+        },
+        {
+          "start": 7.65,
+          "end": 12.15,
+          "text": "But growth only happens in the zone of high friction."
+        },
+        {
+          "start": 12.15,
+          "end": 15.3,
+          "text": "MindFrame protocol: seek voluntary discomfort every morning."
+        },
+        {
+          "start": 15.3,
+          "end": 16.65,
+          "text": "Reclaim your edge."
+        },
+        {
+          "start": 16.65,
+          "end": 18.9,
+          "text": "Get the OS in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic productivity visual: The one word that destroys you...",
+          "stock_search_terms": [
+            "the one",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.6,
+          "description": "Cinematic productivity visual: Your brain is seeking the path...",
+          "stock_search_terms": [
+            "your brain",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.65,
+          "description": "Cinematic productivity visual: But growth only happens in the...",
+          "stock_search_terms": [
+            "but growth",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 12.15,
+          "description": "Cinematic productivity visual: MindFrame protocol: seek volun...",
+          "stock_search_terms": [
+            "mindframe protocol:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 15.3,
+          "description": "Cinematic productivity visual: Reclaim your edge....",
+          "stock_search_terms": [
+            "reclaim your",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "Cinematic productivity visual: Get the OS in bio....",
+          "stock_search_terms": [
+            "get the",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE ONE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.6,
+          "text": "YOUR BRAIN",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.65,
+          "text": "BUT GROWTH",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 12.15,
+          "text": "MINDFRAME PROTOCOL:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 15.3,
+          "text": "RECLAIM YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "GET THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Productivity icon on black. Text: The one word th...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-059",
+    "hook": "The truth about multitasking: It's just 'task switching'.",
+    "pillar": "Productivity",
+    "template": "The 3-Step System (How-To)",
+    "performance_score": 8.5,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.6,
+          "text": "The truth about multitasking: It's just 'task switching'."
+        },
+        {
+          "start": 3.6,
+          "end": 7.2,
+          "text": "Step one: Audit your current environment for switching'."
+        },
+        {
+          "start": 7.2,
+          "end": 10.8,
+          "text": "Step two: Eliminate the noise with clinical precision."
+        },
+        {
+          "start": 10.8,
+          "end": 14.4,
+          "text": "Step three: Execute your primary mission without compromise."
+        },
+        {
+          "start": 14.4,
+          "end": 17.55,
+          "text": "Velocity is the only metric that matters."
+        },
+        {
+          "start": 17.55,
+          "end": 19.8,
+          "text": "Master the system in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic productivity visual: The truth about multitasking: ...",
+          "stock_search_terms": [
+            "the truth",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.6,
+          "description": "Cinematic productivity visual: Step one: Audit your current e...",
+          "stock_search_terms": [
+            "step one:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.2,
+          "description": "Cinematic productivity visual: Step two: Eliminate the noise ...",
+          "stock_search_terms": [
+            "step two:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.8,
+          "description": "Cinematic productivity visual: Step three: Execute your prima...",
+          "stock_search_terms": [
+            "step three:",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 14.4,
+          "description": "Cinematic productivity visual: Velocity is the only metric th...",
+          "stock_search_terms": [
+            "velocity is",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 17.55,
+          "description": "Cinematic productivity visual: Master the system in bio....",
+          "stock_search_terms": [
+            "master the",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE TRUTH",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.6,
+          "text": "STEP ONE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.2,
+          "text": "STEP TWO:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.8,
+          "text": "STEP THREE:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 14.4,
+          "text": "VELOCITY IS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 17.55,
+          "text": "MASTER THE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Productivity icon on black. Text: The truth about...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-060",
+    "hook": "The Stoic guide to handling rejection.",
+    "pillar": "Mindset",
+    "template": "The Hard Truth (Tough Love)",
+    "performance_score": 8.4,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 2.7,
+          "text": "The Stoic guide to handling rejection."
+        },
+        {
+          "start": 2.7,
+          "end": 7.2,
+          "text": "You are using rejection to mask your lack of mission."
+        },
+        {
+          "start": 7.2,
+          "end": 12.15,
+          "text": "True power is the ability to sit in silence and execute."
+        },
+        {
+          "start": 12.15,
+          "end": 16.2,
+          "text": "MindFrame protocol: No distractions until the work is done."
+        },
+        {
+          "start": 16.2,
+          "end": 19.35,
+          "text": "Own your attention or someone else will."
+        },
+        {
+          "start": 19.35,
+          "end": 21.6,
+          "text": "Master your focus in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Cinematic mindset visual: The Stoic guide to handling re...",
+          "stock_search_terms": [
+            "the stoic",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 2.7,
+          "description": "Cinematic mindset visual: You are using rejection to mas...",
+          "stock_search_terms": [
+            "you are",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 7.2,
+          "description": "Cinematic mindset visual: True power is the ability to s...",
+          "stock_search_terms": [
+            "true power",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 12.15,
+          "description": "Cinematic mindset visual: MindFrame protocol: No distrac...",
+          "stock_search_terms": [
+            "mindframe protocol:",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.2,
+          "description": "Cinematic mindset visual: Own your attention or someone ...",
+          "stock_search_terms": [
+            "own your",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 19.35,
+          "description": "Cinematic mindset visual: Master your focus in bio....",
+          "stock_search_terms": [
+            "master your",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE STOIC",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 2.7,
+          "text": "YOU ARE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 7.2,
+          "text": "TRUE POWER",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 12.15,
+          "text": "MINDFRAME PROTOCOL:",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.2,
+          "text": "OWN YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 19.35,
+          "text": "MASTER YOUR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Minimalist Mindset icon on black. Text: The Stoic guide...",
+      "cta": {
+        "text": "Join the MindFrame movement.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  }
+]

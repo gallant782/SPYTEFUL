@@ -1,0 +1,48 @@
+{
+  "categories": [
+    {
+      "category": "Negativity Bias / Fear of Loss",
+      "description": "Hooks that highlight a mistake or a potential loss.",
+      "hooks": [
+        "Stop wasting your mornings on other people's priorities.",
+        "Your comfort zone is a slow-motion suicide.",
+        "The reason you're burnt out isn't work—it's your lack of boundaries.",
+        "99% of people are doing 'deep work' completely wrong.",
+        "You're not lazy; you're just overstimulated."
+      ]
+    },
+    {
+      "category": "Authority / Identity Shift",
+      "description": "Hooks that challenge the viewer's identity or present a new one.",
+      "hooks": [
+        "The person you want to become doesn't have your current habits.",
+        "How a Stoic handles a toxic workplace.",
+        "The productivity system of the top 0.1%.",
+        "Stop acting like you have 1,000 years to live.",
+        "MindFrame Rule #1: Protect your attention like your life depends on it."
+      ]
+    },
+    {
+      "category": "Mystery / Curiosity",
+      "description": "Hooks that pose a question or tease an unknown fact.",
+      "hooks": [
+        "The hidden cost of 'one more video'.",
+        "Why your brain craves distraction (and how to fix it).",
+        "The dark side of 'hustle culture' nobody talks about.",
+        "One habit that will make you unrecognizable in 6 months.",
+        "The 'Dopamine Detox' secret that actually works."
+      ]
+    },
+    {
+      "category": "Contrarian / Pattern Interrupt",
+      "description": "Hooks that go against conventional wisdom.",
+      "hooks": [
+        "Consistency is overrated. Intensity is what matters.",
+        "Stop reading books. Start implementing them.",
+        "Your 'to-do' list is actually a 'distraction' list.",
+        "The best way to get more done is to do less.",
+        "Motivation is a myth. Only systems remain."
+      ]
+    }
+  ]
+}

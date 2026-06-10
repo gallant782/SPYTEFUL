@@ -1,0 +1,24 @@
+{
+  "brand_name": "MindFrame",
+  "tagline": "The Operating System for Your Mind",
+  "mission": "To provide high-impact psychological frameworks and productivity systems for the modern high-performer.",
+  "voice_attributes": {
+    "tone": "Authoritative, Stoic, Direct, Sophisticated, Minimalist",
+    "perspective": "First-person plural (We/MindFrame) or Second-person (You)",
+    "language_style": "Punchy, short sentences. No fluff. High density of information.",
+    "forbidden_words": ["amazing", "unbelievable", "just", "very", "literally", "crazy", "secret trick"],
+    "preferred_words": ["essential", "critical", "framework", "discipline", "sovereignty", "clarity", "asymmetric"]
+  },
+  "visual_identity": {
+    "color_palette": ["#000000", "#FFFFFF", "#1A1A1A", "#DAA520"],
+    "typography": "High-contrast Sans-Serif (e.g., Inter, Montserrat, or Archivo Black)",
+    "imagery": "Cinematic stock footage, dark academia, minimalist architecture, urban nightscapes, stoic statues, macro nature."
+  },
+  "content_pillars": [
+    "Stoic Philosophy for Modern Life",
+    "High-Performance Psychology",
+    "AI-Powered Productivity Systems",
+    "Digital Minimalism & Focus",
+    "The 1% Mindset"
+  ]
+}

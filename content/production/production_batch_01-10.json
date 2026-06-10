@@ -1,0 +1,2182 @@
+[
+  {
+    "id": "mf-011",
+    "hook": "Your comfort zone is a slow-motion suicide.",
+    "pillar": "Mindset",
+    "template": "Why You're Stuck (Pain Point)",
+    "performance_score": 9.5,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.15,
+          "text": "Your comfort zone is a slow-motion suicide."
+        },
+        {
+          "start": 3.15,
+          "end": 9.45,
+          "text": "Every day you stay safe, you are trading your future sovereignty for temporary relief."
+        },
+        {
+          "start": 9.45,
+          "end": 13.5,
+          "text": "Stagnation is the silent killer of the high-performer's soul."
+        },
+        {
+          "start": 13.5,
+          "end": 19.8,
+          "text": "The MindFrame Protocol: Identify one task that terrifies you and execute it before noon."
+        },
+        {
+          "start": 19.8,
+          "end": 24.75,
+          "text": "Friction is not an obstacle; it is the path to evolution."
+        },
+        {
+          "start": 24.75,
+          "end": 27.9,
+          "text": "High-performers don't seek comfort; they seek capacity."
+        },
+        {
+          "start": 27.9,
+          "end": 32.4,
+          "text": "Own the difficulty, or the difficulty will eventually own you."
+        },
+        {
+          "start": 32.4,
+          "end": 35.1,
+          "text": "Escape the trap. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "Close-up of a person sitting on a soft couch, looking empty and bored.",
+          "stock_search_terms": [
+            "slow motion",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.15,
+          "description": "Time-lapse of a decaying plant next to a growing sapling.",
+          "stock_search_terms": [
+            "trading sovereignty",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 9.45,
+          "description": "A single drop of water hitting a still pond, creating ripples that quickly fade.",
+          "stock_search_terms": [
+            "stagnation",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 13.5,
+          "description": "A hand slamming a heavy notebook onto a desk at dawn.",
+          "stock_search_terms": [
+            "execute before noon",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 19.8,
+          "description": "A person climbing a jagged rock face, hands gripping rough edges.",
+          "stock_search_terms": [
+            "friction is the path",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 24.75,
+          "description": "Macro shot of a human eye widening in focus.",
+          "stock_search_terms": [
+            "build capacity",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 27.9,
+          "description": "A person walking through a heavy iron gate into the light.",
+          "stock_search_terms": [
+            "own the difficulty",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 32.4,
+          "description": "MindFrame logo appearing on black background.",
+          "stock_search_terms": [
+            "escape the trap",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "SLOW MOTION",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.15,
+          "text": "TRADING SOVEREIGNTY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 9.45,
+          "text": "STAGNATION",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 13.5,
+          "text": "EXECUTE BEFORE NOON",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 19.8,
+          "text": "FRICTION IS THE PATH",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 24.75,
+          "text": "BUILD CAPACITY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 27.9,
+          "text": "OWN THE DIFFICULTY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 32.4,
+          "text": "ESCAPE THE TRAP",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Hourglass filled with black sludge. Text: ESCAPE NOW.",
+      "cta": {
+        "text": "Join the 1% who execute.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-012",
+    "hook": "The reason you're burnt out isn't work\u2014it's your lack of boundaries.",
+    "pillar": "Health",
+    "template": "The Hard Truth (Tough Love)",
+    "performance_score": 8.8,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.95,
+          "text": "The reason you're burnt out isn't work\u2014it's your lack of boundaries."
+        },
+        {
+          "start": 4.95,
+          "end": 11.7,
+          "text": "You say 'yes' to others because you're afraid to say 'no' to your own insecurity."
+        },
+        {
+          "start": 11.7,
+          "end": 16.65,
+          "text": "Burnout is the physiological tax you pay for being a people-pleaser."
+        },
+        {
+          "start": 16.65,
+          "end": 21.15,
+          "text": "High-performers understand that protecting their energy is a non-negotiable protocol."
+        },
+        {
+          "start": 21.15,
+          "end": 28.35,
+          "text": "Draw a line in the sand: define your 'Deep Work' hours and let nothing breach them."
+        },
+        {
+          "start": 28.35,
+          "end": 34.2,
+          "text": "Your focus is your currency; stop letting the world spend it for you."
+        },
+        {
+          "start": 34.2,
+          "end": 38.25,
+          "text": "True power is the sovereignty over your own schedule."
+        },
+        {
+          "start": 38.25,
+          "end": 40.95,
+          "text": "Fix your boundaries. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A person staring at a bright monitor in a dark office, looking exhausted.",
+          "stock_search_terms": [
+            "the real cause",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.95,
+          "description": "Hand shaking another hand while the person looks away reluctantly.",
+          "stock_search_terms": [
+            "the yes trap",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 11.7,
+          "description": "A battery icon flashing red and then dying.",
+          "stock_search_terms": [
+            "physiological tax",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "A lion protecting its territory, standing alert and firm.",
+          "stock_search_terms": [
+            "protect your energy",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 21.15,
+          "description": "A hand drawing a firm line in dark sand with a stick.",
+          "stock_search_terms": [
+            "deep work only",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 28.35,
+          "description": "Stacks of gold coins being scattered by a wind gust.",
+          "stock_search_terms": [
+            "your currency",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 34.2,
+          "description": "A minimalist calendar showing a single, solid block of time labeled 'Sovereignty'.",
+          "stock_search_terms": [
+            "true power",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 38.25,
+          "description": "MindFrame logo with a glowing gold outline.",
+          "stock_search_terms": [
+            "fix your boundaries",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE REAL CAUSE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.95,
+          "text": "THE YES TRAP",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 11.7,
+          "text": "PHYSIOLOGICAL TAX",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "PROTECT YOUR ENERGY",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 21.15,
+          "text": "DEEP WORK ONLY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 28.35,
+          "text": "YOUR CURRENCY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 34.2,
+          "text": "TRUE POWER",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 38.25,
+          "text": "FIX YOUR BOUNDARIES",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A person pushing away a hovering smartphone. Text: NO MORE BURNOUT.",
+      "cta": {
+        "text": "Master your focus guide.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-013",
+    "hook": "You're not lazy; you're just overstimulated.",
+    "pillar": "Health",
+    "template": "Why You're Stuck (Pain Point)",
+    "performance_score": 8.7,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 2.7,
+          "text": "You're not lazy; you're just overstimulated."
+        },
+        {
+          "start": 2.7,
+          "end": 8.55,
+          "text": "Your brain is drowning in a dopamine flood of short-form noise and notifications."
+        },
+        {
+          "start": 8.55,
+          "end": 11.7,
+          "text": "When everything is 'exciting,' nothing is important."
+        },
+        {
+          "start": 11.7,
+          "end": 16.2,
+          "text": "The MindFrame Dopamine Reset: 24 hours with zero digital inputs."
+        },
+        {
+          "start": 16.2,
+          "end": 20.25,
+          "text": "Reclaim your baseline and watch your motivation return naturally."
+        },
+        {
+          "start": 20.25,
+          "end": 25.2,
+          "text": "Laziness is often just your brain's defense mechanism against cognitive overload."
+        },
+        {
+          "start": 25.2,
+          "end": 28.8,
+          "text": "Clear the noise, and the focus will follow."
+        },
+        {
+          "start": 28.8,
+          "end": 31.5,
+          "text": "Download the reset protocol in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A fast-paced montage of social media feeds scrolling rapidly.",
+          "stock_search_terms": [
+            "not lazy",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 2.7,
+          "description": "Close-up of a person's pupils dilating while looking at a flickering screen.",
+          "stock_search_terms": [
+            "dopamine flood",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 8.55,
+          "description": "A gray, static screen where nothing is distinct.",
+          "stock_search_terms": [
+            "noise",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 11.7,
+          "description": "A hand turning off a smartphone and placing it face down on a wooden table.",
+          "stock_search_terms": [
+            "24 hour reset",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.2,
+          "description": "A person sitting quietly in a minimalist garden, looking peaceful.",
+          "stock_search_terms": [
+            "reclaim baseline",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 20.25,
+          "description": "A complex machine cooling down, steam rising from its components.",
+          "stock_search_terms": [
+            "defense mechanism",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 25.2,
+          "description": "A single, clear drop of water falling into a still basin.",
+          "stock_search_terms": [
+            "clear the noise",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 28.8,
+          "description": "MindFrame logo appearing on black.",
+          "stock_search_terms": [
+            "get the protocol",
+            "health",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "NOT LAZY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 2.7,
+          "text": "DOPAMINE FLOOD",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 8.55,
+          "text": "NOISE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 11.7,
+          "text": "24 HOUR RESET",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.2,
+          "text": "RECLAIM BASELINE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 20.25,
+          "text": "DEFENSE MECHANISM",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 25.2,
+          "text": "CLEAR THE NOISE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 28.8,
+          "text": "GET THE PROTOCOL",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A human head being filled with colorful static. Text: BRAIN FOG FIX.",
+      "cta": {
+        "text": "Download the Dopamine Reset guide.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-014",
+    "hook": "The person you want to become doesn't have your current habits.",
+    "pillar": "Mindset",
+    "template": "This Will Change You (Transformation)",
+    "performance_score": 9.0,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.95,
+          "text": "The person you want to become doesn't have your current habits."
+        },
+        {
+          "start": 4.95,
+          "end": 10.8,
+          "text": "You are currently an architect building a skyscraper with a foundation of sand."
+        },
+        {
+          "start": 10.8,
+          "end": 13.95,
+          "text": "Transformation isn't about adding; it's about pruning."
+        },
+        {
+          "start": 13.95,
+          "end": 20.25,
+          "text": "MindFrame Rule: Kill one destructive habit today to make room for one essential protocol."
+        },
+        {
+          "start": 20.25,
+          "end": 24.3,
+          "text": "Identity is the lagging indicator of your daily actions."
+        },
+        {
+          "start": 24.3,
+          "end": 31.95,
+          "text": "Stop waiting for a new life and start performing the habits of the person who lives it."
+        },
+        {
+          "start": 31.95,
+          "end": 36.0,
+          "text": "Your future self is waiting for you to execute."
+        },
+        {
+          "start": 36.0,
+          "end": 38.7,
+          "text": "Start your transformation. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A person looking at a sharp, well-dressed reflection in a window.",
+          "stock_search_terms": [
+            "identity shift",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.95,
+          "description": "A blueprint of a massive tower being drawn over a shot of shifting sand.",
+          "stock_search_terms": [
+            "the foundation",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.8,
+          "description": "A hand using sharp shears to prune a dead branch from a vibrant tree.",
+          "stock_search_terms": [
+            "prune for growth",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 13.95,
+          "description": "A hand crossing out a line on a to-do list labeled 'Distraction'.",
+          "stock_search_terms": [
+            "kill the old",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 20.25,
+          "description": "A time-lapse of a person working out at the same time every day.",
+          "stock_search_terms": [
+            "lagging indicator",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 24.3,
+          "description": "A person stepping into a high-end office, head held high.",
+          "stock_search_terms": [
+            "perform the new",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 31.95,
+          "description": "A silhouette of a person looking at a sunrise from a mountain top.",
+          "stock_search_terms": [
+            "execute",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 36.0,
+          "description": "MindFrame logo with a gold glow.",
+          "stock_search_terms": [
+            "start today",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "IDENTITY SHIFT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.95,
+          "text": "THE FOUNDATION",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.8,
+          "text": "PRUNE FOR GROWTH",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 13.95,
+          "text": "KILL THE OLD",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 20.25,
+          "text": "LAGGING INDICATOR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 24.3,
+          "text": "PERFORM THE NEW",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 31.95,
+          "text": "EXECUTE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 36.0,
+          "text": "START TODAY",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A person pulling off a mask of their 'Old Self'. Text: NEW IDENTITY.",
+      "cta": {
+        "text": "Join the MindFrame transformation.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-015",
+    "hook": "How a Stoic handles a toxic workplace.",
+    "pillar": "Mindset",
+    "template": "The 3-Step System (How-To)",
+    "performance_score": 8.5,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.15,
+          "text": "How a Stoic handles a toxic workplace."
+        },
+        {
+          "start": 3.15,
+          "end": 6.75,
+          "text": "Step one: Control the internal, ignore the external."
+        },
+        {
+          "start": 6.75,
+          "end": 12.15,
+          "text": "The chaos around you is a data point, not a personal attack."
+        },
+        {
+          "start": 12.15,
+          "end": 17.55,
+          "text": "Step two: Use 'Negative Visualization' to anticipate the drama before it happens."
+        },
+        {
+          "start": 17.55,
+          "end": 21.6,
+          "text": "Step three: Focus purely on your own clinical output."
+        },
+        {
+          "start": 21.6,
+          "end": 26.55,
+          "text": "When you detach your identity from the environment, you become untouchable."
+        },
+        {
+          "start": 26.55,
+          "end": 32.4,
+          "text": "The MindFrame Stoic Protocol is your mental armor in a world of noise."
+        },
+        {
+          "start": 32.4,
+          "end": 36.9,
+          "text": "Join the circle for weekly mental training. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A person sitting calmly at a desk while blurry figures argue in the background.",
+          "stock_search_terms": [
+            "stoic protocol",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.15,
+          "description": "A macro shot of a compass needle pointing steadily while being shaken.",
+          "stock_search_terms": [
+            "internal control",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 6.75,
+          "description": "A computer screen showing columns of raw data scrolling by.",
+          "stock_search_terms": [
+            "only data",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 12.15,
+          "description": "A person closing their eyes and taking a deep breath in a chaotic office.",
+          "stock_search_terms": [
+            "anticipate",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 17.55,
+          "description": "Macro shot of code being written or high-quality work being produced.",
+          "stock_search_terms": [
+            "clinical output",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 21.6,
+          "description": "A person wearing a sleek, dark suit walking through a crowd without looking left or right.",
+          "stock_search_terms": [
+            "untouchable",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 26.55,
+          "description": "A close-up of a stoic marble statue's face, unmoving.",
+          "stock_search_terms": [
+            "mental armor",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 32.4,
+          "description": "MindFrame logo on black background.",
+          "stock_search_terms": [
+            "join the circle",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "STOIC PROTOCOL",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.15,
+          "text": "INTERNAL CONTROL",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 6.75,
+          "text": "ONLY DATA",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 12.15,
+          "text": "ANTICIPATE",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 17.55,
+          "text": "CLINICAL OUTPUT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 21.6,
+          "text": "UNTOUCHABLE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 26.55,
+          "text": "MENTAL ARMOR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 32.4,
+          "text": "JOIN THE CIRCLE",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A glowing golden figure in a room of gray shadows. Text: TOXIC-PROOF.",
+      "cta": {
+        "text": "Join the MindFrame Circle.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-016",
+    "hook": "Stop acting like you have 1,000 years to live.",
+    "pillar": "Mindset",
+    "template": "X Years From Now (Time-Travel)",
+    "performance_score": 9.4,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.05,
+          "text": "Stop acting like you have 1,000 years to live."
+        },
+        {
+          "start": 4.05,
+          "end": 10.35,
+          "text": "Every second you spend on low-value distractions is a second stolen from your legacy."
+        },
+        {
+          "start": 10.35,
+          "end": 17.1,
+          "text": "Your life is not a dress rehearsal; it is an asymmetric sprint to the finish."
+        },
+        {
+          "start": 17.1,
+          "end": 22.05,
+          "text": "The MindFrame Memento Mori Protocol: Wake up and acknowledge your mortality."
+        },
+        {
+          "start": 22.05,
+          "end": 30.15,
+          "text": "Does this task move you closer to the person you need to be, or is it just noise?"
+        },
+        {
+          "start": 30.15,
+          "end": 33.3,
+          "text": "High-performers possess a chronic sense of urgency."
+        },
+        {
+          "start": 33.3,
+          "end": 37.8,
+          "text": "Own your time, or the clock will eventually own you."
+        },
+        {
+          "start": 37.8,
+          "end": 40.5,
+          "text": "Design your future. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A large, ancient clock tower with hands moving rapidly.",
+          "stock_search_terms": [
+            "time is short",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.05,
+          "description": "Handfuls of sand slipping through fingers quickly.",
+          "stock_search_terms": [
+            "stolen legacy",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.35,
+          "description": "A sprinter exploding off the starting blocks in slow motion.",
+          "stock_search_terms": [
+            "the sprint",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 17.1,
+          "description": "A person looking at a skull or an old pocket watch on a desk.",
+          "stock_search_terms": [
+            "memento mori",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 22.05,
+          "description": "A split screen showing 'Noise' (TV) vs 'Signal' (Writing).",
+          "stock_search_terms": [
+            "noise vs signal",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 30.15,
+          "description": "A macro shot of a ticking mechanical watch movement.",
+          "stock_search_terms": [
+            "urgency",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 33.3,
+          "description": "A person looking out over a vast horizon at sunset.",
+          "stock_search_terms": [
+            "own your time",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 37.8,
+          "description": "MindFrame logo fading in.",
+          "stock_search_terms": [
+            "design your future",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "TIME IS SHORT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.05,
+          "text": "STOLEN LEGACY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.35,
+          "text": "THE SPRINT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 17.1,
+          "text": "MEMENTO MORI",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 22.05,
+          "text": "NOISE VS SIGNAL",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 30.15,
+          "text": "URGENCY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 33.3,
+          "text": "OWN YOUR TIME",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 37.8,
+          "text": "DESIGN YOUR FUTURE",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "Hourglass with gold sand running out. Text: 1,000 YEARS?",
+      "cta": {
+        "text": "Design your future with MindFrame.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-017",
+    "hook": "Protect your attention like your life depends on it.",
+    "pillar": "Discipline",
+    "template": "If You Do X, Stop (Intervention Style)",
+    "performance_score": 8.9,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.05,
+          "text": "Protect your attention like your life depends on it."
+        },
+        {
+          "start": 4.05,
+          "end": 10.8,
+          "text": "In the modern world, your focus is the primary target of every algorithm and advertiser."
+        },
+        {
+          "start": 10.8,
+          "end": 16.65,
+          "text": "If you don't control your attention, someone else is profiting from your distraction."
+        },
+        {
+          "start": 16.65,
+          "end": 21.15,
+          "text": "The MindFrame Protocol: Go dark. Turn off all non-essential notifications."
+        },
+        {
+          "start": 21.15,
+          "end": 24.3,
+          "text": "Attention is the raw material of achievement."
+        },
+        {
+          "start": 24.3,
+          "end": 28.35,
+          "text": "Stop being a product and start being a producer."
+        },
+        {
+          "start": 28.35,
+          "end": 30.6,
+          "text": "Reclaim your cognitive sovereignty today."
+        },
+        {
+          "start": 30.6,
+          "end": 33.3,
+          "text": "Master your focus. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A person surrounded by floating icons of social media apps.",
+          "stock_search_terms": [
+            "the target",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.05,
+          "description": "Abstract shots of glowing data streams flowing into a person's eyes.",
+          "stock_search_terms": [
+            "algorithm war",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.8,
+          "description": "A hand reaching into a pile of money, transitioning to a hand scrolling a phone.",
+          "stock_search_terms": [
+            "they profit",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "A hand sliding the 'Notifications' toggle to 'Off' on a smartphone.",
+          "stock_search_terms": [
+            "go dark",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 21.15,
+          "description": "A sculptor carving a statue from a block of raw stone.",
+          "stock_search_terms": [
+            "raw material",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 24.3,
+          "description": "A person creating something complex on a computer, face illuminated by work.",
+          "stock_search_terms": [
+            "be a producer",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 28.35,
+          "description": "A flag waving in the wind atop a high, dark tower.",
+          "stock_search_terms": [
+            "sovereignty",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 30.6,
+          "description": "MindFrame logo zooming in.",
+          "stock_search_terms": [
+            "master focus",
+            "discipline",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE TARGET",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.05,
+          "text": "ALGORITHM WAR",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.8,
+          "text": "THEY PROFIT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "GO DARK",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 21.15,
+          "text": "RAW MATERIAL",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 24.3,
+          "text": "BE A PRODUCER",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 28.35,
+          "text": "SOVEREIGNTY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 30.6,
+          "text": "MASTER FOCUS",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A fortress around a human brain icon. Text: ATTENTION WAR.",
+      "cta": {
+        "text": "Master your focus with MindFrame.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-018",
+    "hook": "The hidden cost of 'one more video'.",
+    "pillar": "Productivity",
+    "template": "They Don't Want You To Know (Conspiracy-Adjacent)",
+    "performance_score": 8.6,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 3.15,
+          "text": "The hidden cost of 'one more video'."
+        },
+        {
+          "start": 3.15,
+          "end": 9.0,
+          "text": "It's not just the 60 seconds you lost; it's the momentum you've murdered."
+        },
+        {
+          "start": 9.0,
+          "end": 16.65,
+          "text": "Every time you interrupt your focus, it takes your brain 23 minutes to return to full capacity."
+        },
+        {
+          "start": 16.65,
+          "end": 18.9,
+          "text": "We call this 'Cognitive Fragmentation.'"
+        },
+        {
+          "start": 18.9,
+          "end": 25.2,
+          "text": "You are trading your long-term success for a cheap dopamine hit you won't remember."
+        },
+        {
+          "start": 25.2,
+          "end": 28.8,
+          "text": "Break the cycle: use the MindFrame '1-In-3-Out' rule."
+        },
+        {
+          "start": 28.8,
+          "end": 31.95,
+          "text": "Escape the noise and reclaim your velocity."
+        },
+        {
+          "start": 31.95,
+          "end": 35.55,
+          "text": "Join the 1% who finish. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A person's thumb scrolling up on a phone repeatedly in a dark room.",
+          "stock_search_terms": [
+            "the hidden cost",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 3.15,
+          "description": "A car's engine stalling and smoke rising from the hood.",
+          "stock_search_terms": [
+            "murdered momentum",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 9.0,
+          "description": "A clock hand spinning wildly for a moment and then slowing down.",
+          "stock_search_terms": [
+            "23 minutes",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 16.65,
+          "description": "A glass breaking into dozens of small pieces on a dark floor.",
+          "stock_search_terms": [
+            "fragmentation",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 18.9,
+          "description": "A person looking regretful while holding their phone.",
+          "stock_search_terms": [
+            "cheap dopamine",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 25.2,
+          "description": "A hand grabbing a heavy weight and lifting it.",
+          "stock_search_terms": [
+            "1-in-3-out",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 28.8,
+          "description": "A person walking out of a noisy crowd into a quiet, clean space.",
+          "stock_search_terms": [
+            "reclaim velocity",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 31.95,
+          "description": "MindFrame logo with a gold outline.",
+          "stock_search_terms": [
+            "join the 1%",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE HIDDEN COST",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 3.15,
+          "text": "MURDERED MOMENTUM",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 9.0,
+          "text": "23 MINUTES",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 16.65,
+          "text": "FRAGMENTATION",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 18.9,
+          "text": "CHEAP DOPAMINE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 25.2,
+          "text": "1-IN-3-OUT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 28.8,
+          "text": "RECLAIM VELOCITY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 31.95,
+          "text": "JOIN THE 1%",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A hand reaching into a black hole of video icons. Text: STOP THE SCROLL.",
+      "cta": {
+        "text": "Join the community of those who finish.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-019",
+    "hook": "Why your brain craves distraction (and how to fix it).",
+    "pillar": "Productivity",
+    "template": "Why You're Stuck (Pain Point)",
+    "performance_score": 8.9,
+    "eleven_labs": {
+      "model": "Adam (v2)",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.5,
+          "text": "Why your brain craves distraction (and how to fix it)."
+        },
+        {
+          "start": 4.5,
+          "end": 9.9,
+          "text": "Your primal brain is hardwired to seek novel stimuli to ensure survival."
+        },
+        {
+          "start": 9.9,
+          "end": 15.75,
+          "text": "But in the age of algorithms, this instinct is being weaponized against you."
+        },
+        {
+          "start": 15.75,
+          "end": 18.0,
+          "text": "The fix: Protocol-Based Environment Design."
+        },
+        {
+          "start": 18.0,
+          "end": 23.4,
+          "text": "Remove the cues that trigger distraction before they reach your conscious mind."
+        },
+        {
+          "start": 23.4,
+          "end": 29.25,
+          "text": "When friction is zero for work, and infinite for distraction, discipline is automatic."
+        },
+        {
+          "start": 29.25,
+          "end": 32.4,
+          "text": "Become the architect of your own focus."
+        },
+        {
+          "start": 32.4,
+          "end": 35.1,
+          "text": "Download the OS. Link in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "An MRI scan of a human brain with a glowing spot in the center.",
+          "stock_search_terms": [
+            "the distraction cure",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.5,
+          "description": "A prehistoric cave painting of a hunter, transitioning to a person looking at a phone.",
+          "stock_search_terms": [
+            "primal brain",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 9.9,
+          "description": "A hand pulling a puppet's strings from above.",
+          "stock_search_terms": [
+            "weaponized",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 15.75,
+          "description": "A person arranging a minimalist workspace with careful detail.",
+          "stock_search_terms": [
+            "environment design",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 18.0,
+          "description": "A hand putting a phone into a timed lock-box.",
+          "stock_search_terms": [
+            "remove the cues",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 23.4,
+          "description": "A smooth stone sliding easily down a surface vs a jagged stone stuck.",
+          "stock_search_terms": [
+            "zero friction",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 29.25,
+          "description": "A person drawing a complex blueprint of a house.",
+          "stock_search_terms": [
+            "the architect",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 32.4,
+          "description": "MindFrame logo on black.",
+          "stock_search_terms": [
+            "download the os",
+            "productivity",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE DISTRACTION CURE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.5,
+          "text": "PRIMAL BRAIN",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 9.9,
+          "text": "WEAPONIZED",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 15.75,
+          "text": "ENVIRONMENT DESIGN",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 18.0,
+          "text": "REMOVE THE CUES",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 23.4,
+          "text": "ZERO FRICTION",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 29.25,
+          "text": "THE ARCHITECT",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 32.4,
+          "text": "DOWNLOAD THE OS",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A brain wired to a circuit board. Text: HACK YOUR BRAIN.",
+      "cta": {
+        "text": "Download the MindFrame OS.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  },
+  {
+    "id": "mf-020",
+    "hook": "The dark side of 'hustle culture' nobody talks about.",
+    "pillar": "Mindset",
+    "template": "The Truth About X (Myth-Busting)",
+    "performance_score": 8.8,
+    "eleven_labs": {
+      "model": "Antoni",
+      "settings": {
+        "stability": 0.35,
+        "clarity": 0.75
+      },
+      "voiceover_text_with_timecodes": [
+        {
+          "start": 0.0,
+          "end": 4.05,
+          "text": "The dark side of 'hustle culture' nobody talks about."
+        },
+        {
+          "start": 4.05,
+          "end": 10.35,
+          "text": "Working 16 hours a day is often a lazy excuse for lack of prioritization."
+        },
+        {
+          "start": 10.35,
+          "end": 13.95,
+          "text": "Intensity and duration are not the same thing."
+        },
+        {
+          "start": 13.95,
+          "end": 18.45,
+          "text": "High-performers optimize for 'Velocity of Outcome,' not volume of activity."
+        },
+        {
+          "start": 18.45,
+          "end": 24.75,
+          "text": "The MindFrame Protocol: 4 hours of extreme intensity beats 12 hours of distracted effort."
+        },
+        {
+          "start": 24.75,
+          "end": 27.9,
+          "text": "Stop busy-bragging and start achieving asymmetric results."
+        },
+        {
+          "start": 27.9,
+          "end": 32.85,
+          "text": "Efficiency is doing things right; Effectiveness is doing the right things."
+        },
+        {
+          "start": 32.85,
+          "end": 35.1,
+          "text": "Join the 1% in bio."
+        }
+      ]
+    },
+    "video_production": {
+      "b_roll_manifest": [
+        {
+          "timestamp": 0.0,
+          "description": "A shot of a person drinking multiple cups of coffee in a messy room.",
+          "stock_search_terms": [
+            "the dark side",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 4.05,
+          "description": "A hamster running on a wheel, faster and faster.",
+          "stock_search_terms": [
+            "busy is lazy",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 10.35,
+          "description": "A slow-motion shot of a bullet hitting a target vs a hail of small pebbles.",
+          "stock_search_terms": [
+            "intensity",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 13.95,
+          "description": "A needle moving rapidly on a speedometer towards a target.",
+          "stock_search_terms": [
+            "velocity",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 18.45,
+          "description": "A person closing their eyes and concentrating intensely.",
+          "stock_search_terms": [
+            "extreme focus",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 24.75,
+          "description": "A person standing quietly at the finish line while others are still running.",
+          "stock_search_terms": [
+            "results only",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 27.9,
+          "description": "A compass and a protractor on a clean desk.",
+          "stock_search_terms": [
+            "effectiveness",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        },
+        {
+          "timestamp": 32.85,
+          "description": "MindFrame logo zooming out.",
+          "stock_search_terms": [
+            "join the 1%",
+            "mindset",
+            "cinematic",
+            "minimalist"
+          ]
+        }
+      ],
+      "text_overlay_frames": [
+        {
+          "timestamp": 0.0,
+          "text": "THE DARK SIDE",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 4.05,
+          "text": "BUSY IS LAZY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 10.35,
+          "text": "INTENSITY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 13.95,
+          "text": "VELOCITY",
+          "position": "top-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 18.45,
+          "text": "EXTREME FOCUS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 24.75,
+          "text": "RESULTS ONLY",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 27.9,
+          "text": "EFFECTIVENESS",
+          "position": "center",
+          "style": "Archivo Black, White, Gold Highlight"
+        },
+        {
+          "timestamp": 32.85,
+          "text": "JOIN THE 1%",
+          "position": "bottom-center",
+          "style": "Archivo Black, White, Gold Highlight"
+        }
+      ]
+    },
+    "distribution": {
+      "hashtags": {
+        "tiktok": [
+          "#productivity",
+          "#stoicism",
+          "#discipline",
+          "#mindset",
+          "#motivation"
+        ],
+        "instagram": [
+          "#mindframe",
+          "#deepwork",
+          "#stoicmindset",
+          "#productivitytips"
+        ],
+        "youtube": [
+          "#shorts",
+          "#productivity",
+          "#success",
+          "#discipline"
+        ]
+      },
+      "thumbnail_concept": "A hamster wheel next to a Ferrari. Text: HUSTLE IS LIES.",
+      "cta": {
+        "text": "Join the MindFrame Inner Circle.",
+        "link": "https://gumroad.com/mindframe/l/os-placeholder"
+      }
+    }
+  }
+]

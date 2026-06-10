@@ -1,0 +1,42 @@
+# =============================================================================
+# MindFrame — .gitignore
+# =============================================================================
+
+# Environment files (contain API keys and secrets)
+.env
+.env.local
+.env.production
+*.env
+
+# OS files
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+
+# IDE files
+.idea/
+.vscode/
+*.sublime-*
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+
+# Node
+node_modules/
+npm-debug.log*
+
+# Deployment artifacts
+*.deployed
+*.supabase-deployed
+/tmp/*
+
+# Docker volumes (large binary data)
+# (n8n data is managed by Docker volumes, not in repo)
+
+# Logs
+*.log

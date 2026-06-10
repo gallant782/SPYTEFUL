@@ -1,0 +1,342 @@
+[
+  {
+    "id": "mf-011",
+    "hook": "Your comfort zone is a slow-motion suicide.",
+    "template": "Why You're Stuck (Pain Point)",
+    "pillar": "Mindset",
+    "performance_score": 9.5,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Intense, urgent",
+      "script": [
+        "Your comfort zone is a slow-motion suicide.",
+        "Every day you stay safe, you are trading your future sovereignty for temporary relief.",
+        "Stagnation is the silent killer of the high-performer's soul.",
+        "The MindFrame Protocol: Identify one task that terrifies you and execute it before noon.",
+        "Friction is not an obstacle; it is the path to evolution.",
+        "High-performers don't seek comfort; they seek capacity.",
+        "Own the difficulty, or the difficulty will eventually own you.",
+        "Escape the trap. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "Close-up of a person sitting on a soft couch, looking empty and bored.", "text_overlay": "SLOW MOTION", "position": "center"},
+      {"line": 2, "b_roll": "Time-lapse of a decaying plant next to a growing sapling.", "text_overlay": "TRADING SOVEREIGNTY", "position": "center"},
+      {"line": 3, "b_roll": "A single drop of water hitting a still pond, creating ripples that quickly fade.", "text_overlay": "STAGNATION", "position": "center"},
+      {"line": 4, "b_roll": "A hand slamming a heavy notebook onto a desk at dawn.", "text_overlay": "EXECUTE BEFORE NOON", "position": "top-center"},
+      {"line": 5, "b_roll": "A person climbing a jagged rock face, hands gripping rough edges.", "text_overlay": "FRICTION IS THE PATH", "position": "center"},
+      {"line": 6, "b_roll": "Macro shot of a human eye widening in focus.", "text_overlay": "BUILD CAPACITY", "position": "center"},
+      {"line": 7, "b_roll": "A person walking through a heavy iron gate into the light.", "text_overlay": "OWN THE DIFFICULTY", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing on black background.", "text_overlay": "ESCAPE THE TRAP", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the 1% who execute.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "Hourglass filled with black sludge. Text: ESCAPE NOW."
+  },
+  {
+    "id": "mf-012",
+    "hook": "The reason you're burnt out isn't work—it's your lack of boundaries.",
+    "template": "The Hard Truth (Tough Love)",
+    "pillar": "Health",
+    "performance_score": 8.8,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, realistic, authoritative",
+      "script": [
+        "The reason you're burnt out isn't work—it's your lack of boundaries.",
+        "You say 'yes' to others because you're afraid to say 'no' to your own insecurity.",
+        "Burnout is the physiological tax you pay for being a people-pleaser.",
+        "High-performers understand that protecting their energy is a non-negotiable protocol.",
+        "Draw a line in the sand: define your 'Deep Work' hours and let nothing breach them.",
+        "Your focus is your currency; stop letting the world spend it for you.",
+        "True power is the sovereignty over your own schedule.",
+        "Fix your boundaries. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person staring at a bright monitor in a dark office, looking exhausted.", "text_overlay": "THE REAL CAUSE", "position": "center"},
+      {"line": 2, "b_roll": "Hand shaking another hand while the person looks away reluctantly.", "text_overlay": "THE YES TRAP", "position": "center"},
+      {"line": 3, "b_roll": "A battery icon flashing red and then dying.", "text_overlay": "PHYSIOLOGICAL TAX", "position": "center"},
+      {"line": 4, "b_roll": "A lion protecting its territory, standing alert and firm.", "text_overlay": "PROTECT YOUR ENERGY", "position": "top-center"},
+      {"line": 5, "b_roll": "A hand drawing a firm line in dark sand with a stick.", "text_overlay": "DEEP WORK ONLY", "position": "center"},
+      {"line": 6, "b_roll": "Stacks of gold coins being scattered by a wind gust.", "text_overlay": "YOUR CURRENCY", "position": "center"},
+      {"line": 7, "b_roll": "A minimalist calendar showing a single, solid block of time labeled 'Sovereignty'.", "text_overlay": "TRUE POWER", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a glowing gold outline.", "text_overlay": "FIX YOUR BOUNDARIES", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your focus guide.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person pushing away a hovering smartphone. Text: NO MORE BURNOUT."
+  },
+  {
+    "id": "mf-013",
+    "hook": "You're not lazy; you're just overstimulated.",
+    "template": "Why You're Stuck (Pain Point)",
+    "pillar": "Health",
+    "performance_score": 8.7,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, fast-paced, insightful",
+      "script": [
+        "You're not lazy; you're just overstimulated.",
+        "Your brain is drowning in a dopamine flood of short-form noise and notifications.",
+        "When everything is 'exciting,' nothing is important.",
+        "The MindFrame Dopamine Reset: 24 hours with zero digital inputs.",
+        "Reclaim your baseline and watch your motivation return naturally.",
+        "Laziness is often just your brain's defense mechanism against cognitive overload.",
+        "Clear the noise, and the focus will follow.",
+        "Download the reset protocol in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A fast-paced montage of social media feeds scrolling rapidly.", "text_overlay": "NOT LAZY", "position": "center"},
+      {"line": 2, "b_roll": "Close-up of a person's pupils dilating while looking at a flickering screen.", "text_overlay": "DOPAMINE FLOOD", "position": "center"},
+      {"line": 3, "b_roll": "A gray, static screen where nothing is distinct.", "text_overlay": "NOISE", "position": "center"},
+      {"line": 4, "b_roll": "A hand turning off a smartphone and placing it face down on a wooden table.", "text_overlay": "24 HOUR RESET", "position": "top-center"},
+      {"line": 5, "b_roll": "A person sitting quietly in a minimalist garden, looking peaceful.", "text_overlay": "RECLAIM BASELINE", "position": "center"},
+      {"line": 6, "b_roll": "A complex machine cooling down, steam rising from its components.", "text_overlay": "DEFENSE MECHANISM", "position": "center"},
+      {"line": 7, "b_roll": "A single, clear drop of water falling into a still basin.", "text_overlay": "CLEAR THE NOISE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo appearing on black.", "text_overlay": "GET THE PROTOCOL", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the Dopamine Reset guide.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A human head being filled with colorful static. Text: BRAIN FOG FIX."
+  },
+  {
+    "id": "mf-014",
+    "hook": "The person you want to become doesn't have your current habits.",
+    "template": "This Will Change You (Transformation)",
+    "pillar": "Mindset",
+    "performance_score": 9.0,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Sophisticated, calm, transformative",
+      "script": [
+        "The person you want to become doesn't have your current habits.",
+        "You are currently an architect building a skyscraper with a foundation of sand.",
+        "Transformation isn't about adding; it's about pruning.",
+        "MindFrame Rule: Kill one destructive habit today to make room for one essential protocol.",
+        "Identity is the lagging indicator of your daily actions.",
+        "Stop waiting for a new life and start performing the habits of the person who lives it.",
+        "Your future self is waiting for you to execute.",
+        "Start your transformation. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person looking at a sharp, well-dressed reflection in a window.", "text_overlay": "IDENTITY SHIFT", "position": "center"},
+      {"line": 2, "b_roll": "A blueprint of a massive tower being drawn over a shot of shifting sand.", "text_overlay": "THE FOUNDATION", "position": "center"},
+      {"line": 3, "b_roll": "A hand using sharp shears to prune a dead branch from a vibrant tree.", "text_overlay": "PRUNE FOR GROWTH", "position": "center"},
+      {"line": 4, "b_roll": "A hand crossing out a line on a to-do list labeled 'Distraction'.", "text_overlay": "KILL THE OLD", "position": "top-center"},
+      {"line": 5, "b_roll": "A time-lapse of a person working out at the same time every day.", "text_overlay": "LAGGING INDICATOR", "position": "center"},
+      {"line": 6, "b_roll": "A person stepping into a high-end office, head held high.", "text_overlay": "PERFORM THE NEW", "position": "center"},
+      {"line": 7, "b_roll": "A silhouette of a person looking at a sunrise from a mountain top.", "text_overlay": "EXECUTE", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold glow.", "text_overlay": "START TODAY", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the MindFrame transformation.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A person pulling off a mask of their 'Old Self'. Text: NEW IDENTITY."
+  },
+  {
+    "id": "mf-015",
+    "hook": "How a Stoic handles a toxic workplace.",
+    "template": "The 3-Step System (How-To)",
+    "pillar": "Mindset",
+    "performance_score": 8.5,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Deep, grave, practical",
+      "script": [
+        "How a Stoic handles a toxic workplace.",
+        "Step one: Control the internal, ignore the external.",
+        "The chaos around you is a data point, not a personal attack.",
+        "Step two: Use 'Negative Visualization' to anticipate the drama before it happens.",
+        "Step three: Focus purely on your own clinical output.",
+        "When you detach your identity from the environment, you become untouchable.",
+        "The MindFrame Stoic Protocol is your mental armor in a world of noise.",
+        "Join the circle for weekly mental training. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person sitting calmly at a desk while blurry figures argue in the background.", "text_overlay": "STOIC PROTOCOL", "position": "center"},
+      {"line": 2, "b_roll": "A macro shot of a compass needle pointing steadily while being shaken.", "text_overlay": "INTERNAL CONTROL", "position": "center"},
+      {"line": 3, "b_roll": "A computer screen showing columns of raw data scrolling by.", "text_overlay": "ONLY DATA", "position": "center"},
+      {"line": 4, "b_roll": "A person closing their eyes and taking a deep breath in a chaotic office.", "text_overlay": "ANTICIPATE", "position": "top-center"},
+      {"line": 5, "b_roll": "Macro shot of code being written or high-quality work being produced.", "text_overlay": "CLINICAL OUTPUT", "position": "center"},
+      {"line": 6, "b_roll": "A person wearing a sleek, dark suit walking through a crowd without looking left or right.", "text_overlay": "UNTOUCHABLE", "position": "center"},
+      {"line": 7, "b_roll": "A close-up of a stoic marble statue's face, unmoving.", "text_overlay": "MENTAL ARMOR", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo on black background.", "text_overlay": "JOIN THE CIRCLE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the MindFrame Circle.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A glowing golden figure in a room of gray shadows. Text: TOXIC-PROOF."
+  },
+  {
+    "id": "mf-016",
+    "hook": "Stop acting like you have 1,000 years to live.",
+    "template": "X Years From Now (Time-Travel)",
+    "pillar": "Mindset",
+    "performance_score": 9.4,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Urgent, rhythmic, punchy",
+      "script": [
+        "Stop acting like you have 1,000 years to live.",
+        "Every second you spend on low-value distractions is a second stolen from your legacy.",
+        "Your life is not a dress rehearsal; it is an asymmetric sprint to the finish.",
+        "The MindFrame Memento Mori Protocol: Wake up and acknowledge your mortality.",
+        "Does this task move you closer to the person you need to be, or is it just noise?",
+        "High-performers possess a chronic sense of urgency.",
+        "Own your time, or the clock will eventually own you.",
+        "Design your future. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A large, ancient clock tower with hands moving rapidly.", "text_overlay": "TIME IS SHORT", "position": "center"},
+      {"line": 2, "b_roll": "Handfuls of sand slipping through fingers quickly.", "text_overlay": "STOLEN LEGACY", "position": "center"},
+      {"line": 3, "b_roll": "A sprinter exploding off the starting blocks in slow motion.", "text_overlay": "THE SPRINT", "position": "center"},
+      {"line": 4, "b_roll": "A person looking at a skull or an old pocket watch on a desk.", "text_overlay": "MEMENTO MORI", "position": "top-center"},
+      {"line": 5, "b_roll": "A split screen showing 'Noise' (TV) vs 'Signal' (Writing).", "text_overlay": "NOISE VS SIGNAL", "position": "center"},
+      {"line": 6, "b_roll": "A macro shot of a ticking mechanical watch movement.", "text_overlay": "URGENCY", "position": "center"},
+      {"line": 7, "b_roll": "A person looking out over a vast horizon at sunset.", "text_overlay": "OWN YOUR TIME", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo fading in.", "text_overlay": "DESIGN YOUR FUTURE", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Design your future with MindFrame.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "Hourglass with gold sand running out. Text: 1,000 YEARS?"
+  },
+  {
+    "id": "mf-017",
+    "hook": "Protect your attention like your life depends on it.",
+    "template": "If You Do X, Stop (Intervention Style)",
+    "pillar": "Discipline",
+    "performance_score": 8.9,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, authoritative, protective",
+      "script": [
+        "Protect your attention like your life depends on it.",
+        "In the modern world, your focus is the primary target of every algorithm and advertiser.",
+        "If you don't control your attention, someone else is profiting from your distraction.",
+        "The MindFrame Protocol: Go dark. Turn off all non-essential notifications.",
+        "Attention is the raw material of achievement.",
+        "Stop being a product and start being a producer.",
+        "Reclaim your cognitive sovereignty today.",
+        "Master your focus. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person surrounded by floating icons of social media apps.", "text_overlay": "THE TARGET", "position": "center"},
+      {"line": 2, "b_roll": "Abstract shots of glowing data streams flowing into a person's eyes.", "text_overlay": "ALGORITHM WAR", "position": "center"},
+      {"line": 3, "b_roll": "A hand reaching into a pile of money, transitioning to a hand scrolling a phone.", "text_overlay": "THEY PROFIT", "position": "center"},
+      {"line": 4, "b_roll": "A hand sliding the 'Notifications' toggle to 'Off' on a smartphone.", "text_overlay": "GO DARK", "position": "top-center"},
+      {"line": 5, "b_roll": "A sculptor carving a statue from a block of raw stone.", "text_overlay": "RAW MATERIAL", "position": "center"},
+      {"line": 6, "b_roll": "A person creating something complex on a computer, face illuminated by work.", "text_overlay": "BE A PRODUCER", "position": "center"},
+      {"line": 7, "b_roll": "A flag waving in the wind atop a high, dark tower.", "text_overlay": "SOVEREIGNTY", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming in.", "text_overlay": "MASTER FOCUS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Master your focus with MindFrame.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A fortress around a human brain icon. Text: ATTENTION WAR."
+  },
+  {
+    "id": "mf-018",
+    "hook": "The hidden cost of 'one more video'.",
+    "template": "They Don't Want You To Know (Conspiracy-Adjacent)",
+    "pillar": "Productivity",
+    "performance_score": 8.6,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Mystery, warning, insightful",
+      "script": [
+        "The hidden cost of 'one more video'.",
+        "It's not just the 60 seconds you lost; it's the momentum you've murdered.",
+        "Every time you interrupt your focus, it takes your brain 23 minutes to return to full capacity.",
+        "We call this 'Cognitive Fragmentation.'",
+        "You are trading your long-term success for a cheap dopamine hit you won't remember.",
+        "Break the cycle: use the MindFrame '1-In-3-Out' rule.",
+        "Escape the noise and reclaim your velocity.",
+        "Join the 1% who finish. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A person's thumb scrolling up on a phone repeatedly in a dark room.", "text_overlay": "THE HIDDEN COST", "position": "center"},
+      {"line": 2, "b_roll": "A car's engine stalling and smoke rising from the hood.", "text_overlay": "MURDERED MOMENTUM", "position": "center"},
+      {"line": 3, "b_roll": "A clock hand spinning wildly for a moment and then slowing down.", "text_overlay": "23 MINUTES", "position": "center"},
+      {"line": 4, "b_roll": "A glass breaking into dozens of small pieces on a dark floor.", "text_overlay": "FRAGMENTATION", "position": "top-center"},
+      {"line": 5, "b_roll": "A person looking regretful while holding their phone.", "text_overlay": "CHEAP DOPAMINE", "position": "center"},
+      {"line": 6, "b_roll": "A hand grabbing a heavy weight and lifting it.", "text_overlay": "1-IN-3-OUT", "position": "center"},
+      {"line": 7, "b_roll": "A person walking out of a noisy crowd into a quiet, clean space.", "text_overlay": "RECLAIM VELOCITY", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo with a gold outline.", "text_overlay": "JOIN THE 1%", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the community of those who finish.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A hand reaching into a black hole of video icons. Text: STOP THE SCROLL."
+  },
+  {
+    "id": "mf-019",
+    "hook": "Why your brain craves distraction (and how to fix it).",
+    "template": "Why You're Stuck (Pain Point)",
+    "pillar": "Productivity",
+    "performance_score": 8.9,
+    "voiceover": {
+      "model": "Adam (v2)",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Direct, scientific, authoritative",
+      "script": [
+        "Why your brain craves distraction (and how to fix it).",
+        "Your primal brain is hardwired to seek novel stimuli to ensure survival.",
+        "But in the age of algorithms, this instinct is being weaponized against you.",
+        "The fix: Protocol-Based Environment Design.",
+        "Remove the cues that trigger distraction before they reach your conscious mind.",
+        "When friction is zero for work, and infinite for distraction, discipline is automatic.",
+        "Become the architect of your own focus.",
+        "Download the OS. Link in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "An MRI scan of a human brain with a glowing spot in the center.", "text_overlay": "THE DISTRACTION CURE", "position": "center"},
+      {"line": 2, "b_roll": "A prehistoric cave painting of a hunter, transitioning to a person looking at a phone.", "text_overlay": "PRIMAL BRAIN", "position": "center"},
+      {"line": 3, "b_roll": "A hand pulling a puppet's strings from above.", "text_overlay": "WEAPONIZED", "position": "center"},
+      {"line": 4, "b_roll": "A person arranging a minimalist workspace with careful detail.", "text_overlay": "ENVIRONMENT DESIGN", "position": "top-center"},
+      {"line": 5, "b_roll": "A hand putting a phone into a timed lock-box.", "text_overlay": "REMOVE THE CUES", "position": "center"},
+      {"line": 6, "b_roll": "A smooth stone sliding easily down a surface vs a jagged stone stuck.", "text_overlay": "ZERO FRICTION", "position": "center"},
+      {"line": 7, "b_roll": "A person drawing a complex blueprint of a house.", "text_overlay": "THE ARCHITECT", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo on black.", "text_overlay": "DOWNLOAD THE OS", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Download the MindFrame OS.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A brain wired to a circuit board. Text: HACK YOUR BRAIN."
+  },
+  {
+    "id": "mf-020",
+    "hook": "The dark side of 'hustle culture' nobody talks about.",
+    "template": "The Truth About X (Myth-Busting)",
+    "pillar": "Mindset",
+    "performance_score": 8.8,
+    "voiceover": {
+      "model": "Antoni",
+      "settings": { "stability": 0.35, "clarity": 0.75 },
+      "tone": "Grounded, realistic, direct",
+      "script": [
+        "The dark side of 'hustle culture' nobody talks about.",
+        "Working 16 hours a day is often a lazy excuse for lack of prioritization.",
+        "Intensity and duration are not the same thing.",
+        "High-performers optimize for 'Velocity of Outcome,' not volume of activity.",
+        "The MindFrame Protocol: 4 hours of extreme intensity beats 12 hours of distracted effort.",
+        "Stop busy-bragging and start achieving asymmetric results.",
+        "Efficiency is doing things right; Effectiveness is doing the right things.",
+        "Join the 1% in bio."
+      ]
+    },
+    "visuals": [
+      {"line": 1, "b_roll": "A shot of a person drinking multiple cups of coffee in a messy room.", "text_overlay": "THE DARK SIDE", "position": "center"},
+      {"line": 2, "b_roll": "A hamster running on a wheel, faster and faster.", "text_overlay": "BUSY IS LAZY", "position": "center"},
+      {"line": 3, "b_roll": "A slow-motion shot of a bullet hitting a target vs a hail of small pebbles.", "text_overlay": "INTENSITY", "position": "center"},
+      {"line": 4, "b_roll": "A needle moving rapidly on a speedometer towards a target.", "text_overlay": "VELOCITY", "position": "top-center"},
+      {"line": 5, "b_roll": "A person closing their eyes and concentrating intensely.", "text_overlay": "EXTREME FOCUS", "position": "center"},
+      {"line": 6, "b_roll": "A person standing quietly at the finish line while others are still running.", "text_overlay": "RESULTS ONLY", "position": "center"},
+      {"line": 7, "b_roll": "A compass and a protractor on a clean desk.", "text_overlay": "EFFECTIVENESS", "position": "center"},
+      {"line": 8, "b_roll": "MindFrame logo zooming out.", "text_overlay": "JOIN THE 1%", "position": "bottom-center"}
+    ],
+    "cta": { "text": "Join the MindFrame Inner Circle.", "placement": "End screen and Caption" },
+    "thumbnail_concept": "A hamster wheel next to a Ferrari. Text: HUSTLE IS LIES."
+  }
+]

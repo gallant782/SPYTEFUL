@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MindFrame | Growth Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+        .text-accent { color: #39FF14; }
+        .bg-accent { background-color: #39FF14; }
+        .border-accent { border-color: #39FF14; }
+        .card { background-color: #121212; border: 1px solid #27272a; }
+    </style>
+</head>
+<body class="antialiased p-4 md:p-12">
+
+    <!-- Header -->
+    <header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
+        <div>
+            <h1 class="text-3xl font-black tracking-tighter uppercase">MindFrame <span class="text-accent">Intelligence</span></h1>
+            <p class="text-zinc-500 text-sm mt-1 uppercase tracking-widest">Real-time Performance Dashboard</p>
+        </div>
+        <div class="flex gap-2">
+            <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[10px] uppercase font-bold tracking-widest">System Live</span>
+            <span class="px-3 py-1 bg-zinc-900 border border-zinc-800 rounded-full text-[10px] uppercase font-bold tracking-widest" id="last-sync">Syncing...</span>
+        </div>
+    </header>
+
+    <!-- Real-time KPI Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+        <div class="card p-8 rounded-2xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-accent opacity-5 -mr-16 -mt-16 rounded-full"></div>
+            <h3 class="text-zinc-500 text-xs font-bold uppercase tracking-widest mb-4">Today's Revenue</h3>
+            <div class="text-5xl font-black" id="stat-revenue">$0.00</div>
+            <div class="text-accent text-[10px] mt-2 font-bold uppercase tracking-tighter">+15% from yesterday</div>
+        </div>
+        <div class="card p-8 rounded-2xl">
+            <h3 class="text-zinc-500 text-xs font-bold uppercase tracking-widest mb-4">New Subscribers</h3>
+            <div class="text-5xl font-black" id="stat-subs">0</div>
+            <div class="text-zinc-500 text-[10px] mt-2 font-bold uppercase tracking-tighter">Target: 50/day</div>
+        </div>
+        <div class="card p-8 rounded-2xl">
+            <h3 class="text-zinc-500 text-xs font-bold uppercase tracking-widest mb-4">Content Views</h3>
+            <div class="text-5xl font-black" id="stat-views">0</div>
+            <div class="text-accent text-[10px] mt-2 font-bold uppercase tracking-tighter">Viral Alert: "The Salary Trap"</div>
+        </div>
+    </div>
+
+    <!-- Funnel & Charts -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
+        <!-- Funnel Visualization -->
+        <div class="card p-8 rounded-2xl">
+            <h3 class="text-zinc-400 font-bold uppercase tracking-widest mb-8 text-sm">Monetization Funnel</h3>
+            <div class="h-64 relative">
+                <canvas id="funnelChart"></canvas>
+            </div>
+            <div class="mt-8 grid grid-cols-2 gap-4">
+                <div class="text-center p-4 bg-zinc-950 rounded-xl">
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-widest">LP Opt-in Rate</div>
+                    <div class="text-xl font-black text-accent">24.5%</div>
+                </div>
+                <div class="text-center p-4 bg-zinc-950 rounded-xl">
+                    <div class="text-[10px] text-zinc-500 uppercase tracking-widest">Sale Conv Rate</div>
+                    <div class="text-xl font-black text-accent">3.2%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Revenue Trends -->
+        <div class="card p-8 rounded-2xl">
+            <h3 class="text-zinc-400 font-bold uppercase tracking-widest mb-8 text-sm">30-Day Revenue Trend</h3>
+            <div class="h-64 relative">
+                <canvas id="revenueChart"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Section: Hooks & Automation -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        <!-- Top Hooks Table -->
+        <div class="card lg:col-span-2 p-8 rounded-2xl">
+            <h3 class="text-zinc-400 font-bold uppercase tracking-widest mb-6 text-sm">Top Performing Hooks</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-left">
+                    <thead>
+                        <tr class="border-b border-zinc-800 text-[10px] text-zinc-500 uppercase tracking-widest">
+                            <th class="pb-4 font-normal">Hook Archetype</th>
+                            <th class="pb-4 font-normal text-right">Views</th>
+                            <th class="pb-4 font-normal text-right">CTR</th>
+                            <th class="pb-4 font-normal text-right">Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-sm" id="hooks-body">
+                        <!-- Content via JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Automation Health -->
+        <div class="card p-8 rounded-2xl">
+            <h3 class="text-zinc-400 font-bold uppercase tracking-widest mb-6 text-sm">Automation Health</h3>
+            <div class="space-y-6" id="automation-health">
+                <!-- Health Bars via JS -->
+            </div>
+            <div class="mt-8 pt-6 border-t border-zinc-800">
+                <button class="w-full py-3 bg-zinc-900 hover:bg-zinc-800 text-[10px] font-bold uppercase tracking-[0.2em] transition-colors rounded-lg">
+                    View n8n Logs
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Data Source Info (For Implementation) -->
+    <div class="mt-12 p-6 bg-zinc-950 border border-dashed border-zinc-800 rounded-xl">
+        <h4 class="text-[10px] text-zinc-500 font-bold uppercase tracking-[0.3em] mb-4">Implementation Notes</h4>
+        <p class="text-xs text-zinc-600 leading-relaxed">
+            Data currently driven by <code>mockData</code> object. To live-link, initialize <code>@supabase/supabase-js</code> and replace <code>fetchStats()</code> with queries from <code>LAUNCH_PLAN.md</code>.
+        </p>
+    </div>
+
+    <script>
+        // Mock Data for Visualization
+        const mockData = {
+            today: {
+                revenue: 142.00,
+                subs: 42,
+                views: 125000
+            },
+            funnel: {
+                labels: ['Views', 'Profile', 'LP Visit', 'Opt-in', 'Sales'],
+                data: [125000, 15000, 8000, 1960, 256]
+            },
+            revenue: {
+                labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+                data: [1200, 2400, 3100, 4800]
+            },
+            hooks: [
+                { name: 'Negative Bias', views: '450k', ctr: '12.4%', rev: '$840' },
+                { name: 'Contrarian Truth', views: '210k', ctr: '8.2%', rev: '$410' },
+                { name: 'Minimalist Reveal', views: '180k', ctr: '15.1%', rev: '$520' }
+            ],
+            automation: [
+                { name: 'Script Gen', rate: 100 },
+                { name: 'Lead Delivery', rate: 99.4 },
+                { name: 'Purchase Handler', rate: 96.8 }
+            ]
+        };
+
+        // Initialize UI
+        document.getElementById('last-sync').innerText = `Last Sync: ${new Date().toLocaleTimeString()}`;
+        document.getElementById('stat-revenue').innerText = `$${mockData.today.revenue.toFixed(2)}`;
+        document.getElementById('stat-subs').innerText = mockData.today.subs;
+        document.getElementById('stat-views').innerText = mockData.today.views.toLocaleString();
+
+        // Funnel Chart
+        new Chart(document.getElementById('funnelChart'), {
+            type: 'bar',
+            data: {
+                labels: mockData.funnel.labels,
+                datasets: [{
+                    label: 'Volume',
+                    data: mockData.funnel.data,
+                    backgroundColor: '#39FF14',
+                    borderRadius: 8
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#27272a' }, ticks: { color: '#71717a' } },
+                    x: { grid: { display: false }, ticks: { color: '#71717a' } }
+                }
+            }
+        });
+
+        // Revenue Chart
+        new Chart(document.getElementById('revenueChart'), {
+            type: 'line',
+            data: {
+                labels: mockData.revenue.labels,
+                datasets: [{
+                    label: 'Revenue',
+                    data: mockData.revenue.data,
+                    borderColor: '#39FF14',
+                    borderWidth: 3,
+                    tension: 0.4,
+                    fill: true,
+                    backgroundColor: 'rgba(57, 255, 20, 0.05)'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    y: { beginAtZero: true, grid: { color: '#27272a' }, ticks: { color: '#71717a' } },
+                    x: { grid: { display: false }, ticks: { color: '#71717a' } }
+                }
+            }
+        });
+
+        // Populate Hooks
+        const hooksBody = document.getElementById('hooks-body');
+        mockData.hooks.forEach(h => {
+            hooksBody.innerHTML += `
+                <tr class="border-b border-zinc-900">
+                    <td class="py-4 text-zinc-300 font-medium">${h.name}</td>
+                    <td class="py-4 text-right font-bold">${h.views}</td>
+                    <td class="py-4 text-right text-accent font-bold">${h.ctr}</td>
+                    <td class="py-4 text-right text-white font-bold">${h.rev}</td>
+                </tr>
+            `;
+        });
+
+        // Populate Automation
+        const authHealth = document.getElementById('automation-health');
+        mockData.automation.forEach(a => {
+            const color = a.rate > 98 ? 'bg-accent' : 'bg-yellow-500';
+            authHealth.innerHTML += `
+                <div>
+                    <div class="flex justify-between text-[10px] mb-2 font-bold uppercase tracking-widest">
+                        <span class="text-zinc-500">${a.name}</span>
+                        <span class="text-white">${a.rate}%</span>
+                    </div>
+                    <div class="w-full bg-zinc-900 h-1.5 rounded-full overflow-hidden">
+                        <div class="${color} h-full" style="width: ${a.rate}%"></div>
+                    </div>
+                </div>
+            `;
+        });
+    </script>
+</body>
+</html>
