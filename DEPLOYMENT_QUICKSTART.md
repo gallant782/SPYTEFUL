@@ -9,7 +9,7 @@
 | Gumroad | https://app.gumroad.com | Digital product sales |
 | OpenAI | https://platform.openai.com | AI script generation |
 | ElevenLabs | https://elevenlabs.io | AI voiceover (optional) |
-| Beehiiv | https://app.beehiiv.com | Email marketing |
+| ConvertKit | https://app.convertkit.com | Email marketing (ConvertKit) |
 
 ### 2️⃣ Get API Keys
 
@@ -69,6 +69,6 @@ bash engineering/deploy/deploy.sh
 | Gumroad | app.gumroad.com | Settings → Advanced → Access token |
 | OpenAI | platform.openai.com | API keys → Create new secret key |
 | ElevenLabs | elevenlabs.io | Profile → API Keys |
-| Beehiiv | app.beehiiv.com | Settings → Integrations → API Key |
+| ConvertKit | app.convertkit.com | Settings → Advanced → API Key |
 | n8n | localhost:5678 | Settings → Credentials (after deploy) |
 | Vercel | vercel.com | Import repo → auto-deploy |

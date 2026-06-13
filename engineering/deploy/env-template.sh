@@ -75,11 +75,9 @@ export MINDFRAME_GUMROAD_ACCESS_TOKEN="YOUR-GUMROAD-ACCESS-TOKEN"
 # SECTION 5: Email Marketing
 # ═══════════════════════════════════════════════════════════════════════════════
 
-# Beehiiv — https://app.beehiiv.com/settings/integrations
-export MINDFRAME_BEEHIIV_API_KEY="YOUR-BEEHIIV-API-KEY"
-
-# ConvertKit (alternative to Beehiiv)
+# ConvertKit (primary email marketing)
 export MINDFRAME_CONVERTKIT_API_KEY="YOUR-CONVERTKIT-API-KEY"
+export MINDFRAME_CONVERTKIT_API_SECRET="YOUR-CONVERTKIT-API-SECRET"
 
 # ═══════════════════════════════════════════════════════════════════════════════
 # SECTION 6: SMTP (Email Fallback)

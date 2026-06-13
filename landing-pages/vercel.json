@@ -1,29 +1,23 @@
 {
-  "name": "MindFrame Landing Pages",
+  "name": "mindframe-landing",
   "version": 2,
   "buildCommand": null,
   "outputDirectory": ".",
   "routes": [
     { "src": "/", "dest": "/index.html" },
-    { "src": "/product", "dest": "/product.html" },
-    { "src": "/vault", "dest": "/product.html" },
-    { "src": "/(.*)", "dest": "/$1" }
+    { "src": "/product", "dest": "/product.html" }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
         { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" }
       ]
     }
   ],
-  "redirects": [
-    { "source": "/product", "destination": "/product.html", "permanent": true },
-    { "source": "/vault", "destination": "/product.html", "permanent": true }
-  ],
   "env": {
-    "MINDFRAME_STRIPE_PUBLISHABLE_KEY": "@stripe_publishable_key"
+    "MINDFRAME_STRIPE_PUBLISHABLE_KEY": "@mindframe-stripe-publishable-key"
   }
 }

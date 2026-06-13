@@ -23,92 +23,101 @@
 |---|----------|---------------|
 | ☐ | `N8N_ENCRYPTION_KEY` | Run: `openssl rand -base64 32` |
 | ☐ | `N8N_DB_PASSWORD` | Pick a strong password (16+ chars) |
-| ☐ | `MINDFRAME_STRIPE_PUBLISHABLE_KEY` | Stripe Dashboard → API keys → Publishable key |
-| ☐ | `MINDFRAME_STRIPE_SECRET_KEY` | Stripe Dashboard → API keys → Secret key |
-| ☐ | `MINDFRAME_STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Webhooks (create endpoint after n8n is live) |
+| ☐ | `MINDFRAME_STRIPE_PUBLISHABLE_KEY` | **Your key:** `[OWNER PROVIDES THIS]` → Stripe Dashboard → API keys |
+| ☐ | `MINDFRAME_STRIPE_SECRET_KEY` | Stripe Dashboard → API keys (sk_live_... or sk_test_...) |
+| ☐ | `MINDFRAME_STRIPE_WEBHOOK_SECRET` | Stripe Dashboard → Webhooks (create endpoint after n8n is running) |
 | ☐ | `MINDFRAME_OPENAI_API_KEY` | platform.openai.com/api-keys |
-| ☐ | `MINDFRAME_BEEHIIV_API_KEY` | app.beehiiv.com/settings/integrations |
+| ☐ | `MINDFRAME_CONVERTKIT_API_KEY` | app.convertkit.com/account_settings/advanced_settings |
 
-Edit the file: `cp engineering/deploy/.env .env && vim .env`
+Edit the file: `vim .env` *(or `cp engineering/deploy/.env .env && vim .env`)*
 
 ---
 
 ## ⬜ Step 3: Deploy Database (2 min)
 
 ```bash
+# One command: creates Supabase project + runs all 10 migrations + seeds 50 hooks
 ./engineering/deploy/supabase-setup.sh
 ```
 
-| ✅ | Check | How to verify |
-|---|-------|--------------|
-| ☐ | Migrations applied | Output shows no errors |
-| ☐ | Hooks seeded | `SELECT COUNT(*) FROM viral_hooks;` → **50** |
-| ☐ | Credentials saved | Set `MINDFRAME_SUPABASE_URL` and `MINDFRAME_SUPABASE_SERVICE_KEY` in `.env` |
+| ✅ | Check | Verify |
+|---|-------|--------|
+| ☐ | Project created | Supabase Dashboard shows new project |
+| ☐ | Migrations applied | 10/10 success (no errors in output) |
+| ☐ | Hooks seeded | Run: `SELECT COUNT(*) FROM viral_hooks;` → **50** |
+| ☐ | Copy credentials | Set `MINDFRAME_SUPABASE_URL` and `MINDFRAME_SUPABASE_SERVICE_KEY` in `.env` |
 
 ---
 
 ## ⬜ Step 4: Launch n8n (2 min)
 
 ```bash
+# Start n8n + PostgreSQL + Redis
 docker compose -f engineering/deploy/docker-compose.yml up -d
 ```
 
-| ✅ | Check | How to verify |
-|---|-------|--------------|
-| ☐ | All 3 containers up | `docker compose ps` → **3/3 running** |
-| ☐ | n8n healthy | `curl http://localhost:5678/healthz` → **200** |
-| ☐ | UI accessible | Open http://localhost:5678 |
+| ✅ | Check | Verify |
+|---|-------|--------|
+| ☐ | All containers running | `docker compose -f engineering/deploy/docker-compose.yml ps` → **3/3 up** |
+| ☐ | n8n healthy | `curl http://localhost:5678/healthz` → **200 OK** |
+| ☐ | Can open UI | Open http://localhost:5678 in browser |
 
 ---
 
 ## ⬜ Step 5: Configure n8n (3 min)
 
-| ✅ | Task |
-|---|------|
-| ☐ | Create admin account at http://localhost:5678 |
-| ☐ | Add **Supabase** credential (PostgreSQL) |
-| ☐ | Add **OpenAI** credential (API key) |
-| ☐ | Add **Stripe** credential (Secret key) |
-| ☐ | Add **Beehiiv** credential (HTTP Header Auth) |
-| ☐ | Import **8 workflows** from `engineering/workflows/*.json` |
-| ☐ | Set **environment variables** (campaign IDs from Beehiiv) |
-| ☐ | **Activate** each workflow (toggle to green) |
+| ✅ | Task | Details |
+|---|------|---------|
+| ☐ | Create admin account | n8n UI → sign up (first user becomes admin) |
+| ☐ | Add Supabase credential | Settings → Credentials → PostgreSQL → use `MINDFRAME_SUPABASE_URL` as host |
+| ☐ | Add OpenAI credential | Settings → Credentials → OpenAI → paste `MINDFRAME_OPENAI_API_KEY` |
+| ☐ | Add Stripe credential | Settings → Credentials → Stripe → paste `MINDFRAME_STRIPE_SECRET_KEY` |
+| ☐ | Add ConvertKit credential | Settings → Credentials → HTTP Header Auth → paste `MINDFRAME_CONVERTKIT_API_KEY` |
+| ☐ | Import 8 workflows | Workflows → Add → Import from File → select each from `engineering/workflows/*.json` |
+| ☐ | Set env variables | Settings → Environment Variables → add all `WELCOME_*_CAMPAIGN_ID` vars |
+| ☐ | Activate workflows | Toggle each workflow to **Active** (green switch) |
 
 ---
 
 ## ⬜ Step 6: Connect Stripe Webhooks (1 min)
 
-| ✅ | Task |
-|---|------|
-| ☐ | Stripe Dashboard → Webhooks → Add endpoint |
-| ☐ | URL: `https://YOUR-N8N-DOMAIN/webhook/mindframe/stripe-purchase` |
-| ☐ | Events: `checkout.session.completed`, `customer.subscription.*` |
-| ☐ | Copy signing secret → set as `MINDFRAME_STRIPE_WEBHOOK_SECRET` |
+| ✅ | Task | Details |
+|---|------|---------|
+| ☐ | Create webhook endpoint | Stripe Dashboard → Webhooks → Add endpoint |
+| ☐ | Endpoint URL | `https://YOUR-N8N-DOMAIN/webhook/mindframe/stripe-purchase` |
+| ☐ | Events to listen for | `checkout.session.completed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted` |
+| ☐ | Copy signing secret | Set as `MINDFRAME_STRIPE_WEBHOOK_SECRET` in n8n env vars |
 
 ---
 
-## 🚀 Final Verification
+## 🚀 Launch Verification
 
 ```bash
-# Run this to confirm everything is green:
+# Final health check — run this:
+echo "── Container Status ──"
 docker compose -f engineering/deploy/docker-compose.yml ps
-curl -s -o /dev/null -w "n8n: HTTP %{http_code}\n" http://localhost:5678/healthz
-echo "Hooks: $(echo "SELECT COUNT(*) FROM viral_hooks;" | supabase db execute --csv 2>/dev/null | tail -1)"
+echo "── n8n Health ──"
+curl -s -o /dev/null -w "%{http_code}" http://localhost:5678/healthz
+echo ""
+echo "── Database ──"
+echo "SELECT COUNT(*) FROM viral_hooks;" | supabase db execute --csv
+echo "── Webhooks Active ──"
+curl -s http://localhost:5678/rest/workflows?active=true | python3 -c "import sys,json; ws=json.load(sys.stdin); [print(f'  {w[\"name\"]}: {\"✅ Active\" if w.get(\"active\") else \"⬜ Inactive\"}') for w in ws]"
 ```
 
 ---
 
-## 🔧 Common Issues
+## 🔧 Troubleshooting
 
-| Problem | Solution |
-|---------|----------|
-| `docker compose` not found | Install Docker Desktop |
+| Symptom | Fix |
+|---------|-----|
+| `docker compose` not found | Install Docker Desktop (includes Compose v2) |
 | `supabase` not found | `brew install supabase/tap/supabase` |
-| n8n 502 error | `docker compose restart n8n` |
-| n8n unreachable from Stripe | Use a public domain or ngrok: `ngrok http 5678` |
-| Webhook 401 | Stripe signing secret doesn't match — re-copy from Stripe |
-| Script gen fails | Check OpenAI key has credits |
+| n8n returns 502 | `docker compose -f engineering/deploy/docker-compose.yml restart n8n` |
+| n8n webhook not responding | Check n8n is on a public URL (not localhost) for Stripe to reach it |
+| Webhook returns 401 | Stripe signing secret doesn't match — re-copy from Stripe Dashboard |
+| Script generation fails | Check `MINDFRAME_OPENAI_API_KEY` has credits and is active |
 
 ---
 
-*📄 Full docs: `engineering/deployment-plan.md` • 🗄 Schema: `engineering/database-architecture.md` • ⚙ Workflows: `engineering/workflows/README.md`*
+*📄 Full documentation: `engineering/deployment-plan.md` | 🗄 Schema: `engineering/database-architecture.md` | ⚙ Workflows: `engineering/workflows/README.md`*
