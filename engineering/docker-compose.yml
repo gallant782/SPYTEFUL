@@ -3,15 +3,14 @@
 # =============================================================================
 # Deploys: n8n (automation) + PostgreSQL (n8n state) + Redis (n8n queue)
 #
+# Compatible with Docker Compose v2.40+ (map syntax for environment vars).
+#
 # Usage:
 #   docker compose up -d
 #   docker compose logs -f n8n
 #
-# NOTE: Supabase is NOT included here — it's managed via supabase.com cloud.
-# This compose file is for the self-hosted automation layer only.
+# NOTE: Supabase is managed via supabase.com cloud — not included here.
 # =============================================================================
-
-version: "3.9"
 
 services:
   # ---------------------------------------------------------------------------
@@ -24,46 +23,53 @@ services:
     ports:
       - "5678:5678"
     environment:
-      # --- General ---
-      - N8N_HOST=${N8N_HOST:-localhost}
-      - N8N_PORT=5678
-      - N8N_PROTOCOL=${N8N_PROTOCOL:-http}
-      - N8N_ENCRYPTION_KEY=${N8N_ENCRYPTION_KEY:?Must set N8N_ENCRYPTION_KEY}
-      - N8N_METRICS=${N8N_METRICS:-false}
-      - N8N_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN=true
-      - EXECUTIONS_DATA_PRUNE=true
-      - EXECUTIONS_DATA_MAX_AGE=168  # Keep executions for 7 days
+      # --- General n8n Configuration ---
+      N8N_HOST: ${N8N_HOST:-localhost}
+      N8N_PORT: "5678"
+      N8N_PROTOCOL: ${N8N_PROTOCOL:-http}
+      N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?Must set N8N_ENCRYPTION_KEY}
+      N8N_METRICS: ${N8N_METRICS:-false}
+      N8N_SKIP_WEBHOOK_DEREGISTRATION_SHUTDOWN: "true"
+      EXECUTIONS_DATA_PRUNE: "true"
+      EXECUTIONS_DATA_MAX_AGE: "168"
 
       # --- Database (PostgreSQL for n8n state) ---
-      - DB_TYPE=postgresdb
-      - DB_POSTGRESDB_HOST=${N8N_DB_HOST:-n8n-db}
-      - DB_POSTGRESDB_PORT=${N8N_DB_PORT:-5432}
-      - DB_POSTGRESDB_DATABASE=${N8N_DB_NAME:-n8n}
-      - DB_POSTGRESDB_USER=${N8N_DB_USER:-n8n}
-      - DB_POSTGRESDB_PASSWORD=${N8N_DB_PASSWORD:?Must set N8N_DB_PASSWORD}
+      DB_TYPE: postgresdb
+      DB_POSTGRESDB_HOST: ${N8N_DB_HOST:-n8n-db}
+      DB_POSTGRESDB_PORT: ${N8N_DB_PORT:-5432}
+      DB_POSTGRESDB_DATABASE: ${N8N_DB_NAME:-n8n}
+      DB_POSTGRESDB_USER: ${N8N_DB_USER:-n8n}
+      DB_POSTGRESDB_PASSWORD: ${N8N_DB_PASSWORD:?Must set N8N_DB_PASSWORD}
 
       # --- Queue (Redis for scaling) ---
-      - EXECUTIONS_MODE=${N8N_EXECUTIONS_MODE:-regular}
-      - QUEUE_BULL_REDIS_HOST=${REDIS_HOST:-n8n-redis}
-      - QUEUE_BULL_REDIS_PORT=${REDIS_PORT:-6379}
-      - QUEUE_BULL_REDIS_PASSWORD=${REDIS_PASSWORD:-}
+      EXECUTIONS_MODE: ${N8N_EXECUTIONS_MODE:-regular}
+      QUEUE_BULL_REDIS_HOST: ${REDIS_HOST:-n8n-redis}
+      QUEUE_BULL_REDIS_PORT: ${REDIS_PORT:-6379}
+      QUEUE_BULL_REDIS_PASSWORD: ${REDIS_PASSWORD:-}
 
-      # --- MindFrame Credentials (injected into n8n) ---
-      # Supabase (Migrated DB)
-      - MINDFRAME_SUPABASE_URL=${MINDFRAME_SUPABASE_URL:-}
-      - MINDFRAME_SUPABASE_SERVICE_KEY=${MINDFRAME_SUPABASE_SERVICE_KEY:-}
+      # --- Supabase (Business Database) ---
+      MINDFRAME_SUPABASE_URL: ${MINDFRAME_SUPABASE_URL:-}
+      MINDFRAME_SUPABASE_SERVICE_KEY: ${MINDFRAME_SUPABASE_SERVICE_KEY:-}
 
-      # AI Providers
-      - MINDFRAME_OPENAI_API_KEY=${MINDFRAME_OPENAI_API_KEY:-}
-      - MINDFRAME_ELEVENLABS_API_KEY=${MINDFRAME_ELEVENLABS_API_KEY:-}
+      # --- AI Providers ---
+      MINDFRAME_OPENAI_API_KEY: ${MINDFRAME_OPENAI_API_KEY:-}
+      MINDFRAME_ELEVENLABS_API_KEY: ${MINDFRAME_ELEVENLABS_API_KEY:-}
 
-      # Payments
-      - MINDFRAME_STRIPE_SECRET_KEY=${MINDFRAME_STRIPE_SECRET_KEY:-}
-      - MINDFRAME_STRIPE_WEBHOOK_SECRET=${MINDFRAME_STRIPE_WEBHOOK_SECRET:-}
-      - MINDFRAME_GUMROAD_ACCESS_TOKEN=${MINDFRAME_GUMROAD_ACCESS_TOKEN:-}
+      # --- Payment Processors ---
+      MINDFRAME_STRIPE_SECRET_KEY: ${MINDFRAME_STRIPE_SECRET_KEY:-}
+      MINDFRAME_STRIPE_WEBHOOK_SECRET: ${MINDFRAME_STRIPE_WEBHOOK_SECRET:-}
+      MINDFRAME_GUMROAD_ACCESS_TOKEN: ${MINDFRAME_GUMROAD_ACCESS_TOKEN:-}
 
-      # Email
-      - MINDFRAME_BEEHIIV_API_KEY=${MINDFRAME_BEEHIIV_API_KEY:-}
+      # --- Email Marketing ---
+      MINDFRAME_BEEHIIV_API_KEY: ${MINDFRAME_BEEHIIV_API_KEY:-}
+      MINDFRAME_CONVERTKIT_API_KEY: ${MINDFRAME_CONVERTKIT_API_KEY:-}
+
+      # --- SMTP Fallback ---
+      MINDFRAME_SMTP_HOST: ${MINDFRAME_SMTP_HOST:-}
+      MINDFRAME_SMTP_PORT: ${MINDFRAME_SMTP_PORT:-587}
+      MINDFRAME_SMTP_USER: ${MINDFRAME_SMTP_USER:-}
+      MINDFRAME_SMTP_PASS: ${MINDFRAME_SMTP_PASS:-}
+      MINDFRAME_SMTP_FROM: ${MINDFRAME_SMTP_FROM:-noreply@mindframe.ai}
 
     volumes:
       - n8n_data:/home/node/.n8n
@@ -86,9 +92,9 @@ services:
     ports:
       - "5432:5432"
     environment:
-      - POSTGRES_DB=${N8N_DB_NAME:-n8n}
-      - POSTGRES_USER=${N8N_DB_USER:-n8n}
-      - POSTGRES_PASSWORD=${N8N_DB_PASSWORD:?Must set N8N_DB_PASSWORD}
+      POSTGRES_DB: ${N8N_DB_NAME:-n8n}
+      POSTGRES_USER: ${N8N_DB_USER:-n8n}
+      POSTGRES_PASSWORD: ${N8N_DB_PASSWORD:?Must set N8N_DB_PASSWORD}
     volumes:
       - n8n_db_data:/var/lib/postgresql/data
     healthcheck:
