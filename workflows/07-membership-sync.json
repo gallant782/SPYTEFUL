@@ -1,0 +1,212 @@
+{
+  "name": "Membership Sync (Stripe)",
+  "nodes": [
+    {
+      "id": "stripe-webhook",
+      "name": "Stripe Subscription Webhook",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/membership-sync",
+        "options": {
+          "rawBody": true
+        }
+      },
+      "webhookId": "mindframe-membership"
+    },
+    {
+      "id": "parse-event",
+      "name": "Parse Stripe Event",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "const event = $input.first().json;\nconst stripeEvent = event.body || {};\nconst eventType = stripeEvent.type || '';\nconst subscription = stripeEvent.data?.object || {};\n\n// Determine event category\nlet membershipEvent = '';\nif (eventType.includes('created')) membershipEvent = 'created';\nelse if (eventType.includes('updated') && subscription.status === 'active') membershipEvent = 'updated';\nelse if (eventType.includes('deleted')) membershipEvent = 'canceled';\nelse if (eventType === 'customer.subscription.updated' && subscription.cancel_at_period_end) membershipEvent = 'canceled';\nelse if (eventType === 'customer.subscription.updated' && !subscription.cancel_at_period_end && subscription.status === 'active') membershipEvent = 'reactivated';\nelse membershipEvent = 'updated';\n\n// Map Stripe status to internal status\nconst statusMap = {\n  'trialing': 'trialing',\n  'active': 'active',\n  'past_due': 'past_due',\n  'canceled': 'canceled',\n  'incomplete': 'incomplete',\n  'incomplete_expired': 'incomplete_expired'\n};\n\nconst metadata = subscription.metadata || {};\nconst items = subscription.items?.data || [];\nconst price = items[0]?.price || {};\n\nreturn {\n  event_type: membershipEvent,\n  stripe_event_type: eventType,\n  stripe_subscription_id: subscription.id,\n  stripe_customer_id: subscription.customer,\n  customer_email: metadata.email || '',\n  status: statusMap[subscription.status] || 'active',\n  current_period_start: new Date(subscription.current_period_start * 1000).toISOString(),\n  current_period_end: new Date(subscription.current_period_end * 1000).toISOString(),\n  trial_start: subscription.trial_start ? new Date(subscription.trial_start * 1000).toISOString() : null,\n  trial_end: subscription.trial_end ? new Date(subscription.trial_end * 1000).toISOString() : null,\n  cancel_at_period_end: subscription.cancel_at_period_end || false,\n  canceled_at: subscription.canceled_at ? new Date(subscription.canceled_at * 1000).toISOString() : null,\n  ended_at: subscription.ended_at ? new Date(subscription.ended_at * 1000).toISOString() : null,\n  plan_id: metadata.plan_id || null,\n  price_cents: (price.unit_amount || metadata.price_cents || 1900),\n  currency: price.currency || 'usd',\n  interval: price.recurring?.interval || 'month'\n};"
+      }
+    },
+    {
+      "id": "find-profile",
+      "name": "Find Profile by Stripe ID",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, email, is_member, member_since\nFROM profiles\nWHERE stripe_customer_id = '{{ $json.stripe_customer_id}}' OR email = '{{ $json.customer_email }}'\nLIMIT 1"
+      }
+    },
+    {
+      "id": "create-profile-if-missing",
+      "name": "Create Profile if Missing",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [850, 200],
+      "parameters": {
+        "jsCode": "// If no profile found, create one\nif ($json.length === 0) {\n  // Profile creation happens via first node output\n  return {\n    needs_creation: true,\n    ...$json\n  };\n}\n\n// Profile found - merge data\nreturn {\n  needs_creation: false,\n  profile_id: $json[0].id,\n  ...$json\n};"
+      }
+    },
+    {
+      "id": "create-profile",
+      "name": "Create Missing Profile",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 400],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "profiles",
+        "columns": "email,stripe_customer_id,is_member,member_since,metadata",
+        "additionalFields": {
+          "returnFields": "id,email"
+        }
+      }
+    },
+    {
+      "id": "upsert-membership",
+      "name": "Upsert Membership",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "WITH upsert AS (\n  INSERT INTO memberships (\n    profile_id, plan_id, stripe_subscription_id, stripe_customer_id,\n    status, current_period_start, current_period_end,\n    trial_start, trial_end, cancel_at_period_end, canceled_at, ended_at,\n    price_cents_at_subscription\n  )\n  VALUES (\n    '{{ $json.profile_id }}',\n    '{{ $json.plan_id }}',\n    '{{ $json.stripe_subscription_id }}',\n    '{{ $json.stripe_customer_id }}',\n    '{{ $json.status }}',\n    '{{ $json.current_period_start }}',\n    '{{ $json.current_period_end }}',\n    {{ $json.trial_start ? \"'\" + $json.trial_start + \"'\" : 'NULL' }},\n    {{ $json.trial_end ? \"'\" + $json.trial_end + \"'\" : 'NULL' }},\n    {{ $json.cancel_at_period_end ? 'TRUE' : 'FALSE' }},\n    {{ $json.canceled_at ? \"'\" + $json.canceled_at + \"'\" : 'NULL' }},\n    {{ $json.ended_at ? \"'\" + $json.ended_at + \"'\" : 'NULL' }},\n    {{ $json.price_cents }}\n  )\n  ON CONFLICT (stripe_subscription_id)\n  DO UPDATE SET\n    status = EXCLUDED.status,\n    current_period_start = EXCLUDED.current_period_start,\n    current_period_end = EXCLUDED.current_period_end,\n    cancel_at_period_end = EXCLUDED.cancel_at_period_end,\n    canceled_at = EXCLUDED.canceled_at,\n    ended_at = EXCLUDED.ended_at,\n    updated_at = NOW()\n  RETURNING id, status, created_at\n)\nSELECT * FROM upsert;"
+      }
+    },
+    {
+      "id": "update-profile",
+      "name": "Update Profile Membership Flag",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE profiles\nSET\n  is_member = CASE WHEN '{{ $json.status }}' IN ('active', 'trialing') THEN TRUE ELSE FALSE END,\n  member_since = CASE \n    WHEN is_member = FALSE AND '{{ $json.status }}' IN ('active', 'trialing') THEN NOW()\n    ELSE member_since\n  END,\n  updated_at = NOW()\nWHERE id = '{{ $json.profile_id }}'\nRETURNING id, is_member, member_since;"
+      }
+    },
+    {
+      "id": "log-membership-event",
+      "name": "Log Membership Event",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 500],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "membership_events",
+        "columns": "membership_id,profile_id,event_type,new_plan_id,new_price,metadata",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "send-confirmation",
+      "name": "Send Welcome/Confirmation",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email || $json.customer_email }}"},
+            {"name": "campaign_id", "value": "={{ $json.event_type === 'created' ? $env.MEMBERSHIP_WELCOME_CAMPAIGN_ID : $env.MEMBERSHIP_UPDATE_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        }
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log to Automation Logs",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1650, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "respond-200",
+      "name": "Respond 200 OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1850, 300],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\"received\": true, \"status\": \"{{ $json.status }}\", \"event\": \"{{ $json.event_type }}\"}"
+      }
+    }
+  ],
+  "connections": {
+    "Stripe Subscription Webhook": {
+      "main": [[{"node": "Parse Stripe Event", "type": "main", "index": 0}]]
+    },
+    "Parse Stripe Event": {
+      "main": [[{"node": "Find Profile by Stripe ID", "type": "main", "index": 0}]]
+    },
+    "Find Profile by Stripe ID": {
+      "main": [[{"node": "Create Profile if Missing", "type": "main", "index": 0}]]
+    },
+    "Create Profile if Missing": {
+      "main": [
+        [
+          {"node": "Create Missing Profile", "type": "main", "index": 0},
+          {"node": "Upsert Membership", "type": "main", "index": 0}
+        ],
+        [
+          {"node": "Upsert Membership", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Create Missing Profile": {
+      "main": [[{"node": "Upsert Membership", "type": "main", "index": 0}]]
+    },
+    "Upsert Membership": {
+      "main": [
+        [
+          {"node": "Update Profile Membership Flag", "type": "main", "index": 0},
+          {"node": "Log Membership Event", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Update Profile Membership Flag": {
+      "main": [[{"node": "Send Welcome/Confirmation", "type": "main", "index": 0}]]
+    },
+    "Log Membership Event": {
+      "main": [[{"node": "Send Welcome/Confirmation", "type": "main", "index": 0}]]
+    },
+    "Send Welcome/Confirmation": {
+      "main": [[{"node": "Log to Automation Logs", "type": "main", "index": 0}]]
+    },
+    "Log to Automation Logs": {
+      "main": [[{"node": "Respond 200 OK", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["membership", "stripe", "subscription"],
+  "pinData": {},
+  "versionId": "1"
+}

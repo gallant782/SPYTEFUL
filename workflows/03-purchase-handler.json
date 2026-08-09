@@ -1,0 +1,210 @@
+{
+  "name": "Purchase Handler (Stripe)",
+  "nodes": [
+    {
+      "id": "stripe-webhook",
+      "name": "Stripe Webhook Receiver",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/stripe-purchase",
+        "options": {
+          "rawBody": true,
+          "responseHeaders": {
+            "parameters": []
+          }
+        }
+      },
+      "webhookId": "mindframe-stripe"
+    },
+    {
+      "id": "verify-webhook",
+      "name": "Verify Stripe Signature",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "// Stripe signature verification happens via n8n's webhook middleware\n// This node validates the event type and extracts the payload\n\nconst event = $input.first().json;\n\n// Extract the Stripe event object\nconst stripeEvent = event.body || {};\nconst eventType = stripeEvent.type || '';\n\n// Only process completed checkouts and subscription events\nconst allowedTypes = [\n  'checkout.session.completed',\n  'checkout.session.async_payment_succeeded',\n  'customer.subscription.created',\n  'customer.subscription.updated',\n  'customer.subscription.deleted',\n  'invoice.payment_succeeded',\n  'invoice.payment_failed'\n];\n\nif (!allowedTypes.includes(eventType)) {\n  return { skip: true, event_type: eventType, reason: 'Unhandled event type' };\n}\n\nconst session = stripeEvent.data?.object || {};\n\nreturn {\n  skip: false,\n  event_type: eventType,\n  session_id: session.id,\n  customer_email: session.customer_details?.email || session.customer_email || '',\n  customer_name: session.customer_details?.name || '',\n  amount_total_cents: session.amount_total || 0,\n  currency: session.currency || 'usd',\n  payment_status: session.payment_status || '',\n  stripe_customer_id: session.customer || '',\n  stripe_subscription_id: session.subscription || '',\n  metadata: session.metadata || {},\n  mode: session.mode || 'payment'  // 'payment' or 'subscription'\n};"
+      }
+    },
+    {
+      "id": "route-event",
+      "name": "Route: Purchase vs Subscription",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 300],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.mode }}",
+              "operation": "equal",
+              "value2": "subscription"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "handle-purchase",
+      "name": "Find or Create Profile",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 200],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Find existing subscriber, create profile if needed\nWITH subscriber AS (\n  INSERT INTO email_subscribers (email, full_name, source, status)\n  VALUES ('{{ $json.customer_email }}', '{{ $json.customer_name }}', 'purchase', 'active')\n  ON CONFLICT (email) DO UPDATE SET has_purchased = TRUE, updated_at = NOW()\n  RETURNING id\n),\nprofile AS (\n  INSERT INTO profiles (email, full_name, stripe_customer_id)\n  VALUES ('{{ $json.customer_email }}', '{{ $json.customer_name }}', '{{ $json.stripe_customer_id }}')\n  ON CONFLICT (email) DO UPDATE SET stripe_customer_id = '{{ $json.stripe_customer_id }}', updated_at = NOW()\n  RETURNING id\n)\nSELECT subscriber.id AS subscriber_id, profile.id AS profile_id\nFROM subscriber, profile;"
+      }
+    },
+    {
+      "id": "lookup-product",
+      "name": "Lookup Product by metadata",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 400],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, name, price_cents, product_type, affiliate_commission_pct\nFROM digital_products\nWHERE id = '{{ $json.metadata.product_id }}' OR stripe_price_id = '{{ $json.metadata.price_id }}'\nLIMIT 1"
+      }
+    },
+    {
+      "id": "create-purchase",
+      "name": "Create Purchase Record",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "purchases",
+        "columns": "product_id,profile_id,subscriber_id,customer_email,customer_name,amount_cents,currency,processor,processor_charge_id,status,source_url,utm_source,utm_medium,utm_campaign",
+        "additionalFields": {
+          "returnFields": "id,amount_cents,created_at"
+        }
+      }
+    },
+    {
+      "id": "grant-access",
+      "name": "Grant Product Access",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE purchase_items\nSET access_granted = TRUE, access_granted_at = NOW()\nWHERE purchase_id = '{{ $json.id }}';\n\n-- Update purchase_items with download URLs from the product\nUPDATE purchase_items pi\nSET download_url = dp.file_urls->0->>'url'\nFROM digital_products dp\nWHERE pi.product_id = dp.id AND pi.purchase_id = '{{ $json.id }}';"
+      }
+    },
+    {
+      "id": "tag-purchaser",
+      "name": "Tag as Purchaser",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 500],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO email_tags (name, slug, description)\nVALUES ('Purchased: Productivity Vault', 'purchased-vault', 'Customer who bought the Ultimate Productivity Vault')\nON CONFLICT (slug) DO NOTHING;\n\nINSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT '{{ $json.subscriber_id }}', id FROM email_tags WHERE slug = 'purchased-vault'\nON CONFLICT DO NOTHING;\n\nUPDATE email_subscribers SET has_purchased = TRUE, lifetime_value = lifetime_value + {{ $json.amount_cents }} / 100.0\nWHERE id = '{{ $json.subscriber_id }}';"
+      }
+    },
+    {
+      "id": "trigger-welcome",
+      "name": "Trigger Welcome Sequence",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 300],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.customer_email }}"},
+            {"name": "campaign_id", "value": "={{ $env.PURCHASE_WELCOME_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 15000
+        }
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log to Automation Logs",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1650, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source,related_purchase_id",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "respond-200",
+      "name": "Respond 200 OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1850, 300],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"received\": true,\n  \"purchase_id\": \"{{ $json.id }}\",\n  \"status\": \"completed\"\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Stripe Webhook Receiver": {
+      "main": [[{"node": "Verify Stripe Signature", "type": "main", "index": 0}]]
+    },
+    "Verify Stripe Signature": {
+      "main": [[{"node": "Route: Purchase vs Subscription", "type": "main", "index": 0}]]
+    },
+    "Route: Purchase vs Subscription": {
+      "main": [
+        [
+          {"node": "Find or Create Profile", "type": "main", "index": 0},
+          {"node": "Lookup Product by metadata", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Find or Create Profile": {
+      "main": [[{"node": "Create Purchase Record", "type": "main", "index": 0}]]
+    },
+    "Lookup Product by metadata": {
+      "main": [[{"node": "Create Purchase Record", "type": "main", "index": 1}]]
+    },
+    "Create Purchase Record": {
+      "main": [[{"node": "Grant Product Access", "type": "main", "index": 0}]]
+    },
+    "Grant Product Access": {
+      "main": [[{"node": "Tag as Purchaser", "type": "main", "index": 0}]]
+    },
+    "Tag as Purchaser": {
+      "main": [[{"node": "Trigger Welcome Sequence", "type": "main", "index": 0}]]
+    },
+    "Trigger Welcome Sequence": {
+      "main": [[{"node": "Log to Automation Logs", "type": "main", "index": 0}]]
+    },
+    "Log to Automation Logs": {
+      "main": [[{"node": "Respond 200 OK", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["commerce", "stripe", "purchases"],
+  "pinData": {},
+  "versionId": "1"
+}

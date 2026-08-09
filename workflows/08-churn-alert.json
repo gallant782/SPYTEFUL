@@ -1,0 +1,265 @@
+{
+  "name": "Churn Alert & Re-engagement",
+  "nodes": [
+    {
+      "id": "daily-cron",
+      "name": "Daily CRON Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "0 6 * * *"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "query-expiring",
+      "name": "Query Memberships Expiring Soon",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 200],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  m.id AS membership_id,\n  m.profile_id,\n  m.status,\n  m.current_period_end,\n  m.stripe_subscription_id,\n  p.email,\n  p.full_name,\n  m.cancel_at_period_end\nFROM memberships m\nJOIN profiles p ON p.id = m.profile_id\nWHERE m.status IN ('active', 'trialing')\n  AND m.current_period_end BETWEEN NOW() AND NOW() + INTERVAL '5 days'\n  AND m.cancel_at_period_end = FALSE\nORDER BY m.current_period_end ASC;"
+      }
+    },
+    {
+      "id": "query-past-due",
+      "name": "Query Past Due / Failed Payments",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 400],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  m.id AS membership_id,\n  m.profile_id,\n  m.status,\n  m.current_period_end,\n  m.stripe_subscription_id,\n  p.email,\n  p.full_name\nFROM memberships m\nJOIN profiles p ON p.id = m.profile_id\nWHERE m.status IN ('past_due', 'incomplete')\nORDER BY m.current_period_end ASC;"
+      }
+    },
+    {
+      "id": "query-churned",
+      "name": "Query Recently Churned",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 600],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT \n  m.id AS membership_id,\n  m.profile_id,\n  m.ended_at,\n  m.cancellation_reason,\n  m.cancellation_reason_detail,\n  p.email,\n  p.full_name,\n  p.is_member\nFROM memberships m\nJOIN profiles p ON p.id = m.profile_id\nWHERE m.status = 'canceled'\n  AND m.ended_at >= NOW() - INTERVAL '24 hours'\nORDER BY m.ended_at DESC;"
+      }
+    },
+    {
+      "id": "check-expiring-items",
+      "name": "Any expiring members?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 200],
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items('Query Memberships Expiring Soon').length }}",
+              "operation": "larger",
+              "value2": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "send-expiry-email",
+      "name": "Send Expiry Reminder Email",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 100],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.CHURN_REMINDER_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "tag-churn-risk",
+      "name": "Tag as Churn Risk",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO email_tags (name, slug, description)\nVALUES ('Churn Risk: Expiring', 'churn-risk-expiring', 'Membership expiring within 5 days')\nON CONFLICT (slug) DO NOTHING;\n\nINSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT es.id, et.id \nFROM email_subscribers es, email_tags et\nWHERE es.email = '{{ $json.email }}' AND et.slug = 'churn-risk-expiring'\nON CONFLICT DO NOTHING;"
+      }
+    },
+    {
+      "id": "check-past-due",
+      "name": "Any past-due members?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 400],
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items('Query Past Due / Failed Payments').length }}",
+              "operation": "larger",
+              "value2": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "send-admin-alert",
+      "name": "Send Admin Alert (Past-Due)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [850, 500],
+      "parameters": {
+        "fromEmail": "alerts@mindframe.ai",
+        "toEmail": "admin@mindframe.ai",
+        "subject": "=⚠️ [MindFrame] {{ $items('Query Past Due / Failed Payments').length }} members past due",
+        "text": "=Past-Due Members Alert — {{ new Date().toISOString().split('T')[0] }}\n\n{{ $items('Query Past Due / Failed Payments').length }} members past due.\n\nCheck Stripe Dashboard: https://dashboard.stripe.com/subscriptions\n\nAutomation health: https://n8n.mindframe.ai",
+        "options": {}
+      }
+    },
+    {
+      "id": "check-any-churned",
+      "name": "Anyone churned in 24h?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [650, 600],
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "value1": "={{ $items('Query Recently Churned').length }}",
+              "operation": "larger",
+              "value2": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "log-churn",
+      "name": "Log Churn Analytics",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [850, 700],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "log-execution-final",
+      "name": "Final Execution Log",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1100, 400],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Daily CRON Trigger": {
+      "main": [
+        [
+          {"node": "Query Memberships Expiring Soon", "type": "main", "index": 0},
+          {"node": "Query Past Due / Failed Payments", "type": "main", "index": 0},
+          {"node": "Query Recently Churned", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Query Memberships Expiring Soon": {
+      "main": [[{"node": "Any expiring members?", "type": "main", "index": 0}]]
+    },
+    "Any expiring members?": {
+      "main": [
+        [
+          {"node": "Send Expiry Reminder Email", "type": "main", "index": 0},
+          {"node": "Tag as Churn Risk", "type": "main", "index": 0}
+        ],
+        [],
+        []
+      ]
+    },
+    "Send Expiry Reminder Email": {
+      "main": [[{"node": "Final Execution Log", "type": "main", "index": 0}]]
+    },
+    "Tag as Churn Risk": {
+      "main": [[{"node": "Final Execution Log", "type": "main", "index": 0}]]
+    },
+    "Query Past Due / Failed Payments": {
+      "main": [[{"node": "Any past-due members?", "type": "main", "index": 0}]]
+    },
+    "Any past-due members?": {
+      "main": [
+        [
+          {"node": "Send Admin Alert (Past-Due)", "type": "main", "index": 0}
+        ],
+        [],
+        []
+      ]
+    },
+    "Send Admin Alert (Past-Due)": {
+      "main": [[{"node": "Final Execution Log", "type": "main", "index": 0}]]
+    },
+    "Query Recently Churned": {
+      "main": [[{"node": "Anyone churned in 24h?", "type": "main", "index": 0}]]
+    },
+    "Anyone churned in 24h?": {
+      "main": [
+        [
+          {"node": "Log Churn Analytics", "type": "main", "index": 0}
+        ],
+        [],
+        []
+      ]
+    },
+    "Log Churn Analytics": {
+      "main": [[{"node": "Final Execution Log", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "timezone": "UTC",
+    "saveManualExecutions": true
+  },
+  "staticData": null,
+  "tags": ["retention", "churn", "membership", "alert"],
+  "pinData": {},
+  "versionId": "1"
+}

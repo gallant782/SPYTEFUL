@@ -1,0 +1,189 @@
+{
+  "name": "Script Generator (Content Pipeline)",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Receive Hook + Template",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/script-generator",
+        "options": {
+          "responseMode": "responseNode"
+        }
+      },
+      "webhookId": "mindframe-script-gen"
+    },
+    {
+      "id": "fetch-hook",
+      "name": "Fetch Viral Hook",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, hook_text, category, trigger_type, estimated_performance FROM viral_hooks WHERE id = {{ $json.body.hook_id }} LIMIT 1",
+        "additionalFields": {}
+      }
+    },
+    {
+      "id": "fetch-template",
+      "name": "Fetch Template Structure",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [450, 500],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, name, hook_format, point_1_framework, point_2_framework, point_3_framework, cta_framework, category FROM content_templates WHERE id = {{ $json.body.template_id }} LIMIT 1",
+        "additionalFields": {}
+      }
+    },
+    {
+      "id": "merge-data",
+      "name": "Merge Hook + Template",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2,
+      "position": [650, 400],
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "mergeByPosition"
+      }
+    },
+    {
+      "id": "openai-generate",
+      "name": "OpenAI - Generate Script",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 2,
+      "position": [850, 400],
+      "parameters": {
+        "resource": "chat",
+        "model": "gpt-4-turbo",
+        "messages": {
+          "values": [
+            {
+              "role": "system",
+              "content": "You are a MindFrame scriptwriter — The Stoic Architect. Write a 60-second short-form video script.\n\nBrand Voice Rules:\n- Tone: Authoritative, Stoic, Slightly confrontational (Tough Love), Evidence-based.\n- Perspective: Second-person ('You').\n- One sentence per line.\n- Use the 'Rule of Three' (3 points, 3 steps, 3 reasons).\n- No: amazing, unbelievable, secret, hack, just, try, hope, motivation, easy.\n- Preferred vocabulary: Framework, Protocol, Sovereignty, Friction, Asymmetric, System, Cognitive, Primal, Discipline, Velocity.\n\nStructure:\n1. HOOK (first 3 seconds) - Use the exact hook text provided\n2. POINT 1: Open the gap / problem\n3. POINT 2: Introduce the MindFrame framework\n4. POINT 3: Asymmetric action / leverage point\n5. CTA: Low-friction, high-value offer\n\nOutput JSON: { \"hook\": \"...\", \"body\": \"...\", \"cta\": \"...\", \"word_count\": 120 }"
+            },
+            {
+              "role": "user",
+              "content": "Generate a script using this hook: \"{{ $json.hook_text }}\"\nHook category: {{ $json.hook_category }}\nTrigger type: {{ $json.trigger_type }}\n\nTemplate structure to follow:\n- Hook format: {{ $json.hook_format }}\n- Point 1 (Problem/Gap): {{ $json.point_1_framework }}\n- Point 2 (Solution/Insight): {{ $json.point_2_framework }}\n- Point 3 (Action/Leverage): {{ $json.point_3_framework }}\n- CTA: {{ $json.cta_framework }}\n\nGenerate the full script in MindFrame's brand voice."
+            }
+          ]
+        },
+        "options": {
+          "temperature": 0.7,
+          "maxTokens": 1000
+        }
+      }
+    },
+    {
+      "id": "parse-openai",
+      "name": "Parse Script Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 400],
+      "parameters": {
+        "jsCode": "const raw = $input.first().json;\nconst content = raw.message.content;\nlet parsed;\n\ntry {\n  // Try to extract JSON from the response\n  const jsonMatch = content.match(/\\{[\\s\\S]*\\}/);\n  parsed = jsonMatch ? JSON.parse(jsonMatch[0]) : { hook: '', body: content, cta: '' };\n} catch (e) {\n  parsed = { hook: raw.hook_text || '', body: content, cta: '', word_count: content.split(' ').length };\n}\n\nreturn {\n  hook_text: parsed.hook || $json.hook_text,\n  body_text: parsed.body || content,\n  cta_text: parsed.cta || '',\n  word_count: parsed.word_count || content.split(' ').length,\n  ai_prompt: $json.ai_prompt || '',\n  ai_model: 'gpt-4-turbo',\n  tokens_used: raw.usage?.total_tokens || 0,\n  category: $json.hook_category || $json.category || '',\n  estimated_performance: $json.estimated_performance || null,\n  hook_id: $json.hook_id\n};"
+      }
+    },
+    {
+      "id": "insert-script",
+      "name": "Insert into content_scripts",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 400],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "content_scripts",
+        "columns": "title,hook_text,body_text,cta_text,ai_prompt,ai_temperature,ai_model,tokens_used,category,estimated_performance,word_count",
+        "additionalFields": {
+          "returnFields": "id,created_at"
+        }
+      }
+    },
+    {
+      "id": "update-hook-counter",
+      "name": "Update Hook Usage Count",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 600],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE viral_hooks SET times_used = times_used + 1, last_used_at = NOW() WHERE id = '{{ $json.hook_id }}' RETURNING id"
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log to automation_execution_logs",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1450, 400],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source,related_video_id",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "respond",
+      "name": "Return Script ID",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [1650, 400],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"script_id\": \"{{ $json.id }}\",\n  \"word_count\": {{ $json.word_count }},\n  \"hook_text\": {{ $json.hook_text }}\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Receive Hook + Template": {
+      "main": [
+        [
+          {"node": "Fetch Viral Hook", "type": "main", "index": 0},
+          {"node": "Fetch Template Structure", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Fetch Viral Hook": {
+      "main": [[{"node": "Merge Hook + Template", "type": "main", "index": 0}]]
+    },
+    "Fetch Template Structure": {
+      "main": [[{"node": "Merge Hook + Template", "type": "main", "index": 1}]]
+    },
+    "Merge Hook + Template": {
+      "main": [[{"node": "OpenAI - Generate Script", "type": "main", "index": 0}]]
+    },
+    "OpenAI - Generate Script": {
+      "main": [[{"node": "Parse Script Output", "type": "main", "index": 0}]]
+    },
+    "Parse Script Output": {
+      "main": [
+        [
+          {"node": "Insert into content_scripts", "type": "main", "index": 0},
+          {"node": "Update Hook Usage Count", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Insert into content_scripts": {
+      "main": [[{"node": "Log to automation_execution_logs", "type": "main", "index": 0}]]
+    },
+    "Update Hook Usage Count": {
+      "main": [[{"node": "Log to automation_execution_logs", "type": "main", "index": 0}]]
+    },
+    "Log to automation_execution_logs": {
+      "main": [[{"node": "Return Script ID", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["content", "pipeline", "ai-generation"],
+  "pinData": {},
+  "versionId": "1"
+}

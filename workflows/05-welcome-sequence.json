@@ -1,0 +1,311 @@
+{
+  "name": "Welcome Sequence Automator (5-Day Drip)",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Webhook: New Lead/Purchase",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/welcome-sequence",
+        "options": {
+          "responseMode": "responseNode"
+        }
+      },
+      "webhookId": "mindframe-welcome"
+    },
+    {
+      "id": "parse-input",
+      "name": "Parse Input",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "const body = $input.first().json;\n\nreturn {\n  email: body.email,\n  subscriber_id: body.subscriber_id,\n  profile_id: body.profile_id || null,\n  trigger_type: body.trigger_type || 'lead_magnet', // 'lead_magnet' or 'purchase'\n  subscriber_name: body.full_name || body.email.split('@')[0],\n  sequence_start: new Date().toISOString()\n};"
+      }
+    },
+    {
+      "id": "record-sequence",
+      "name": "Record Sequence Start in DB",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Tag subscriber with welcome sequence started\nINSERT INTO email_tags (name, slug, description)\nVALUES ('Welcome Sequence: Started', 'welcome-started', 'Currently in 5-day welcome drip')\nON CONFLICT (slug) DO NOTHING;\n\nINSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT '{{ $json.subscriber_id }}', id FROM email_tags WHERE slug = 'welcome-started'\nON CONFLICT DO NOTHING;"
+      }
+    },
+    {
+      "id": "day1-email",
+      "name": "Day 1: Send Immediately",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [850, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_DAY1_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "wait-day2",
+      "name": "Wait 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [850, 350],
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    },
+    {
+      "id": "day2-email",
+      "name": "Day 2: Efficiency Trap",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1050, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_DAY2_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "wait-day3",
+      "name": "Wait 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1050, 350],
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    },
+    {
+      "id": "day3-email",
+      "name": "Day 3: AI Advantage",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1250, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_DAY3_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "wait-day4",
+      "name": "Wait 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1250, 350],
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    },
+    {
+      "id": "day4-email",
+      "name": "Day 4: Social Proof",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1450, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_DAY4_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "wait-day5",
+      "name": "Wait 24 Hours",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1,
+      "position": [1450, 350],
+      "parameters": {
+        "amount": 24,
+        "unit": "hours"
+      }
+    },
+    {
+      "id": "day5-email",
+      "name": "Day 5: The Offer (Membership)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [1650, 150],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.beehiiv.com/v2/campaigns/trigger",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {"name": "Authorization", "value": "Bearer {{ $credentials.beehiivApiKey }}"},
+            {"name": "Content-Type", "value": "application/json"}
+          ]
+        },
+        "sendBody": true,
+        "bodyParameters": {
+          "parameters": [
+            {"name": "email", "value": "={{ $json.email }}"},
+            {"name": "campaign_id", "value": "={{ $env.WELCOME_DAY5_CAMPAIGN_ID }}"},
+            {"name": "send_immediately", "value": true}
+          ]
+        },
+        "options": {
+          "timeout": 10000
+        }
+      }
+    },
+    {
+      "id": "mark-complete",
+      "name": "Mark Sequence Complete",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1850, 250],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "-- Tag subscriber with welcome sequence completed\nINSERT INTO email_tags (name, slug, description)\nVALUES ('Welcome Sequence: Completed', 'welcome-completed', 'Finished the 5-day welcome drip')\nON CONFLICT (slug) DO NOTHING;\n\nINSERT INTO email_subscriber_tags (subscriber_id, tag_id)\nSELECT '{{ $json.subscriber_id }}', id FROM email_tags WHERE slug = 'welcome-completed'\nON CONFLICT DO NOTHING;\n\n-- Remove 'started' tag\nDELETE FROM email_subscriber_tags\nWHERE subscriber_id = '{{ $json.subscriber_id }}'\nAND tag_id IN (SELECT id FROM email_tags WHERE slug = 'welcome-started');"
+      }
+    },
+    {
+      "id": "respond-webhook",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2050, 250],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"subscriber_id\": \"{{ $json.subscriber_id }}\",\n  \"sequence\": \"5-day welcome\",\n  \"status\": \"started\"\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook: New Lead/Purchase": {
+      "main": [[{"node": "Parse Input", "type": "main", "index": 0}]]
+    },
+    "Parse Input": {
+      "main": [[{"node": "Record Sequence Start in DB", "type": "main", "index": 0}]]
+    },
+    "Record Sequence Start in DB": {
+      "main": [[{"node": "Day 1: Send Immediately", "type": "main", "index": 0}]]
+    },
+    "Day 1: Send Immediately": {
+      "main": [[{"node": "Wait 24 Hours", "type": "main", "index": 0}]]
+    },
+    "Wait 24 Hours": {
+      "main": [[{"node": "Day 2: Efficiency Trap", "type": "main", "index": 0}]]
+    },
+    "Day 2: Efficiency Trap": {
+      "main": [[{"node": "Wait 24 Hours", "type": "main", "index": 0}]]
+    },
+    "Wait 24 Hours": {
+      "main": [[{"node": "Day 3: AI Advantage", "type": "main", "index": 0}]]
+    },
+    "Day 3: AI Advantage": {
+      "main": [[{"node": "Wait 24 Hours", "type": "main", "index": 0}]]
+    },
+    "Wait 24 Hours": {
+      "main": [[{"node": "Day 4: Social Proof", "type": "main", "index": 2}]]
+    },
+    "Day 4: Social Proof": {
+      "main": [[{"node": "Wait 24 Hours", "type": "main", "index": 0}]]
+    },
+    "Wait 24 Hours": {
+      "main": [[{"node": "Day 5: The Offer (Membership)", "type": "main", "index": 0}]]
+    },
+    "Day 5: The Offer (Membership)": {
+      "main": [[{"node": "Mark Sequence Complete", "type": "main", "index": 0}]]
+    },
+    "Mark Sequence Complete": {
+      "main": [[{"node": "Respond OK", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {
+    "timezone": "UTC",
+    "saveManualExecutions": true,
+    "callerPolicy": "workflowsFromSameOwner"
+  },
+  "staticData": null,
+  "tags": ["email", "drip", "onboarding", "sequence"],
+  "pinData": {},
+  "versionId": "1"
+}

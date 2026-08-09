@@ -1,0 +1,193 @@
+{
+  "name": "Affiliate Commission Processor",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Webhook: Purchase with Affiliate",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [250, 300],
+      "parameters": {
+        "path": "mindframe/affiliate-commission",
+        "options": {
+          "responseMode": "responseNode"
+        }
+      },
+      "webhookId": "mindframe-affiliate-comm"
+    },
+    {
+      "id": "parse-purchase",
+      "name": "Parse Purchase Data",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [450, 300],
+      "parameters": {
+        "jsCode": "const body = $input.first().json;\n\nreturn {\n  purchase_id: body.purchase_id,\n  affiliate_id: body.affiliate_id,\n  referral_code: body.referral_code,\n  amount_cents: body.amount_cents || 0,\n  product_type: body.product_type || 'tripwire',\n  commission_pct: body.commission_pct || 40,\n  referred_email: body.customer_email,\n  referred_profile_id: body.profile_id || null,\n  membership_id: body.membership_id || null,\n  is_recurring: body.is_recurring || false\n};"
+      }
+    },
+    {
+      "id": "fetch-affiliate",
+      "name": "Fetch Affiliate Details",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [650, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, profile_id, email, full_name, referral_code, commission_pct, \n       tier, total_earned_cents, total_paid_cents, pending_cents, is_active\nFROM affiliates\nWHERE id = '{{ $json.affiliate_id }}' OR referral_code = '{{ $json.referral_code }}'\nLIMIT 1"
+      }
+    },
+    {
+      "id": "check-active",
+      "name": "Is Affiliate Active?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [850, 300],
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.is_active }}",
+              "operation": "equal",
+              "value2": true
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "calc-commission",
+      "name": "Calculate Commission",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [1050, 200],
+      "parameters": {
+        "jsCode": "const amountCents = $json.amount_cents;\nconst commissionPct = $json.commission_pct || $json.commission_pct;\nconst isRecurring = $json.is_recurring;\n\nlet commissionCents = Math.round(amountCents * (commissionPct / 100));\n\n// Tier bonuses\nconst tier = $json.tier || 'standard';\nif (tier === 'premium') commissionCents = Math.round(commissionCents * 1.1);   // 10% bonus\nif (tier === 'elite') commissionCents = Math.round(commissionCents * 1.25);     // 25% bonus\n\nreturn {\n  commission_cents: commissionCents,\n  commission_type: isRecurring ? 'recurring' : 'one_time',\n  commission_pct: commissionPct,\n  effective_pct: ((commissionCents / amountCents) * 100).toFixed(2),\n  affiliate_id: $json.id,\n  purchase_id: $json.purchase_id\n};"
+      }
+    },
+    {
+      "id": "update-referral",
+      "name": "Update/Create Referral Record",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1050, 400],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO affiliate_referrals (affiliate_id, referred_email, referred_profile_id, \n  converted, converted_at, purchase_id, purchase_amount_cents, commission_cents)\nVALUES (\n  '{{ $json.affiliate_id }}',\n  '{{ $json.referred_email }}',\n  '{{ $json.referred_profile_id }}',\n  TRUE, NOW(),\n  '{{ $json.purchase_id }}',\n  {{ $json.amount_cents }},\n  {{ $json.commission_cents }}\n)\nRETURNING id;"
+      }
+    },
+    {
+      "id": "create-commission",
+      "name": "Create Commission Record",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1250, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "affiliate_commissions",
+        "columns": "affiliate_id,referral_id,amount_cents,currency,commission_type,source_purchase_id,source_membership_id,status",
+        "additionalFields": {
+          "returnFields": "id,amount_cents,status,created_at"
+        }
+      }
+    },
+    {
+      "id": "update-affiliate-totals",
+      "name": "Update Affiliate Totals",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1450, 300],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE affiliates\nSET \n  total_earned_cents = total_earned_cents + {{ $json.amount_cents }},\n  pending_cents = pending_cents + {{ $json.amount_cents }},\n  updated_at = NOW()\nWHERE id = '{{ $json.affiliate_id }}'\nRETURNING total_earned_cents, pending_cents;"
+      }
+    },
+    {
+      "id": "notify-affiliate",
+      "name": "Notify Affiliate (Email)",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [1650, 300],
+      "parameters": {
+        "fromEmail": "affiliates@mindframe.ai",
+        "toEmail": "={{ $json.email }}",
+        "subject": "=You earned ${{ ($json.amount_cents / 100).toFixed(2) }} — MindFrame Affiliate",
+        "text": "=Hi {{ $json.full_name }},\n\nYou just earned a commission of ${{ ($json.amount_cents / 100).toFixed(2) }}!\n\nReferral: {{ $json.referred_email }}\nCommission type: {{ $json.commission_type }}\nTotal earned: ${{ ($json.total_earned_cents / 100).toFixed(2) }}\nPending payout: ${{ ($json.pending_cents / 100).toFixed(2) }}\n\nKeep sharing your link to earn more:\n{{ $json.referral_link }}\n\n— MindFrame Affiliate Team",
+        "options": {}
+      }
+    },
+    {
+      "id": "log-execution",
+      "name": "Log to Automation Logs",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1850, 300],
+      "parameters": {
+        "operation": "insert",
+        "schema": "public",
+        "table": "automation_execution_logs",
+        "columns": "workflow_id,status,input_data,output_data,trigger_source,related_purchase_id",
+        "additionalFields": {
+          "returnFields": "id"
+        }
+      }
+    },
+    {
+      "id": "respond-webhook",
+      "name": "Respond OK",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [2050, 300],
+      "parameters": {
+        "respondWith": "json",
+        "responseBody": "={\n  \"success\": true,\n  \"commission_id\": \"{{ $json.id }}\",\n  \"amount_cents\": {{ $json.amount_cents }},\n  \"status\": \"{{ $json.status }}\"\n}"
+      }
+    }
+  ],
+  "connections": {
+    "Webhook: Purchase with Affiliate": {
+      "main": [[{"node": "Parse Purchase Data", "type": "main", "index": 0}]]
+    },
+    "Parse Purchase Data": {
+      "main": [[{"node": "Fetch Affiliate Details", "type": "main", "index": 0}]]
+    },
+    "Fetch Affiliate Details": {
+      "main": [
+        [
+          {"node": "Is Affiliate Active?", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Is Affiliate Active?": {
+      "main": [
+        [
+          {"node": "Calculate Commission", "type": "main", "index": 0},
+          {"node": "Update/Create Referral Record", "type": "main", "index": 0}
+        ]
+      ]
+    },
+    "Calculate Commission": {
+      "main": [[{"node": "Create Commission Record", "type": "main", "index": 0}]]
+    },
+    "Update/Create Referral Record": {
+      "main": [[{"node": "Create Commission Record", "type": "main", "index": 0}]]
+    },
+    "Create Commission Record": {
+      "main": [[{"node": "Update Affiliate Totals", "type": "main", "index": 0}]]
+    },
+    "Update Affiliate Totals": {
+      "main": [[{"node": "Notify Affiliate (Email)", "type": "main", "index": 0}]]
+    },
+    "Notify Affiliate (Email)": {
+      "main": [[{"node": "Log to Automation Logs", "type": "main", "index": 0}]]
+    },
+    "Log to Automation Logs": {
+      "main": [[{"node": "Respond OK", "type": "main", "index": 0}]]
+    }
+  },
+  "settings": {},
+  "staticData": null,
+  "tags": ["affiliate", "commission", "commerce"],
+  "pinData": {},
+  "versionId": "1"
+}
